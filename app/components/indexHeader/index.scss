@@ -1,0 +1,69 @@
+.header-div2{
+  background: #0f85fb !important;
+  
+  .logo2 {
+    background: url(../../static/images/logoIndex.png) no-repeat center;
+    width:140px;
+    height: 60px;
+    float:left;
+    margin-left:30px;
+  }
+  .ant-menu.menuUl{
+    background:none;
+    height:100%;
+    line-height: 64px;
+    float:left;
+    border:0px;
+    float:right;
+  }
+  .ant-menu-horizontal .ant-menu-item.menuLi{
+    margin: 0;
+    height: 100%;
+    font-size: 14px;
+    color: #fff;
+    a{
+     color: #fff;
+    }
+  }
+  .ant-menu-horizontal > .ant-menu-item-selected,.ant-menu-horizontal > .ant-menu-item:hover{
+    color:#fff !important;
+    border-bottom:0px !important;
+  }
+  .wapper{
+    width:1280px;
+    margin:0 auto;
+  }
+  .right{
+    float:right;
+    position:relative;
+    margin-left:32px;
+    &.showInput{
+      margin-left:10px;
+      .search_input{
+        width:200px;
+        padding-left:16px;
+      }
+      .search_icon{
+        color:#000;
+        background:#fff;
+        padding-right:10px;
+        border-radius: 100%;
+      }
+    }
+    
+  }
+  .search_icon{
+    cursor: pointer;
+    position:absolute;
+    right:3px;
+    top:25px;
+    color:#fff;
+    font-size:16px;
+    }
+  .search_input{
+    width:0px;
+    border-radius: 30px;
+    border:0px;
+    padding:0px;
+  }
+}

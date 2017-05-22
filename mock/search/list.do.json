@@ -1,0 +1,135 @@
+{
+    "data": {
+        "menus": [
+            {
+                "name": "人口标签",
+                "icon": "people",
+                "list": [
+                    {
+                        "id": 1,            
+                        "name": "性别",     
+                        "defaultValue": 0,
+                        "type": "select",
+                        "isShow": true,
+                        "options": [
+                            {
+                                "name": "全部", 
+                                "value": 0
+                            },
+                            {
+                                "name": "男",
+                                "value": 1
+                            },
+                            {
+                                "name": "女",
+                                "value": 2
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "name": "年龄",
+                        "type": "select",
+                        "defaultValue": 0,
+                        "options": [
+                            {
+                                "name": "全部",
+                                "value": 0
+                            },
+                            {
+                                "name": 10,
+                                "value": 10
+                            },
+                            {
+                                "name": 20,
+                                "value": 20
+                            },
+                            {
+                                "name": 30,
+                                "value": 30
+                            },
+                            {
+                                "name": 40,
+                                "value": 40
+                            },
+                            {
+                                "name": 50,
+                                "value": 50
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "name": "婚姻",
+                        "type": "select",
+                        "defaultValue": 0,
+                        "options": [
+                            {
+                                "name": "全部",
+                                "value": 0
+                            },
+                            {
+                                "name": "已婚",
+                                "value": 1
+                            },
+                            {
+                                "name": "未婚",
+                                "value": 2
+                            }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "name": "子女"
+                    },
+                    {
+                        "id": 5,
+                        "name": "学历"
+                    },
+                    {
+                        "id": 6,
+                        "name": "职业"
+                    },
+                    {
+                        "id": 7,
+                        "name": "身份证归属地"
+                    },
+                    {
+                        "id": 8,
+                        "defaultValue": "340803",
+                        "name": "手机归属地",
+                        "type": "city"
+                    },
+                    {
+                        "id": 9,
+                        "name": "注册时间"
+                    },
+                    {
+                        "id": 10,
+                        "name": "爱好"
+                    }
+                ]
+            },
+            {
+                "name": "资产标签",
+                "icon": "pig",
+                "list": [
+                    {
+                        "id": 11,
+                        "name": "宝币"
+                    },
+                    {
+                        "id": 12,
+                        "name": "宝券"
+                    },
+                    {
+                        "id": 13,
+                        "name": "优惠券"
+                    }
+                ]
+            }
+        ]
+    },
+    "success": true,
+    "message": ""
+}

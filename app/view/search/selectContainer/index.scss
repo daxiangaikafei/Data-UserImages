@@ -1,0 +1,67 @@
+.selectContainer{
+    background: #ffffff;
+    border: 1px solid #e7eaf2;
+
+    .ant-tabs{
+        border-bottom: 1px solid #e7eaf2;
+    }
+
+    .ant-tabs-bar{
+        padding: 0 30px;
+        border-bottom: 1px solid #e7eaf2;
+        margin-bottom: 0;
+        .ant-tabs-tab{
+            height: 42px;
+            padding: 10px, 20px;
+        }
+    }
+
+    .ant-tabs-tabpane{
+        padding: 20px 30px;
+        max-height: 190px;
+        overflow: auto;
+    }
+}
+
+.button-div{
+    padding: 20px 30px;
+
+    .tip-div{
+        display: inline-block;
+        background: #ecf3fc;
+        padding: 9px;
+        color: #1a5bfb;
+        font-size: 14px;
+        border-radius: 5px;
+
+        i{
+            color: #1a5bfb;
+            margin-right: 10px;
+        }
+    }
+
+    .left-div{
+        float: right;
+
+        button{
+            width: 120px;
+            height: 38px;
+            font-size: 14px;
+            color: #ffffff;
+            margin-right: 20px;
+        }
+
+        button:nth-child(1){
+            background: #69cbd7;
+        }
+
+        button:nth-child(1):disabled{
+            background: #999999;
+        }
+
+        button:nth-child(2){
+            background: #1a5bfb !important;
+        }
+    }
+}
+

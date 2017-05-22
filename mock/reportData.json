@@ -1,0 +1,354 @@
+{
+    "data": {
+        "reports": [
+            {
+                "name": "姓名",
+                "type": "bar",
+                "data": [
+                    {
+                        "count": 1000,
+                        "name": 1989
+                    },
+                    {
+                        "count": 1000,
+                        "name": 1990
+                    },
+                    {
+                        "count": 2000,
+                        "name": 1991
+                    },
+                    {
+                        "count": 3000,
+                        "name": 1992
+                    }
+                ]
+            },
+            {
+                "name": "姓名",
+                "type": "pie",
+                "data": [
+                    {
+                        "count": 1000,
+                        "name": 1989
+                    },
+                    {
+                        "count": 1000,
+                        "name": 1990
+                    },
+                    {
+                        "count": 2000,
+                        "name": 1991
+                    },
+                    {
+                        "count": 3000,
+                        "name": 1992
+                    }
+                ]
+            },
+            {
+                "name": "姓名",
+                "type": "pie",
+                "data": [
+                    {
+                        "count": 1000,
+                        "name": 1989
+                    },
+                    {
+                        "count": 1000,
+                        "name": 1990
+                    },
+                    {
+                        "count": 2000,
+                        "name": 1991
+                    },
+                    {
+                        "count": 3000,
+                        "name": 1992
+                    }
+                ]
+            },
+            {
+                "name": "姓名",
+                "type": "bar",
+                "data": [
+                    {
+                        "count": 1000,
+                        "name": 1989
+                    },
+                    {
+                        "count": 1000,
+                        "name": 1990
+                    },
+                    {
+                        "count": 2000,
+                        "name": 1991
+                    },
+                    {
+                        "count": 3000,
+                        "name": 1992
+                    }
+                ]
+            },
+            {
+                "name": "姓名",
+                "type": "bar",
+                "data": [
+                    {
+                        "count": 1000,
+                        "name": 1989
+                    },
+                    {
+                        "count": 1000,
+                        "name": 1990
+                    },
+                    {
+                        "count": 2000,
+                        "name": 1991
+                    },
+                    {
+                        "count": 3000,
+                        "name": 1992
+                    }
+                ]
+            },
+            {
+                "name": "姓名",
+                "type": "waterfall",
+                "data": [
+                    {
+                        "count": [
+                            0,
+                            10
+                        ],
+                        "name": 1989
+                    },
+                    {
+                        "count": [
+                            8,
+                            10
+                        ],
+                        "name": 1990
+                    },
+                    {
+                        "count": [
+                            4,
+                            8
+                        ],
+                        "name": 1991
+                    },
+                    {
+                        "count": [
+                            0,
+                            4
+                        ],
+                        "name": 1992
+                    }
+                ]
+            },
+            {
+                "name": "姓名",
+                "type": "waterfall",
+                "data": [
+                    {
+                        "count": [
+                            0,
+                            10
+                        ],
+                        "name": 1989
+                    },
+                    {
+                        "count": [
+                            8,
+                            10
+                        ],
+                        "name": 1990
+                    },
+                    {
+                        "count": [
+                            4,
+                            8
+                        ],
+                        "name": 1991
+                    },
+                    {
+                        "count": [
+                            0,
+                            4
+                        ],
+                        "name": 1992
+                    }
+                ]
+            },
+            {
+                "name": "姓名",
+                "type": "waterfall",
+                "data": [
+                    {
+                        "count": [
+                            0,
+                            10
+                        ],
+                        "name": 1989
+                    },
+                    {
+                        "count": [
+                            8,
+                            10
+                        ],
+                        "name": 1990
+                    },
+                    {
+                        "count": [
+                            4,
+                            8
+                        ],
+                        "name": 1991
+                    },
+                    {
+                        "count": [
+                            0,
+                            4
+                        ],
+                        "name": 1992
+                    }
+                ]
+            },
+            {
+                "name": "姓名",
+                "type": "waterfall",
+                "data": [
+                    {
+                        "count": [
+                            0,
+                            10
+                        ],
+                        "name": 1989
+                    },
+                    {
+                        "count": [
+                            8,
+                            10
+                        ],
+                        "name": 1990
+                    },
+                    {
+                        "count": [
+                            4,
+                            8
+                        ],
+                        "name": 1991
+                    },
+                    {
+                        "count": [
+                            0,
+                            4
+                        ],
+                        "name": 1992
+                    }
+                ]
+            },
+            {
+                "name": "姓名",
+                "type": "bar",
+                "data": [
+                    {
+                        "count": 1000,
+                        "name": 1989
+                    },
+                    {
+                        "count": 1000,
+                        "name": 1990
+                    },
+                    {
+                        "count": 2000,
+                        "name": 1991
+                    },
+                    {
+                        "count": 3000,
+                        "name": 1992
+                    }
+                ]
+            },
+            {
+                "name": "姓名",
+                "type": "waterfall",
+                "data": [
+                    {
+                        "count": [
+                            0,
+                            10
+                        ],
+                        "name": 1989
+                    },
+                    {
+                        "count": [
+                            8,
+                            10
+                        ],
+                        "name": 1990
+                    },
+                    {
+                        "count": [
+                            4,
+                            8
+                        ],
+                        "name": 1991
+                    },
+                    {
+                        "count": [
+                            0,
+                            4
+                        ],
+                        "name": 1992
+                    }
+                ]
+            },
+            {
+                "name": "姓名",
+                "type": "bar",
+                "data": [
+                    {
+                        "count": 1000,
+                        "name": 1989
+                    },
+                    {
+                        "count": 1000,
+                        "name": 1990
+                    },
+                    {
+                        "count": 2000,
+                        "name": 1991
+                    },
+                    {
+                        "count": 3000,
+                        "name": 1992
+                    }
+                ]
+            },
+            {
+                "name": "姓名",
+                "type": "bar",
+                "data": [
+                    {
+                        "count": 1000,
+                        "name": 1989
+                    },
+                    {
+                        "count": 1000,
+                        "name": 1990
+                    },
+                    {
+                        "count": 2000,
+                        "name": 1991
+                    },
+                    {
+                        "count": 3000,
+                        "name": 1992
+                    }
+                ]
+            }
+        ]
+    },
+    "success": true,
+    "message": ""
+}
