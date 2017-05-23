@@ -8,7 +8,6 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 
 import { history, store} from './redux'
 import Routers from './router/router'
-
 ReactDOM.render(
     <Provider store={store}>
         <Router history={history} routes={Routers}></Router>

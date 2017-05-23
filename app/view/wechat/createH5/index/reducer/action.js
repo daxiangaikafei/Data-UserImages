@@ -33,7 +33,7 @@ export const changeContent =(content) => dispatch => {
 export const changeLogo =(logo) => dispatch => {
     dispatch({
         type : ActionTypes.Change_Logo,
-        logo: logo
+        logo : logo
     })
 }
 export const changeUrl =(linkurl) => dispatch => {
@@ -42,11 +42,13 @@ export const changeUrl =(linkurl) => dispatch => {
         linkurl: linkurl
     })
 }
-export const changePic =(index,pic) => dispatch => {
+export const changePic =(index,pic,shortImgurl) => dispatch => {
     dispatch({
         type : ActionTypes.Change_Pic,
         pic: pic,
-        index:index
+        index:index,
+        shortImgurl:shortImgurl
+        
     })
 }
 export const changeTxt =(txt,index) => dispatch => {
@@ -97,14 +99,19 @@ export const setUrl = (url) => dispatch => {
 
 //保存数据
 export const commitWechat = (data) => dispatch => {
-    let url = "/activity/save";
-    return dispatch(HTTPUtil.fetchGet(url, data, null))
+    let url = "/activity/h5/save.do";
+    return dispatch(HTTPUtil.fetchPost(url, data, null))
 }
 
 
 //推送人群
 export const getUserList = () => dispatch => {
-    let url = "/portrayal/collection/allList";
+    let url = "/portrayal/collection/allList.do";
+    return dispatch(HTTPUtil.fetchGet(url, null, null))
+}
+
+export const getLogo = () => dispatch => {
+    let url = "/qiniu/upload.do";
     return dispatch(HTTPUtil.fetchGet(url, null, null))
 }
 

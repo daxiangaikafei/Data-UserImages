@@ -34,7 +34,7 @@ handleChange = (info) => {
     if (info.file.status === 'done') {
         getBase64(info.file.originFileObj, imageUrl => {
             this.setState({ imageUrl })
-            this.props.pic(imageUrl)
+            this.props.pic(imageUrl,info.file.response.data)
         });
     }
 }
@@ -51,9 +51,9 @@ render() {
             <li className="addPics">
                 <span>页面</span>
                 <Upload className="avatar-uploader"
-                        name="avatar"
+                        name="file"
                         showUploadList={false}
-                        action="//jsonplaceholder.typicode.com/posts/"
+                        action="/qiniu/upload.do"
                         beforeUpload={beforeUpload}
                         onChange={this.handleChange}>
                     {

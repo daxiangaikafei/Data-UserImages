@@ -33,7 +33,6 @@ class setUpMessage extends React.Component {
     this.setState(state);
   }
   handlerSend(msg,e){
-    console.log(msg[0])
     this.setState({
         sendType:msg[0]
     })
@@ -69,13 +68,16 @@ class setUpMessage extends React.Component {
     })
   }
   handlerAddUrl(msg){
-    this.props.getLinkUrl().then(data=>this.setState({
-      wapLink:data.wapLink,
-      id:data.id
-    }))
+    this.props.getLinkUrl().then(data=>this.setState({ address:data}))
+  }
+  handleChangeAddress(e){
+    this.setState({
+      messageId:e.split('&&')[0],
+      wapLink:e.split('&&')[1]
+    })
   }
   handlerCommit(e){
-    const {name,userSelectGroupId,content,tel,sendType,time,wapLink,id}=this.state;
+    const {name,userSelectGroupId,content,tel,sendType,time,wapLink,messageId}=this.state;
     let reg=/^1\d{10}$/;
     let msg;
     console.log(this.state)
@@ -83,7 +85,8 @@ class setUpMessage extends React.Component {
       msg="活动名称不能为空"
     }else if(!userSelectGroupId){
       msg="推送人群不能为空"
-    }else if(!content){
+    }
+    else if(!content){
       msg="消息内容不能为空"
     }else if(!tel){
       msg="预览手机号不能为空"
@@ -103,7 +106,8 @@ class setUpMessage extends React.Component {
       "type":1,
       "sendType":sendType,
       "sendTime":time,
-      "tunnelId":1
+      "tunnelId":1,
+      "messageId":messageId
     }).then(()=> 
              hashHistory.push({
                 pathname:'message',
@@ -119,12 +123,16 @@ class setUpMessage extends React.Component {
     })
   }
   render() {
-    const {Population,message,sendType,ishow,content,wapLink,id} = this.state;
+    const {Population,message,sendType,ishow,content,wapLink,id,address} = this.state;
     const children = [];
     Population&&Population.map((item,index)=> {
         children.push(<Option key={item.id}>{item.name}[{item.createTime}]{item.num}人</Option>);
     });
-    console.log(this.state)
+    
+    const oAddress = [];
+    address&&address.map((item,index)=> {
+        oAddress.push(<Option key={item.id+"&&"+item.wapLink} >{item.wapLink}</Option>);
+    });
     return (
       <div className="content-wrapper">
           <h6>1.推送活动</h6>
@@ -155,7 +163,10 @@ class setUpMessage extends React.Component {
 
               <li>
                 <span>插入地址</span>
-                <Input placeholder="点击按钮获取地址" value={wapLink} readOnly onChange={this.handlerChanges.bind(this,['wapLink'])} />
+                <Select onChange={this.handleChangeAddress.bind(this)} placeholder="点击按钮获取地址" >
+                    {oAddress}
+                </Select>
+                {/*<Input value={wapLink}  */}
                 <Button  className="sendButton"  onClick={this.handlerAddUrl.bind(this)}>获取</Button>
               </li>
           </ul>

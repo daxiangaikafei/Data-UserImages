@@ -28,7 +28,7 @@ const columns = [{
   }
 }, {
   title: '推送渠道',
-  dataIndex: 'tunnelId',
+  dataIndex: 'sendTunnel',
   render:(value)=>{
     if(value=="1"){
       return "短信"
@@ -37,11 +37,12 @@ const columns = [{
       return "微信"
     }
   }
-},{
-  title: '通道',
-  dataIndex: 'tunnelName',
-  key: 'tunnelName',
 },
+// {
+//   title: '通道',
+//   dataIndex: 'tunnelName',
+//   key: 'tunnelName',
+// },
 {
   title: '目标客户数量',
   dataIndex: 'selectNum'
@@ -82,7 +83,7 @@ class Message extends React.Component {
     }
 
     handleTableChange(e){
-      this.props.getTableData(10,e)
+      this.props.getTableData(10,e-1)
     }
 
     handlerCreatMail(){

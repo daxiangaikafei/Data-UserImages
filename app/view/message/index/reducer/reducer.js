@@ -5,7 +5,7 @@ const initialState = {
 }
 function getData(msg){
     return msg.map((item, key)=>{
-        switch (item.tunnelId){
+        switch (item.sendTunnel){
             case 1:
                 return {  ...item ,img: "1"  }
             case 2:

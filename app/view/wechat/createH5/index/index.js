@@ -23,7 +23,8 @@ import {
     oDelete,
     setFileString,
     setUrl,
-    removeData
+    removeData,
+    getLogo
 } from './reducer/action'
 import './index.scss'
 const RadioGroup = Radio.Group;
@@ -92,9 +93,11 @@ handlerAddClickPic(){
 }
 
 goNext(){
-    
-    console.log(this.state,1393939949404)
-    const {name,userSelectGroupId,title,content,linkurl,logoUrl,data}=this.props;
+    const {name,userSelectGroupId,title,content,linkurl,data,logo}=this.props;
+    const datas=data.map((item,index)=>({
+        "url":item.url,
+        "txt":item.txt
+    }))
     let msg;
     if(!name){
         msg="活动标题不能为空"
@@ -104,7 +107,7 @@ goNext(){
         msg="消息标题不能为空"
     }else if(!content){
         msg="消息内容不能为空"
-    }else if(!logoUrl){
+    }else if(!logo){
         msg="标题图不能为空"
     }else if(!linkurl){
         msg="跳转链接不能为空"
@@ -129,15 +132,21 @@ goNext(){
             userSelectGroupId:userSelectGroupId,
             title:title,
             content:content,
-            logoUrl:logoUrl,
+            logo:logo,
             link:linkurl,
-            shortContent:data,
+            shortContent:datas,
             type:2
-        }).then(()=> 
+        }).then((data)=> 
              hashHistory.push({
                 pathname:'wechartNext',
+                query:{
+                    userSelectGroupId:userSelectGroupId,
+                    messageId:data.messageId
+                }
             })
         )
+        
+        console.log(this.props)
            
     }
 }
@@ -146,11 +155,16 @@ handlerImport(){
 }
 handleChangeLogo = (info) => {
     if (info.file.status === 'done') {
-        getBase64(info.file.originFileObj, logoUrl => this.props.changeLogo(logoUrl));
+        getBase64(info.file.originFileObj, logo => {
+                this.setState({
+                    logo:logo
+                })
+                this.props.changeLogo(info.file.response.data)
+        });
     }
 }
-handlerPic(index,msg){
-    this.props.changePic(index,msg)
+handlerPic(index,msg,url){
+    this.props.changePic(index,msg,url)
 }
 
 handlerTxt(index,msg){
@@ -185,8 +199,6 @@ componentDidMount(){
     this.props.changeLogo("")
     this.props.changeUrl("")
     this.props.removeData("")
-    // this.props.changePic("")
-    // this.props.changeTxt("")
   }
   handlerts(msg){
       this.setState({
@@ -207,14 +219,14 @@ componentDidMount(){
 render() {
     
     const {Population,ishow,tabs,stepNum,status,value,name} = this.state;
-    const {title,content,linkurl,logoUrl,data,pageUrl,fileString}=this.props;
+    const {title,content,linkurl,data,pageUrl,fileString,logo}=this.props;
     const children = [];
     Population&&Population.map((item,index)=> {
         children.push(<Option key={item.id}>{item.name}[{item.createTime}]{item.num}人</Option>);
     });
     let components = data.map((data, index)=>{
             return <Pic key={index} 
-            pic={(value)=>this.handlerPic(index, value)} 
+            pic={(value,url)=>this.handlerPic(index, value,url)} 
             txt={(value)=>this.handlerTxt(index, value)}
             del={(value)=>this.handlerDelete(index, value)}/>
     })
@@ -266,14 +278,14 @@ render() {
                         <li>
                             <span>标题图</span>
                             <Upload className="avatar-uploader logoUpload"
-                                    name="avatar"
+                                    name="file"
                                     showUploadList={false}
-                                    action="//jsonplaceholder.typicode.com/posts/"
+                                    action="/qiniu/upload.do"
                                     beforeUpload={beforeUpload}
                                     onChange={this.handleChangeLogo}>
                                 {
-                                this.props.logoUrl ?
-                                <img src={this.props.logoUrl} alt="" className="avatar"/> :
+                                this.state.logo ?
+                                <img src={this.state.logo} alt="" className="avatar"/> :
                                 <Icon type="plus" className="avatar-uploader-trigger"/>
                                 }
                             </Upload>
@@ -333,7 +345,7 @@ let mapStateToProps = state => ({
     title:state.wechatReducer.title,
     content:state.wechatReducer.content,
     linkurl:state.wechatReducer.linkurl,
-    logoUrl:state.wechatReducer.logoUrl,
+    logo:state.wechatReducer.logo,
     data:state.wechatReducer.data,
     fileString:state.wechatReducer.fileString,
     pageUrl:state.wechatReducer.pageUrl
@@ -355,7 +367,8 @@ let mapDispatchToProps = (dispatch) => {
         oDelete,
         setFileString,
         setUrl,
-        removeData
+        removeData,
+        getLogo
     }, dispatch)
 }
 

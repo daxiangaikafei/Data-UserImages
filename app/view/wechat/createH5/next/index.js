@@ -23,7 +23,9 @@ class Wechat extends React.Component {
         })
     }
     componentDidMount(){
-        this.props.generateAd().then((data)=>this.setState({
+        let query=this.props.location.query;
+        console.log(this.props.location.query.userSelectGroupId,this.props.location.query.messageId,111111)
+        this.props.generateAd(query.userSelectGroupId,query.messageId).then((data)=>this.setState({
           oUrl:data.url
       }))
     }
@@ -44,7 +46,7 @@ class Wechat extends React.Component {
         }else{
             this.props.sendMessage({
                 "phone":mobileNo,
-                "url":oUrl
+                "content":oUrl
             })
         }
     }
@@ -54,6 +56,7 @@ class Wechat extends React.Component {
         })
     }
     render() {
+
         const {stepNum,imageUrl,status, oUrl}=this.state;
         let comp=this.props.location.query.status==1?
         <Mobile title={this.props.title} url={this.props.url} content={this.props.content} data={this.props.data} logo={this.props.logo}/>:

@@ -7,16 +7,17 @@ const initialState = {
     title:"",
     content:"",
     linkurl:"",
+    logo:"",
     logoUrl:"",
-    data: [{"pic":"","txt":""}],
+    data: [{"pic":"","url":"","txt":""}],
     fileString:"",
     pageUrl:""
 }
-function changePics(pic,index,state){
+function changePics(pic,index,url,state){
     let data=state.data;
     return data.map((item, key)=>{
         if(index==key){
-            return { ...item, pic: pic}
+            return { ...item, pic: pic,url:url}
         }
         return item
     })
@@ -75,12 +76,12 @@ export default function update (state = initialState, action){
         case ActionTypes.Change_Logo:
             return {
                 ...state,
-                logoUrl:action.logo
+                logo:action.logo
             }
         case ActionTypes.Change_Pic:
             return {
                 ...state,
-                data:changePics(action.pic,action.index,state)
+                data:changePics(action.pic,action.index,action.shortImgurl,state)
             }
         case ActionTypes.Change_Txt:
             return {
