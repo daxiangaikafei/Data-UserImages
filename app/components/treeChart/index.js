@@ -189,6 +189,7 @@ class TreeChart extends React.Component {
 
     render() {
         let Chart = this.getTreeChart()
+        console.log(this.props.data)
         return (
             <div>
                 <Chart

@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { hashHistory } from 'react-router'
 
 import { Table, Button } from 'antd'
 import Icon from '../../components/icon'
@@ -49,8 +50,8 @@ class FavoritePage extends React.Component{
                     width: 150,
                     render: (text, record) => (
                         <span>
-                            <Button className="btn_mail" onClick={(e)=>this.onMailHandler(e)}><span className="btn-icon"><Icon name="mail" color="#000" size="14" /></span>短信</Button>
-                            <Button className="btn_wx" onClick={(e)=>this.onWeiXinHandler(e)}><span className="btn-icon"><Icon name="weixing" color="#000" size="14" /></span>微信</Button>
+                            <Button className="btn_mail" onClick={(e)=>this.onMailHandler(e, record.userSelectId)}><span className="btn-icon"><Icon name="mail" color="#000" size="14" /></span>短信</Button>
+                            <Button className="btn_wx" onClick={(e)=>this.onWeiXinHandler(e, record.userSelectId)}><span className="btn-icon"><Icon name="weixing" color="#000" size="14" /></span>微信</Button>
                         </span>
                     )
                 }
@@ -74,18 +75,17 @@ class FavoritePage extends React.Component{
         this.sendData(pagination)
     }
 
-    onMailHandler(e){
+    onMailHandler(e, id){
         e.stopPropagation()
         e.preventDefault()
 
-        console.log("onMailHandler")
+        hashHistory.push(RouterConst.MESSAGE_STEPUP_MOBILE + "/" + id)
     }
 
-    onWeiXinHandler(e){
+    onWeiXinHandler(e, id){
         e.stopPropagation()
         e.preventDefault()
-
-        console.log("onWeiXinHandler")
+        hashHistory.push(RouterConst.WECHART + "/" + id)
     }
 
     onClickHandler(e){
@@ -105,7 +105,7 @@ class FavoritePage extends React.Component{
                     <p>收藏群组</p>
                 </div>
                 <div className="favorite-tab">
-                    <div><Button className="bnNew">新建用户群</Button></div>
+                    {/*<div><Button className="bnNew">新建用户群</Button></div>*/}
                     <Table
                             columns={columns} 
                             dataSource={this.props.favoriteList}

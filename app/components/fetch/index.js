@@ -19,7 +19,7 @@ export function fetchGet(url, params, headers){
                         title: '提示',
                         content: data.message,
                     });
-                    return false;
+                    reject && reject()
                 } else if (data && data.success) {
                     resolve && resolve(data.data || null)
                 }
@@ -88,8 +88,8 @@ export function fetchPost(url, formData) {
                     Modal.error({
                         title: '提示',
                         content: data.message,
-                    });
-                    return false;
+                    })
+                    reject && reject()
                 } else if (data && data.success) {
                     resolve && resolve(data.data || null)
                 }
@@ -97,6 +97,7 @@ export function fetchPost(url, formData) {
         })
     }
 }
+
 export function fetchpost(url, formData) {
 
     return (dispatch, getState) => {

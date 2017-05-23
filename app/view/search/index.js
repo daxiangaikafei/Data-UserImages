@@ -8,9 +8,8 @@ import SelectContainer from './selectContainer'
 import AntVContainer from './antVContainer'
 import FavoriteContainer from './favoritePop'
 
-import { getSearchMenu } from './reducer/actions'
-
 import * as RouterConst from '../../static/const'
+import { getCityCode } from './reducer/actions'
 
 import './index.scss'
 
@@ -26,7 +25,7 @@ class SearchList extends React.Component {
     }
     
     componentDidMount(){
-        this.props.getSearchMenu()
+        this.props.getCityCode()
     }
 
     onShowFavorite = () => {
@@ -67,7 +66,7 @@ let mapStateToProps = state => ({
 })
 
 let mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({ getSearchMenu }, dispatch)
+    return bindActionCreators({ getCityCode }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchList)

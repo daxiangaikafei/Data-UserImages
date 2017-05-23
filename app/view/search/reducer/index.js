@@ -8,7 +8,9 @@ const initialState = {
     reportId: 0,
     reportDate: "",
     reportNumber: 0,
-    reportList: []
+    reportList: [],
+
+    cityCode: null
 }
 
 //改变显示项目
@@ -161,6 +163,11 @@ export default function update(state = initialState, action) {
                 reportDate: '',
                 reportNumber: 0,
                 reportList: [],
+            }
+        case ActionType.INIT_CITY_CODE:
+            return {
+                ...state,
+                cityCode: action.data
             }
         default:
             return state

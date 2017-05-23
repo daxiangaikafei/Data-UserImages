@@ -15,8 +15,9 @@ import * as menuData from '../../static/const/menu'
 
 import SiderSearchMenu from '../../components/siderSearch'
 
-import { checkLogin} from '../login/reducer/action'
-import {getCurrent} from '../../components/siderMenu/reducer/action';
+import { checkLogin } from '../login/reducer/action'
+import { getCurrent } from '../../components/siderMenu/reducer/action';
+
 class App extends React.Component {
     constructor(props) {
         super(props)
@@ -73,6 +74,7 @@ class App extends React.Component {
     handlerCurrent(e) {
         console.log(e)
     }
+
     render() {
         let curr = this.props.location.query.current;
         let top;
@@ -123,7 +125,7 @@ let mapStateToProps = state => ({
 })
 
 let mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({ checkLogin ,getCurrent}, dispatch)
+    return bindActionCreators({ checkLogin ,getCurrent }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

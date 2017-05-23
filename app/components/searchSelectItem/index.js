@@ -1,11 +1,10 @@
 import React, { PropTypes } from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
 import { Select, Icon, Cascader } from 'antd'
 
-import CityConst from '../../static/const/citys'
-
 import './index.scss'
-
 
 class SelectItem extends React.Component{
 
@@ -25,11 +24,13 @@ class SelectItem extends React.Component{
     }
 
     getComponents(){
-        let { type, defautlValue } = this.props
+        let { type, defautlValue, cityCode } = this.props
         if(type == 3 || type == 4){
             let value = defautlValue ? [defautlValue.substring(0, 2) + "0000", defautlValue.substring(0, 4) + "00", defautlValue] : ""
+
+            let opts = cityCode ? type == 3 ? cityCode.cityCode3 : cityCode2 : []
             return (
-                <Cascader options={CityConst} onChange={(e)=>this.onCascaderChange(e)} value={value} placeholder="未选择" />
+                <Cascader options={opts} onChange={(e)=>this.onCascaderChange(e)} value={value} placeholder="未选择" />
             )
         }else{
             return (
@@ -64,7 +65,16 @@ SelectItem.PropTypes = {
     options: PropTypes.array.isRequired,
     defautlValue: PropTypes.any,
     onChangeHandler: PropTypes.func.isRequired,
-    onAddHandler: PropTypes.func
+    onAddHandler: PropTypes.func,
+    cityCode: PropTypes.object.isRequired
 }
 
-export default SelectItem
+let mapStateToProps = state => ({
+    cityCode: state.searchList.cityCode
+})
+
+let mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({ }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SelectItem)

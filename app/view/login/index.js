@@ -60,7 +60,10 @@ class Login extends React.Component{
             return
         }
 
-        this.props.userLogin(username, password, validCode)
+        this.props.userLogin(username, password, validCode).then(null, ()=>{
+            console.log("登录失败重新获取验证码")
+            this.refs.imgCode.src = '/captcha/generate.do?t='+new Date().getTime()
+        })
     }
 
     render(){
@@ -81,7 +84,7 @@ class Login extends React.Component{
                         <div className="login-code">
                             {/*<Checkbox className="checkbox" onChange={(e)=>console.log(e.target.checked)}>7日内免登陆</Checkbox>*/}
                             <Input className="validCode" value={validCode} placeholder="验证码" onChange={(e)=>this.onInputChange(e, "validCode")} />
-                            <span><img onClick={(e)=>e.currentTarget.src='/captcha/generate.do?t='+new Date().getTime()} alt="看不清？点击换一张" src={"/captcha/generate.do"} /></span>
+                            <span><img ref="imgCode" onClick={(e)=>e.currentTarget.src='/captcha/generate.do?t='+new Date().getTime()} alt="看不清？点击换一张" src={"/captcha/generate.do"} /></span>
                         </div>
                         <Button className="bnLogin" onClick={()=>this.onLoginHandler()}>登录</Button>
                         <div className="login-tip">还没有账户?  <Link to={ RouterConst.ROUTER_REGISTER }>立即前往</Link></div>

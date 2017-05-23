@@ -19,3 +19,11 @@ export const getFavoriteData = opt => dispatch => {
     let url = '/search/usergroup.do'
     dispatch(HTTPUtil.fetchGet(url, opt, null)).then(data=>dispatch(receiveData(data, opt.page)))
 }
+
+export const getFavoriteDetailData = id => dispatch => {
+    let url = "/search/usergroupdetail.do"
+    dispatch(HTTPUtil.fetchGet(url, { id: id }, null)).then(data => dispatch({
+        type: ActionType.INIT_FAVORITE_DETAIL_DATA,
+        data: data
+    }))
+}

@@ -6,8 +6,7 @@ import { Menu, Icon, Button } from 'antd'
 
 import SubMenuItem from './subMenuItem'
 
-
-import { changeShowMenuList } from '../../view/search/reducer/actions'
+import { changeShowMenuList, getSearchMenu } from '../../view/search/reducer/actions'
 
 import '../../static/css/common.scss'
 import './index.scss'
@@ -22,6 +21,7 @@ class SiderSearchMenu extends React.Component{
     }
     
     componentDidMount(){
+        this.props.getSearchMenu()
     }
 
     getMenu(){
@@ -81,7 +81,7 @@ let mapStateToProps = state => ({
 })
 
 let mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({ changeShowMenuList }, dispatch)
+    return bindActionCreators({ changeShowMenuList, getSearchMenu }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SiderSearchMenu)

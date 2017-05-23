@@ -2,6 +2,7 @@ import * as ActionType from './actionType'
 
 const initialState = {
     isLogin: false,
+    cityCode: null,
 }
 
 export default function update (state = initialState, action){

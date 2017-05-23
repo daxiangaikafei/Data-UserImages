@@ -20,7 +20,7 @@ class SelectResultContainer extends React.Component{
                 if(item.isShowResult){
                     let value=""
                     if(item.type == "3" || item.type == "4"){
-                        value = getCityNameByValue(item.defaultValue)
+                        value = getCityNameByValue(item.defaultValue, this.props.cityCode || [])
                     }else{
                         value = item.options ? item.options.find(obj=>obj.value==item.defaultValue).name : ""
                     }
@@ -46,10 +46,12 @@ class SelectResultContainer extends React.Component{
 
 SelectResultContainer.PropTypes = {
     filterMenuList: PropTypes.array.isRequired,
+    cityCode: PropTypes.object.isRequired,
 }
 
 let mapStateToProps = state => ({
     filterMenuList: state.searchList.filterMenuList,
+    cityCode: state.searchList.cityCode
 })
 
 let mapDispatchToProps = (dispatch) => {

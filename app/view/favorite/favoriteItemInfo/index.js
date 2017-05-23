@@ -1,6 +1,10 @@
 import React, { PropTypes } from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
 import { Button } from 'antd'
+
+import { getFavoriteDetailData } from '../reducer/actions'
 
 import './index.scss'
 
@@ -9,12 +13,17 @@ class FavoriteItemInfo extends React.Component{
         super(props, context)
     }
 
+    componentDidMount(){
+        let { data } = this.props
+        if(data.userSelectId) this.props.getFavoriteDetailData(data.userSelectId)
+    }
+
     onCancelHandler(){
         this.props.onClose();
     }
 
     render(){
-        let { data } = this.props
+        let { data, options } = this.props
 
         return(
             <div className="favoriteItem-mask">
@@ -37,7 +46,7 @@ class FavoriteItemInfo extends React.Component{
                         <div className="favoriteItem-item">
                             <div className="title-div-1">标签筛选条件:</div>
                             <div className="favoriteItem-list">
-                                {data.option.map((obj, index) => 
+                                {options.map((obj, index) => 
                                     <div className="list-item" key={index}><div>{obj.name}</div><div>{obj.value}</div></div>
                                 )}
                             </div>
@@ -52,7 +61,16 @@ class FavoriteItemInfo extends React.Component{
 
 FavoriteItemInfo.PropTypes = {
     onClose: PropTypes.func.isRequired,
-    data: PropTypes.object.isRequired
+    data: PropTypes.object.isRequired,
+    options: PropTypes.array.isRequired,
 }
 
-export default FavoriteItemInfo
+let mapStateToProps = state => ({
+    options: state.favoriteReducer.favorite_detail
+})
+
+let mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({ getFavoriteDetailData }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FavoriteItemInfo)

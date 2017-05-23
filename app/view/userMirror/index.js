@@ -16,7 +16,8 @@ class UserMirror extends React.Component{
     }
     
     componentDidMount(){
-        this.props.getUserMirror()
+        let userId = this.props.params.userId
+        if(userId) this.props.getUserMirror(userId)
     }
 
     render(){

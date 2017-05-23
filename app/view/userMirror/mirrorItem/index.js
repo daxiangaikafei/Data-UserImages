@@ -12,6 +12,7 @@ class MirrorItem extends React.Component{
     render(){
         let { data } = this.props
         let title = data.name || "", list = data.children || []
+        
         return (
             <div className="mirror-item">
                 <div className="mirror-item-title">{title}</div>
