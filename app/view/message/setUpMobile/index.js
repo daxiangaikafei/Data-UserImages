@@ -88,10 +88,8 @@ class setUpMessage extends React.Component {
     }
     else if(!content){
       msg="消息内容不能为空"
-    }else if(!tel){
-      msg="预览手机号不能为空"
-    }else if(!reg.test(tel)){
-      msg="预览手机号格式不正确"
+    }else if(time<new Date().getTime()+100){
+      msg="推送时间必须大于当前时间"
     }
     if(msg){
       Modal.error({

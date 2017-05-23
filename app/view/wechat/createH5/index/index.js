@@ -98,6 +98,7 @@ goNext(){
         "url":item.url,
         "txt":item.txt
     }))
+    
     let msg;
     if(!name){
         msg="活动标题不能为空"
