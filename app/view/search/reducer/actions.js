@@ -117,3 +117,57 @@ export const collectionFavrite = opt => dispatch => {
     let url = '/search/collection.do'
     return dispatch(HTTPUtil.fetchPost(url, opt, null))
 }
+
+let receiveCityCode = data => ({
+    type: ActionType.INIT_CITY_CODE,
+    data: {
+        cityCode3: getCityCode3(data),
+        cityCode2: getCityCode2(data)
+    }
+})
+
+let getCityCode3 = data => {
+    return data.province.map(p => {
+        let childrens = data.city.filter(c => c.code.substring(0,2) == p.code.substring(0, 2))
+        return {
+            value: p.code,
+            label: p.name,
+            children: childrens.map(child => {
+                let aChildrens = data.area.filter(a => a.code.substring(0, 4) == child.code.substring(0, 4))
+                return {
+                    value: child.code,
+                    label: child.name,
+                    children: aChildrens.map(aChild => ({
+                        value: aChild.code,
+                        label: aChild.name
+                    }))
+                }
+            })
+        }
+    })
+}
+
+let getCityCode2 = data => {
+    return data.province.map(p => {
+        let childrens = data.city.filter(c => c.code.substring(0,2) == p.code.substring(0, 2))
+        return {
+            value: p.code,
+            label: p.name,
+            children: childrens.map(child => {
+                let aChildrens = data.area.filter(a => a.code.substring(0, 4) == child.code.substring(0, 4))
+                return {
+                    value: child.code,
+                    label: child.name,
+                }
+            })
+        }
+    })
+}
+
+export const getCityCode = () => (dispatch, getState) => {
+    let state = getState()
+    if(state.loginReducer.cityCode == null){
+        let url = '/index/cityCode.do'
+        dispatch(HTTPUtil.fetchGet(url, null, null)).then(data=>dispatch(receiveCityCode(data)))
+    }
+}

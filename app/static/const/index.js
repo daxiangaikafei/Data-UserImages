@@ -15,7 +15,7 @@ export const USER = ROUTER_ROOT + "/user"
 
 export const SEARCH_LIST = ROUTER_ROOT + "/searchList"
 
-export const USER_MIRROR = ROUTER_ROOT + "/userMirror"
+export const USER_MIRROR = ROUTER_ROOT + "/userMirror/:userId"
 
 export const GET_MESSAGE = ROUTER_ROOT + "/message"
 

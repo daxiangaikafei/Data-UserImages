@@ -23,16 +23,21 @@ export const userLogin = (userName, password, validCode) => dispatch => {
         j_password: MD5(password),
         validCode: validCode
     }
-    dispatch(HTTPUtil.fetchPost(url, opt, null)).then(data=>{
-        dispatch(receiveData(data))
-        setCookie("token", data.token)
-        setCookie("userName", data.userName)
 
-        Modal.success({
-            title: '提示',
-            content: '登录成功!',
-            onOk: ()=>{ console.log("123123123");hashHistory.push(RouterConst.ROUTER_HOME)}
-        });
+    return new Promise((resolve, reject) => {
+        dispatch(HTTPUtil.fetchPost(url, opt, null)).then(data=>{
+            dispatch(receiveData(data))
+            setCookie("token", data.token)
+            setCookie("userName", data.userName)
+
+            Modal.success({
+                title: '提示',
+                content: '登录成功!',
+                onOk: ()=>{ hashHistory.push(RouterConst.ROUTER_HOME)}
+            })
+            resolve && resolve()
+
+        }, reject)
     })
 }
 

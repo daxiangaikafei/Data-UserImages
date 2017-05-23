@@ -10,8 +10,8 @@ export default function update(state = initialState, action){
         case ActionType.USER_MIRROR_UPDATE:
             return { 
                 ...state, 
-                mirrorData: action.data.mirror,
-                username: action.data.username
+                mirrorData: action.data.result.mirror,
+                username: action.data.result.username
             }
         default:
             return state

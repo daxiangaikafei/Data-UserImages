@@ -1,279 +1,1083 @@
 {
-    "data": {
-        "username": "钱宝用户名",
-        "mirror": [
-            {
-                "name": "入口",
-                "children": [
-                    {
-                        "name": "性别",
-                        "children": [
-                            {
-                                "name": "男"
-                            },
-                            {
-                                "name": "女"
-                            }
-                        ]
-
-                    },
-                    {
-                        "name": "行为规则",
-                        "children": [
-                            {
-                                "name": "行为"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "年龄"
-                    },
-                    {
-                        "name": "婚姻"
-                    },
-                    {
-                        "name": "子女"
-                    },
-                    {
-                        "name": "学历"
-                    },
-                    {
-                        "name": "职位"
-                    }
-                ]
-            },
-            {
-                "name": "用户",
-                "children": [
-                    {
-                        "name": "信用"
-                    },
-                    {
-                        "name": "app行为"
-                    },
-                    {
-                        "name": "pc行为"
-                    },
-                    {
-                        "name": "设备行为",
-                        "children": [
-                            {
-                                "name": "依赖"
-                            },
-                            {
-                                "name": "忠诚"
-                            },
-                            {
-                                "name": "活跃"
-                            },
-                            {
-                                "name": "初生",
-                                "children": [
-                                    {
-                                        "name": "新客识别"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "沉默"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "用户类型",
-                        "children": [
-                            {
-                                "name": "依赖"
-                            },
-                            {
-                                "name": "忠诚"
-                            },
-                            {
-                                "name": "活跃"
-                            },
-                            {
-                                "name": "初生",
-                                "children": [
-                                    {
-                                        "name": "新客识别"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "沉默"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "投资",
-                "children": [
-                    {
-                        "name": "资产"
-                    }
-                ]
-            },
-            {
-                "name": "入口",
-                "children": [
-                    {
-                        "name": "性别"
-                    },
-                    {
-                        "name": "行为规则",
-                        "children": [
-                            {
-                                "name": "行为"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "年龄"
-                    },
-                    {
-                        "name": "婚姻"
-                    },
-                    {
-                        "name": "子女"
-                    },
-                    {
-                        "name": "学历"
-                    },
-                    {
-                        "name": "职位"
-                    }
-                ]
-            },
-            {
-                "name": "用户",
-                "children": [
-                    {
-                        "name": "信用"
-                    },
-                    {
-                        "name": "app行为"
-                    },
-                    {
-                        "name": "pc行为"
-                    },
-                    {
-                        "name": "设备行为"
-                    },
-                    {
-                        "name": "用户类型",
-                        "children": [
-                            {
-                                "name": "依赖"
-                            },
-                            {
-                                "name": "忠诚"
-                            },
-                            {
-                                "name": "活跃"
-                            },
-                            {
-                                "name": "初生",
-                                "children": [
-                                    {
-                                        "name": "新客识别"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "沉默"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "投资",
-                "children": [
-                    {
-                        "name": "资产"
-                    }
-                ]
-            },
-            {
-                "name": "入口",
-                "children": [
-                    {
-                        "name": "性别"
-                    },
-                    {
-                        "name": "行为规则",
-                        "children": [
-                            {
-                                "name": "行为"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "年龄"
-                    },
-                    {
-                        "name": "婚姻"
-                    },
-                    {
-                        "name": "子女"
-                    },
-                    {
-                        "name": "学历"
-                    },
-                    {
-                        "name": "职位"
-                    }
-                ]
-            },
-            {
-                "name": "用户",
-                "children": [
-                    {
-                        "name": "信用"
-                    },
-                    {
-                        "name": "app行为"
-                    },
-                    {
-                        "name": "pc行为"
-                    },
-                    {
-                        "name": "设备行为"
-                    },
-                    {
-                        "name": "用户类型",
-                        "children": [
-                            {
-                                "name": "依赖"
-                            },
-                            {
-                                "name": "忠诚"
-                            },
-                            {
-                                "name": "活跃"
-                            },
-                            {
-                                "name": "初生",
-                                "children": [
-                                    {
-                                        "name": "新客识别"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "沉默"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "投资"
-            }
-        ]
-    },
-
     "success": true,
-    "message": ""
+    "message": null,
+    "data": {
+        "result": {
+            "mirror": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "14"
+                                        }
+                                    ],
+                                    "name": "用户id"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "3"
+                                        }
+                                    ],
+                                    "name": "用户来源"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "4"
+                                        }
+                                    ],
+                                    "name": "用户注册归属"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "1"
+                                        }
+                                    ],
+                                    "name": "性别"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "57"
+                                        }
+                                    ],
+                                    "name": "年龄"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "-1"
+                                        }
+                                    ],
+                                    "name": "婚姻"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "2"
+                                        }
+                                    ],
+                                    "name": "子女"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "5"
+                                        }
+                                    ],
+                                    "name": "学历"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "361222"
+                                        }
+                                    ],
+                                    "name": "身份证归属地"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "1001100"
+                                        }
+                                    ],
+                                    "name": "手机归属地"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "2017-05-19"
+                                        }
+                                    ],
+                                    "name": "注册时间"
+                                }
+                            ],
+                            "name": "人口"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "3"
+                                        }
+                                    ],
+                                    "name": "手机品牌"
+                                }
+                            ],
+                            "name": "位置"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "note1"
+                                        }
+                                    ],
+                                    "name": "手机型号"
+                                }
+                            ],
+                            "name": "位置"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "其他"
+                                        }
+                                    ],
+                                    "name": "最近一次使用的操作系统"
+                                }
+                            ],
+                            "name": "位置"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "ios"
+                                        }
+                                    ],
+                                    "name": "常用操作系统"
+                                }
+                            ],
+                            "name": "位置"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "41"
+                                        }
+                                    ],
+                                    "name": "app浏览／pc浏览比率"
+                                }
+                            ],
+                            "name": "位置"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {}
+                                    ],
+                                    "name": "周末生活第一位置"
+                                }
+                            ],
+                            "name": "位置"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "1001100"
+                                        }
+                                    ],
+                                    "name": "周末生活第一位置行政区码"
+                                }
+                            ],
+                            "name": "位置"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "1001101"
+                                        }
+                                    ],
+                                    "name": "常驻地"
+                                }
+                            ],
+                            "name": "位置"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "[41,63]"
+                                        }
+                                    ],
+                                    "name": "居住位置"
+                                }
+                            ],
+                            "name": "位置"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "1001100"
+                                        }
+                                    ],
+                                    "name": "居住位置行政区码"
+                                }
+                            ],
+                            "name": "位置"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "[88,71]"
+                                        }
+                                    ],
+                                    "name": "工作位置"
+                                }
+                            ],
+                            "name": "位置"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "1001100"
+                                        }
+                                    ],
+                                    "name": "工作位置行政区码"
+                                }
+                            ],
+                            "name": "购物"
+                        }
+                    ],
+                    "name": "基础"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "海鲜/大家电/成人用品/家装/电子数码"
+                                        }
+                                    ],
+                                    "name": "品类购买偏好"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "71.43"
+                                        }
+                                    ],
+                                    "name": "平均客单价"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "10"
+                                        }
+                                    ],
+                                    "name": "总下单次数"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "40"
+                                        }
+                                    ],
+                                    "name": "总购买金额"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "505"
+                                        }
+                                    ],
+                                    "name": "总购买金额（宝币）"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "53"
+                                        }
+                                    ],
+                                    "name": "总购买金额（宝券）"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "115"
+                                        }
+                                    ],
+                                    "name": "总购买金额（优惠券）"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "622"
+                                        }
+                                    ],
+                                    "name": "总购买金额（购物卡）"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "2017-05-19"
+                                        }
+                                    ],
+                                    "name": "最近一次支付日期"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "678"
+                                        }
+                                    ],
+                                    "name": "最近一次购买金额"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "49"
+                                        }
+                                    ],
+                                    "name": "取消订单总次数"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "73"
+                                        }
+                                    ],
+                                    "name": "退货总次数"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "458"
+                                        }
+                                    ],
+                                    "name": "订单支付率"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "49"
+                                        }
+                                    ],
+                                    "name": "绑定银行卡数"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Y"
+                                        }
+                                    ],
+                                    "name": "是否认证商家"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "1"
+                                        }
+                                    ],
+                                    "name": "商家历史最高等级"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "4257"
+                                        }
+                                    ],
+                                    "name": "商家平均月销量"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "30"
+                                        }
+                                    ],
+                                    "name": "商家平均月销量宝券占比"
+                                },
+                                {
+                                    "children": [
+                                        {}
+                                    ],
+                                    "name": "完成分销次数"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "8957"
+                                        }
+                                    ],
+                                    "name": "60天完成分销次数"
+                                },
+                                {
+                                    "children": [
+                                        {}
+                                    ],
+                                    "name": "60天分销产品平均保证金"
+                                },
+                                {
+                                    "children": [
+                                        {}
+                                    ],
+                                    "name": "健康产品\n\""
+                                },
+                                {
+                                    "children": [
+                                        {}
+                                    ],
+                                    "name": "生活缴费\n\""
+                                },
+                                {
+                                    "children": [
+                                        {}
+                                    ],
+                                    "name": "加油卡\n\""
+                                },
+                                {
+                                    "children": [
+                                        {}
+                                    ],
+                                    "name": "汽车洗车服务\n\""
+                                },
+                                {
+                                    "children": [
+                                        {}
+                                    ],
+                                    "name": "文具玩具\n\""
+                                },
+                                {
+                                    "children": [
+                                        {}
+                                    ],
+                                    "name": "每周一花\n\""
+                                }
+                            ],
+                            "name": "购物"
+                        }
+                    ],
+                    "name": "购物"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "5875"
+                                        }
+                                    ],
+                                    "name": "30天收藏次数"
+                                }
+                            ],
+                            "name": "收藏"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "3059"
+                                        }
+                                    ],
+                                    "name": "30天购物车次数"
+                                }
+                            ],
+                            "name": "购物车"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "854"
+                                        }
+                                    ],
+                                    "name": "两个月点赞次数"
+                                }
+                            ],
+                            "name": "点赞"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "手机，短裙，手机壳，蜂蜜，电风扇"
+                                        }
+                                    ],
+                                    "name": "10天搜索关键字top10"
+                                }
+                            ],
+                            "name": "搜索"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "3522"
+                                        }
+                                    ],
+                                    "name": "10天搜索次数"
+                                }
+                            ],
+                            "name": "搜索"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {}
+                                    ],
+                                    "name": "10天搜索下单转化率"
+                                }
+                            ],
+                            "name": "搜索"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "5210"
+                                        }
+                                    ],
+                                    "name": "活跃值"
+                                }
+                            ],
+                            "name": "活跃值"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "5"
+                                        }
+                                    ],
+                                    "name": "集中上网时段_1"
+                                }
+                            ],
+                            "name": "时间"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "8"
+                                        }
+                                    ],
+                                    "name": "集中上网时段_2"
+                                }
+                            ],
+                            "name": "时间"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "5"
+                                        }
+                                    ],
+                                    "name": "习惯签到时间段"
+                                }
+                            ],
+                            "name": "时间"
+                        }
+                    ],
+                    "name": "上网行为"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "3"
+                                        }
+                                    ],
+                                    "name": "商家资产"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "4"
+                                        }
+                                    ],
+                                    "name": "宝币总资产"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "4"
+                                        }
+                                    ],
+                                    "name": "个人宝券"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "2"
+                                        }
+                                    ],
+                                    "name": "当前保证金"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "3"
+                                        }
+                                    ],
+                                    "name": "可提现资产"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "2"
+                                        }
+                                    ],
+                                    "name": "冻结资产"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "1"
+                                        }
+                                    ],
+                                    "name": "账户管理费"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "35"
+                                        }
+                                    ],
+                                    "name": "优惠券使用／失效比［90天］"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "60"
+                                        }
+                                    ],
+                                    "name": "当天减持比率"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "22"
+                                        }
+                                    ],
+                                    "name": "当天追加资金比率"
+                                }
+                            ],
+                            "name": "资产"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Y"
+                                        }
+                                    ],
+                                    "name": "是否购买退运险"
+                                }
+                            ],
+                            "name": "资产等级"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "N"
+                                        }
+                                    ],
+                                    "name": "是否自主购买保险"
+                                }
+                            ],
+                            "name": "资产等级"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Y"
+                                        }
+                                    ],
+                                    "name": "是否订阅数据助手"
+                                }
+                            ],
+                            "name": "资产等级"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "N"
+                                        }
+                                    ],
+                                    "name": "是否订阅账户安全险"
+                                }
+                            ],
+                            "name": "资产等级"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "N"
+                                        }
+                                    ],
+                                    "name": "是否宝粉卡用户"
+                                }
+                            ],
+                            "name": "资产等级"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Y"
+                                        }
+                                    ],
+                                    "name": "是否订阅金戈盾"
+                                }
+                            ],
+                            "name": "资产等级"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {}
+                                    ],
+                                    "name": "45天总的投资回报率［宝币］"
+                                }
+                            ],
+                            "name": "资产等级"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "2"
+                                        }
+                                    ],
+                                    "name": "资产等级"
+                                }
+                            ],
+                            "name": "资产等级"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "N"
+                                        }
+                                    ],
+                                    "name": "持平阶段"
+                                }
+                            ],
+                            "name": "投资阶段"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Y"
+                                        }
+                                    ],
+                                    "name": "追加投资阶段"
+                                }
+                            ],
+                            "name": "投资阶段"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Y"
+                                        }
+                                    ],
+                                    "name": "减持阶段"
+                                }
+                            ],
+                            "name": "投资阶段"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "N"
+                                        }
+                                    ],
+                                    "name": "清仓阶段"
+                                }
+                            ],
+                            "name": "投资阶段"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "Y"
+                                        }
+                                    ],
+                                    "name": "观望阶段"
+                                }
+                            ],
+                            "name": "投资阶段"
+                        }
+                    ],
+                    "name": "投资"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "9371"
+                                        }
+                                    ],
+                                    "name": "30天观看电影"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "5024"
+                                        }
+                                    ],
+                                    "name": "30天观看演出"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "9205"
+                                        }
+                                    ],
+                                    "name": "最近30天门票购买"
+                                }
+                            ],
+                            "name": "有票"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "2715"
+                                        }
+                                    ],
+                                    "name": "最近30天做主播次数"
+                                }
+                            ],
+                            "name": "q直播"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "6914"
+                                        }
+                                    ],
+                                    "name": "关注的主播数量"
+                                }
+                            ],
+                            "name": "q直播"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "7008"
+                                        }
+                                    ],
+                                    "name": "30天q豆消费数"
+                                }
+                            ],
+                            "name": "q直播"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "6119"
+                                        }
+                                    ],
+                                    "name": "30天q豆充值数"
+                                }
+                            ],
+                            "name": "q直播"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "8519"
+                                        }
+                                    ],
+                                    "name": "30天收到的礼物次数"
+                                }
+                            ],
+                            "name": "q直播"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "6771"
+                                        }
+                                    ],
+                                    "name": "今天粉丝总数量"
+                                }
+                            ],
+                            "name": "q直播"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "4676"
+                                        }
+                                    ],
+                                    "name": "30天粉丝增长数量"
+                                }
+                            ],
+                            "name": "q直播"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "2404"
+                                        }
+                                    ],
+                                    "name": "最近30天进入直播间次数"
+                                }
+                            ],
+                            "name": "q直播"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "7269"
+                                        }
+                                    ],
+                                    "name": "累计推荐好友数"
+                                }
+                            ],
+                            "name": "人脉"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "4530"
+                                        }
+                                    ],
+                                    "name": "90天内推荐好友数"
+                                }
+                            ],
+                            "name": "人脉"
+                        }
+                    ],
+                    "name": "娱乐"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "name": "9734"
+                                        }
+                                    ],
+                                    "name": "初生型"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "2006"
+                                        }
+                                    ],
+                                    "name": "成长型"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "6036"
+                                        }
+                                    ],
+                                    "name": "活跃型"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "9724"
+                                        }
+                                    ],
+                                    "name": "沉默型"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "name": "872"
+                                        }
+                                    ],
+                                    "name": "流失型"
+                                },
+                                {
+                                    "children": [
+                                        {}
+                                    ],
+                                    "name": "通用型"
+                                }
+                            ],
+                            "name": "类型"
+                        }
+                    ],
+                    "name": "用户"
+                }
+            ],
+            "username": "testuser"
+        }
+    }
 }
