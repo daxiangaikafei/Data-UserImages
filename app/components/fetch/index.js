@@ -30,7 +30,7 @@ export function fetchGet(url, params, headers){
 
 export function fetchget(url, params, headers) {
     // if (process.env.NODE_ENV == "develop") {
-    //     url = "mock/" + url + ".json"
+    //     url = "mock" + url + ".json"
     // }
 
     return (dispatch, getState) => {

@@ -114,7 +114,7 @@ ul, li {
 
   .yellow-title{
     margin-top: 152px;
-    margin-left: calc(50% - 540px);
+    margin-left: calc(~"50% - 540px");
     color: #ffe738;
     font-size: 35px;
     line-height: 35px;
@@ -125,14 +125,14 @@ ul, li {
     font-size: 20px;
     line-height: 20px;
     margin-top: 20px;
-    margin-left: calc(50% - 540px);
+    margin-left: calc(~"50% - 540px");
     text-align: left;
   }
 
     .tween2{
       top: 16px;
       text-align: left;
-      left: calc(50% - 540px);
+      left: calc(~"50% - 540px");
 
       .btn-view{
         width: 80px;

@@ -34,6 +34,7 @@ class Favorite extends React.Component{
 
         let opt = {
             id: this.props.reportId,
+            number: this.props.reportNumber,
             name: favoriteName,
             remark: favoriteDesc
         }

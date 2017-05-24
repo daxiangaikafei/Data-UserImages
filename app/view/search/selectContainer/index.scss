@@ -18,7 +18,10 @@
 
     .ant-tabs-tabpane{
         padding: 20px 30px;
-        max-height: 190px;
+    }
+
+    .tab_panel_select_list{
+        max-height: 176px;
         overflow: auto;
     }
 }

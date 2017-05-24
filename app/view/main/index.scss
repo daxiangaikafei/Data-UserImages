@@ -4,6 +4,14 @@ body{
     overflow-y:scroll;
 }
 
+.ant-layout{
+    overflow: inherit !important;
+}
+
+.ant-layout-content{
+    overflow: inherit !important;
+}
+
 .title{
     padding-left:10px;
     line-height:38px;
