@@ -28,6 +28,12 @@ class Login extends React.Component{
     componentDidMount(){
         setCookie("token", "", "-1")
         setCookie("userName", "", "-1")
+        setCookie("userId", "", "-1")
+        this.setState({
+            username: "",
+            password: "",
+            validCode: ""
+        })
         this.props.checkLogin()
     }
 
@@ -61,7 +67,6 @@ class Login extends React.Component{
         }
 
         this.props.userLogin(username, password, validCode).then(null, ()=>{
-            console.log("登录失败重新获取验证码")
             this.refs.imgCode.src = '/captcha/generate.do?t='+new Date().getTime()
         })
     }
@@ -79,7 +84,7 @@ class Login extends React.Component{
                         </div>
                         <div className="password-div">
                             <Input className="password-input" type="password" placeholder="6-12位登录密码" maxLength="12" value={password} onChange={(e)=>this.onInputChange(e, "password")} />
-                            <span className="forgetPw-txt" onClick={()=>hashHistory.push(RouterConst.ROUTER_FORGET_PW)}>忘记密码?</span>
+                            <span className="forgetPw-txt">忘记密码?</span>
                         </div>
                         <div className="login-code">
                             {/*<Checkbox className="checkbox" onChange={(e)=>console.log(e.target.checked)}>7日内免登陆</Checkbox>*/}

@@ -29,13 +29,11 @@ class App extends React.Component {
 
     checkLogin(props){
         let isLogin = false
-        // if(!props.isLogin){
-        //     switch (props.location.pathname) {
-        //         case RouterConst.SEARCH_LIST:
-        //             hashHistory.push(RouterConst.ROUTER_LOGIN)
-        //             return
-        //     }
-        // }
+        if(!props.isLogin){
+            if([RouterConst.ROUTER_HOME, RouterConst.ROUTER_LOGIN, RouterConst.ROUTER_REGISTER].indexOf(props.location.pathname) < 0){
+                hashHistory.push(RouterConst.ROUTER_LOGIN)
+            }
+        }
     }
 
     componentWillMount(){

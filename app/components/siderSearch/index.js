@@ -33,7 +33,7 @@ class SiderSearchMenu extends React.Component{
                     data.list.map((item, i) => {
                         let key = item.id
                         return (
-                            <Menu.Item className={item.isShow ? "menu-item-show" : "menu-item-hide"} key={key}>
+                            <Menu.Item className={item.isShow ? "menu-item-show" : "menu-item-hide"} key={key} disabled={!item.isReport} >
                                 <div className="menu-icon"></div>
                                 <div className="menu-item-title">{item.name}</div>
                             </Menu.Item>
