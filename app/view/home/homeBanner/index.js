@@ -68,7 +68,7 @@ class HomeBanner extends React.Component {
                         <Button className="btn-open" onClick={()=>this.openHandler()}>立即开启画像营销</Button>
                     </TweenOne>
                 </Element>
-                <Element key="banner2" prefixCls="banner-user-elem banner2">
+                {/*<Element key="banner2" prefixCls="banner-user-elem banner2">
                     <BgElement key="bg" className="bg" style={this.state.bgStyle2} />
                     <QueueAnim name="QueueAnim">
                         <p key="p1" className="yellow-title">千人千面·用户标签</p>
@@ -77,7 +77,7 @@ class HomeBanner extends React.Component {
                     <TweenOne className="tween2" animation={{ y: 80, opacity: 0, type: 'from', delay: 200 }} name="TweenOne2">
                         <Button className="btn-view" onClick={()=>this.viewHandler()}>立即查看</Button>
                     </TweenOne>
-                </Element>
+                </Element>*/}
             </BannerAnim>
         )
     }

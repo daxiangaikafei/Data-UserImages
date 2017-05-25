@@ -1,0 +1,41 @@
+.userMirrorTableItem{
+    .table-item-title{
+        font-size: 20px;
+        color: #666666;
+        height: 60px;
+        line-height: 60px;
+        border-bottom: 2px solid #666666;
+    }
+
+    .table-list{
+        border: 1px solid #e9ecf3;
+    }
+
+    .table-tr-div{
+        background: #ffffff;
+        padding: 0 20px;
+
+        .table-tr-item{
+            display: inline-block;
+            width: 30%;
+            height: 80px;
+            padding: 10px 0;
+
+            .table-tr-item-title{
+                height: 30px;
+                line-height: 30px;
+                color: #666666;
+            }
+
+            .table-tr-item-value{
+                height: 30px;
+                line-height: 30px;
+                color: #000000;
+            }
+        }
+    }
+
+    .table-tr-div:nth-child(2n){
+            background: #ecf3fc;
+    }
+}

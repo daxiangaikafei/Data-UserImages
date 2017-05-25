@@ -1,14 +1,14 @@
 import React, { PropTypes } from 'react'
 
-import Icon from '../../icon'
+import Icon from '../../../../components/icon'
 
 import './index.scss'
 
-class SubMenuItem extends React.Component{
+class TableMenuItem extends React.Component{
 
     constructor(props, context){
         super(props, context)
-
+        
         this.state = {
             isMouseOver: false
         }
@@ -22,26 +22,27 @@ class SubMenuItem extends React.Component{
         this.setState({isMouseOver: false})
     }
 
+    componentDidMount(){
+    }
+
     render(){
         let { isMouseOver } = this.state
-        let {title, icon} = this.props
+        let { icon, name } = this.props.data
 
         return (
-            <div className="submenu-item" onMouseOver={()=>this.onMouseOverHandler()} onMouseOut={()=>this.onMouseOutHandler()}>
+            <div className="table-menu-item" onMouseOver={()=>this.onMouseOverHandler()} onMouseOut={()=>this.onMouseOutHandler()}>
                 <div className="icon-group">
                     <Icon className="circle-bg" name="circle" size="30" color={isMouseOver ? '#ffffff' : '#000000'} />
                     <Icon className="item-icon" name={icon} size="16" color={isMouseOver ? '#ffffff' : '#000000'} />
                 </div>
-                <span className="submenu-title" style={{color: isMouseOver ? '#ffffff' : '#000000'}}>{title}</span>
+                <span className="submenu-title" style={{color: isMouseOver ? '#ffffff' : '#000000'}}>{name}</span>
             </div>
         )
     }
-
 }
 
-SubMenuItem.PropTypes = {
-    title: PropTypes.string.isRequired,
-    icon: PropTypes.string.isRequired
+TableMenuItem.PropTypes = {
+    data: PropTypes.object.isRequired,
 }
 
-export default SubMenuItem
+export default TableMenuItem

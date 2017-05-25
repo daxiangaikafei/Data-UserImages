@@ -1,10 +1,10 @@
 .search-chart-item{
-    width: 320px;
+    width: calc(~"(100% - 60px) / 3");
     height: 250px;
     border: 1px solid #cccccc;
     text-align: center;
     display: inline-block;
-    margin-right: 40px;
+    margin-right: 30px;
     margin-bottom: 20px;
     background: #fff;
 

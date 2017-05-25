@@ -29,6 +29,7 @@ export const userLogin = (userName, password, validCode) => dispatch => {
             dispatch(receiveData(data))
             setCookie("token", data.token)
             setCookie("userName", data.userName)
+            setCookie("userId", data.userId)
 
             Modal.success({
                 title: '提示',

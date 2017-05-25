@@ -57,13 +57,17 @@ class App extends React.Component {
         let text=this.props.location.query.text;
         console.log(text,3999)
         text&&this.props.getCurrent(text);
+
+        if(this.props.location.pathname.indexOf(RouterConst.USER_MIRROR.substring(0, RouterConst.USER_MIRROR.indexOf('/:')))>=0){
+            return ''
+        }
+
         switch (this.props.location.pathname) {
             case RouterConst.ROUTER_HOME:
             case RouterConst.ROUTER_LOGIN:
             case RouterConst.ROUTER_REGISTER:
             case RouterConst.ROUTER_FORGET_PW:
             case RouterConst.ROUTER_RESET_PW:
-            case RouterConst.USER_MIRROR:
                 return ""
             case RouterConst.SEARCH_LIST:
             case RouterConst.ROUTER_FAVORITE:

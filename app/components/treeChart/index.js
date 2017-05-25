@@ -8,7 +8,7 @@ class TreeChart extends React.Component {
         super(props, context)
         this.state = {
             forceFit: true,
-            width: 250,
+            width: 450,
             height: 450,
             plotCfg: {
                 margin: [10, 10]
@@ -31,8 +31,8 @@ class TreeChart extends React.Component {
         chart.clear();
         let Stat = G2.Stat
         let height = Math.max(100, 40 / dx); // 最小高度 500
-        let deep = nodes.length ? this.getChildrenDeep(nodes) : 1;
-        chart.changeSize(deep * 100, height);
+        let deep = this.getMaxLen(nodes)
+        chart.changeSize(450, height);
         // 首先绘制 edges，点要在边的上面
         // 创建单独的视图
         var edgeView = chart.createView();
@@ -82,7 +82,7 @@ class TreeChart extends React.Component {
                 }
             }
             return 'leaf';
-        }).tooltip('name*id');
+        }).tooltip('name');
         chart.render();
     }
 
@@ -132,6 +132,33 @@ class TreeChart extends React.Component {
         return shape;
     }
 
+    getMaxLen(list){
+        var result = []
+        for(let i=0; i<list.length; i++){
+            let obj = list[i]
+            result.push(obj.name.length)
+            if(obj.children){
+                result = [
+                    ...result,
+                    this.getMaxLen(obj.children)
+                ]
+            }
+        }
+        return Math.max.apply(null, result)
+    }
+
+    strLen(str) {
+        var len = 0;
+        for (var i = 0; i < str.length; i++) {
+            if (str.charCodeAt(i) > 0 && str.charCodeAt(i) < 128) {
+                len++;
+            } else {
+                len += 2;
+            }
+        }
+        return len;
+    }
+
     getTreeChart() {
         return createG2(chart => {
             G2.Shape.registShape('point', 'collapsed', {
@@ -153,10 +180,12 @@ class TreeChart extends React.Component {
             })
 
             let data = chart.get('data').data, Stat = G2.Stat;
+            // let dy = this.getMaxLen(data)
             // 使用layout，用户可以自己编写自己的layout
             // 仅约定输出的节点 存在 id,x，y字段即可
             let layout = new G2.Layout.Tree({
-                nodes: data
+                nodes: data,
+                dy: 380 /1000
             });
             let dx = layout.dx, nodes = layout.getNodes(), edges = layout.getEdges();
             chart.animate(false);

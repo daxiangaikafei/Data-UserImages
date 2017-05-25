@@ -26,9 +26,9 @@ class SelectContainer extends React.Component {
 
     getTabs(){
         let TabPane = Tabs.TabPane
-
         return this.props.filterMenuList.map((menu, key)=>
             <TabPane tab={menu.name} key={key}>
+                <div className="tab_panel_select_list">
                 {
                     menu.list.map((item, index) => 
                         <SelectItem 
@@ -42,6 +42,7 @@ class SelectContainer extends React.Component {
                         />
                     )
                 }
+                </div>
             </TabPane>
         )
     }
