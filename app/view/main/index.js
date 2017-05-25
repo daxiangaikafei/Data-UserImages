@@ -42,6 +42,7 @@ class App extends React.Component {
 
     componentWillReceiveProps(nextProps){
         this.checkLogin(nextProps)
+        console.log(this.props.location.query,7777)
     }
 
     componentDidMount() {
@@ -52,6 +53,7 @@ class App extends React.Component {
 
     getMenuByRouter() {
         let text=this.props.location.query.text;
+        console.log(text,3999)
         text&&this.props.getCurrent(text);
 
         if(this.props.location.pathname.indexOf(RouterConst.USER_MIRROR.substring(0, RouterConst.USER_MIRROR.indexOf('/:')))>=0){
@@ -78,6 +80,8 @@ class App extends React.Component {
     }
 
     render() {
+        
+
         let curr = this.props.location.query.current;
         let top;
         let oClass;

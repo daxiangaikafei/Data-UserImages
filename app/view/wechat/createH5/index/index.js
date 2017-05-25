@@ -142,7 +142,8 @@ goNext(){
                 pathname:'wechartNext',
                 query:{
                     userSelectGroupId:userSelectGroupId,
-                    messageId:data.messageId
+                    messageId:data.messageId,
+                    text:'c2'
                 }
             })
         )
@@ -189,6 +190,10 @@ handlerChangePageUrl(e){
         this.props.setUrl(e.target.value)
     }
 componentDidMount(){
+    
+    this.setState({
+      userSelectGroupId:this.props.location.query.id||""
+    });
     this.props.getUserList().then(data=>{this.setState({
         Population:data
       })
@@ -264,7 +269,7 @@ render() {
                         </li>
                         <li>
                             <span>推送人群</span>
-                            <Select  className="sel" onChange={this.handlerChangePeople.bind(this)}>
+                            <Select  className="sel" onChange={this.handlerChangePeople.bind(this)} defaultValue={this.state.userSelectGroupId}>
                                 {children}
                             </Select>
                         </li>

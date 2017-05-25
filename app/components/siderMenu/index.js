@@ -68,7 +68,7 @@ class SiderMenu extends React.Component{
                             {
                                 item.children.map((menu,index) => (
                                     <Menu.Item key={menu.id+index} disabled={menu.id=="d"?true:false}>
-                                        <Link to={menu.url}>{menu.name}</Link>
+                                        <Link to={{ pathname: menu.url, query: { text: menu.id+index } }}>{menu.name}</Link>
                                     </Menu.Item>
                                 ))
                             }

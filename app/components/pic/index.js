@@ -70,7 +70,7 @@ render() {
                             <div className="iconBg"></div>
                             <Icon type="plus" className="avatar-uploader-trigger"/>
                         </div>
-                        <span>上传图像分辨率1200 x 800，300kb以内</span>
+                        <span>上传图像分辨率1344 x 750，300kb以内</span>
                     </div>
                     }
                 </Upload>
