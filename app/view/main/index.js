@@ -44,6 +44,7 @@ class App extends React.Component {
 
     componentWillReceiveProps(nextProps){
         this.checkLogin(nextProps)
+        console.log(this.props.location.query,7777)
     }
 
     componentDidMount() {
@@ -54,6 +55,7 @@ class App extends React.Component {
 
     getMenuByRouter() {
         let text=this.props.location.query.text;
+        console.log(text,3999)
         text&&this.props.getCurrent(text);
         switch (this.props.location.pathname) {
             case RouterConst.ROUTER_HOME:
@@ -76,6 +78,8 @@ class App extends React.Component {
     }
 
     render() {
+        
+
         let curr = this.props.location.query.current;
         let top;
         let oClass;

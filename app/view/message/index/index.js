@@ -87,12 +87,10 @@ class Message extends React.Component {
     }
 
     handlerCreatMail(){
-      this.props.getCurrent("b1")
-      hashHistory.push('/message/setUpmessage')
+      hashHistory.push({pathname:'/message/setUpmessage',query:{text:'b1'}})
     }
     handlerCreateWeixin(){
-       this.props.getCurrent("c2")
-       hashHistory.push('/wechart')
+       hashHistory.push({pathname:'/wechart',query:{text:'c2'}})
     }
     render() {
         return (

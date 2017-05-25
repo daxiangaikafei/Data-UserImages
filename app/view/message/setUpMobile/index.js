@@ -18,14 +18,14 @@ class setUpMessage extends React.Component {
             Population: "",
             time:timer,
             sendType:1,
-            ishow:0,
-            
+            ishow:0
         }
     }
   handleChange(msg,e){
     let state={};
     state[msg]=e;
     this.setState(state);
+    console.log(e,283839949)
   }
   handlerChanges(msg,e){
     let state={};
@@ -80,16 +80,22 @@ class setUpMessage extends React.Component {
     const {name,userSelectGroupId,content,tel,sendType,time,wapLink,messageId}=this.state;
     let reg=/^1\d{10}$/;
     let msg;
+    let otime;
     console.log(this.state)
     if(!name){
       msg="活动名称不能为空"
-    }else if(!userSelectGroupId){
+    }
+    else if(!userSelectGroupId){
       msg="推送人群不能为空"
     }
     else if(!content){
       msg="消息内容不能为空"
-    }else if(time<new Date().getTime()+100){
-      msg="推送时间必须大于当前时间"
+    }
+    if(sendType==1){
+        otime=new Date().getTime()
+    }else if(sendType==2&&time<new Date().getTime()){
+         otime=time;
+         msg="推送时间必须大于当前时间"
     }
     if(msg){
       Modal.error({
@@ -103,7 +109,7 @@ class setUpMessage extends React.Component {
       "content":wapLink?content+wapLink:content,
       "type":1,
       "sendType":sendType,
-      "sendTime":time,
+      "sendTime":otime,
       "tunnelId":1,
       "messageId":messageId
     }).then(()=> 
@@ -119,12 +125,16 @@ class setUpMessage extends React.Component {
         Population:data
       })
     })
+    
+    this.setState({
+      userSelectGroupId:this.props.location.query.id||""
+    });
   }
   render() {
-    const {Population,message,sendType,ishow,content,wapLink,id,address} = this.state;
+    const {Population,message,sendType,ishow,content,wapLink,id,address,userSelectGroupId} = this.state;
     const children = [];
     Population&&Population.map((item,index)=> {
-        children.push(<Option key={item.id}>{item.name}[{item.createTime}]{item.num}人</Option>);
+        children.push(<Option key={item.userSelectId}>{item.name}[{item.createTime}]{item.num}人</Option>);
     });
     
     const oAddress = [];
@@ -138,7 +148,7 @@ class setUpMessage extends React.Component {
              <li><span>活动名称</span><Input onChange={this.handlerChanges.bind(this,['name'])}/></li>
              <li>
                <span>推送人群</span>
-               <Select   onChange={this.handleChange.bind(this,['userSelectGroupId'])}>
+               <Select   onChange={this.handleChange.bind(this,['userSelectGroupId'])} value={userSelectGroupId}>
                    {children}
                 </Select>
              </li>

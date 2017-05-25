@@ -5,10 +5,10 @@ import { hashHistory } from 'react-router'
 
 import { Table, Button } from 'antd'
 import Icon from '../../components/icon'
-
 import FavoriteItemInfo from './favoriteItemInfo'
-
 import { getFavoriteData } from './reducer/actions'
+import * as RouterConst from '../../static/const'
+
 
 import './index.scss'
 
@@ -78,14 +78,28 @@ class FavoritePage extends React.Component{
     onMailHandler(e, id){
         e.stopPropagation()
         e.preventDefault()
+        hashHistory.push({
+                pathname:RouterConst.MESSAGE_STEPUP_MOBILE,
+                query: {
+                    text:'b1',
+                    id:id
 
-        hashHistory.push(RouterConst.MESSAGE_STEPUP_MOBILE + "/" + id)
+                }
+         })
     }
 
     onWeiXinHandler(e, id){
         e.stopPropagation()
         e.preventDefault()
-        hashHistory.push(RouterConst.WECHART + "/" + id)
+        
+        hashHistory.push({
+                pathname:RouterConst.WECHART,
+                query: {
+                    text:'c2',
+                    id:id
+
+                }
+         })
     }
 
     onClickHandler(e){
@@ -105,7 +119,6 @@ class FavoritePage extends React.Component{
                     <p>收藏群组</p>
                 </div>
                 <div className="favorite-tab">
-                    {/*<div><Button className="bnNew">新建用户群</Button></div>*/}
                     <Table
                             columns={columns} 
                             dataSource={this.props.favoriteList}
