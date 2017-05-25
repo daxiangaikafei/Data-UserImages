@@ -20,10 +20,6 @@ var entry = {
   index: [
       './index.js'
   ],
-  
-  oIndex:[
-    './deblock_index.js'
-  ],
   vendor: ["react", "react-dom", 'react-redux', "redux", 'react-router', 'react-router-redux']
 }
 
