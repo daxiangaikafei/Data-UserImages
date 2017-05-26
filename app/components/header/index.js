@@ -6,6 +6,8 @@ import { Router, Route, IndexRoute, Link ,hashHistory} from 'react-router';
 import { Layout, Menu, Icon, Input, Button } from 'antd'
 import * as RouterConst from '../../static/const'
 
+import { getCookie } from '../../utils'
+
 import './index.scss'
 
 class Headers extends React.Component {
@@ -30,7 +32,7 @@ class Headers extends React.Component {
 
         return(
             <Header className="header-div">
-                <div className="logo"></div>
+                <div className="logo" onClick={()=>hashHistory.push(RouterConst.ROUTER_HOME)}></div>
                 <Menu onClick={(e) => this.handleClick(e)} selectedKeys={[this.state.selectedTab]} mode="horizontal" className="menuUl">
                     <Menu.Item key="home" className="menuLi"><Link to={RouterConst.ROUTER_HOME}>首页</Link></Menu.Item>
                     <Menu.Item key="user" className="menuLi"><Link to={RouterConst.SEARCH_LIST}>用户画像</Link></Menu.Item>
@@ -45,7 +47,7 @@ class Headers extends React.Component {
                             <Button className="bnLogin" onClick={() => hashHistory.push(RouterConst.ROUTER_LOGIN) }>登录</Button>
                             <Button className="bnRegister" onClick={() => hashHistory.push(RouterConst.ROUTER_REGISTER) }>立即注册</Button>
                         </div>
-                        : ""
+                        : <div className="login-btns">{getCookie("userName")}</div>
                 }
             </Header>
         )
@@ -54,11 +56,11 @@ class Headers extends React.Component {
 }
 
 Headers.PropTypes = {
-    isLogin: PropTypes.bool.isRequired
+    isLogin: PropTypes.bool.isRequired,
 }
 
 let mapStateToProps = state => ({
-    isLogin: state.loginReducer.isLogin
+    isLogin: state.loginReducer.isLogin,
 })
 
 let mapDispatchToProps = (dispatch) => {
