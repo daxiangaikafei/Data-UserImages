@@ -84,11 +84,16 @@ let receiveReportData = data => ({
     data: data,
 })
 
+export const clearReportData = () => dispatch => {
+    dispatch({type: ActionType.SEARCH_MENU_CLEAR_REPORT_DATA})
+}
+
 /**根据筛选条件获取报表 */
-export const getReportData = (callBack) => (dispatch, getState) => {
+export const getReportData = (opt, callBack) => (dispatch, getState) => {
     let state = getState()
     let url = "/search/calculation.do";
-    let opt = {
+    opt = {
+        ...opt,
         showList: getShowList(state),
         selectList: getFilterList(state)
     }

@@ -9,6 +9,7 @@ const initialState = {
     reportDate: "",
     reportNumber: 0,
     reportList: [],
+    reportCount: 0,
 
     cityCode: null
 }
@@ -144,6 +145,12 @@ export default function update(state = initialState, action) {
 
         case ActionType.SEARCH_MENU_CHANGE_SELECT:
             return changeSelectValue(state, action.data)
+        
+        case ActionType.SEARCH_MENU_CLEAR_REPORT_DATA:
+            return {
+                ...state,
+                reportList: []
+            }
 
         case ActionType.SEARCH_UPDATE_REPORT_DATA:
             return { 
@@ -151,7 +158,8 @@ export default function update(state = initialState, action) {
                 reportId: action.data.id,
                 reportDate: action.data.create_date,
                 reportNumber: action.data.number,
-                reportList: action.data.reports,
+                reportList: state.reportList.concat(action.data.reports),
+                reportCount: action.data.count
              }
         case ActionType.CLOSE_FILTER_MENU_LIST:
             return closeFilterMenuList(state, action.data)
