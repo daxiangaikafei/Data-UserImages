@@ -14,5 +14,5 @@ export const generateAd = (userSelectGroupId,messageId) => dispatch => {
 //发送到我的手机
 export const sendMessage = (data) => dispatch => {
     let url = "/message/sendMobile.do";
-    dispatch(HTTPUtil.fetchGet(url, data, null)).then((data)=>data)
+    return dispatch(HTTPUtil.fetchGet(url, data, null))
 }

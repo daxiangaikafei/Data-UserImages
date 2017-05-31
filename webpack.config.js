@@ -20,10 +20,6 @@ var entry = {
   index: [
       './index.js'
   ],
-<<<<<<< HEAD
-  
-=======
->>>>>>> bb345028af70fd4142f27d8c289c7eaa4ae1f455
   vendor: ["react", "react-dom", 'react-redux', "redux", 'react-router', 'react-router-redux']
 }
 
