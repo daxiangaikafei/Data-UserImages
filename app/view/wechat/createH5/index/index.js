@@ -228,7 +228,7 @@ render() {
     const {title,content,linkurl,data,pageUrl,fileString,logo}=this.props;
     const children = [];
     Population&&Population.map((item,index)=> {
-        children.push(<Option key={item.id}>{item.name}[{item.createTime}]{item.num}人</Option>);
+        children.push(<Option key={item.userSelectId}>{item.name}[{item.createTime}]{item.num}人</Option>);
     });
     let components = data.map((data, index)=>{
             return <Pic key={index} 
