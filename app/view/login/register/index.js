@@ -31,7 +31,7 @@ class Register extends React.Component{
     /**输入框改变事件 */
     onInputChange(e, type){
         let value = e.currentTarget.value.replace(/\s/g,''), state = {}
-        state[type] = e.currentTarget.value
+        state[type] = value
         this.setState(state)
     }
 

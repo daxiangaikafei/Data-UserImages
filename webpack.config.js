@@ -107,15 +107,6 @@ var config = {
       stats:{colors:true},
       hot: true,
       contentBase: "build/",
-       proxy: [
-         {  
-            '/*.do*': {  
-                target: 'http://10.172.31.228:8080', 
-                changeOrigin: true, 
-                secure: false  
-            }  
-        }
-      ]  
   },
   //其它解决方案配置
   resolve: {
@@ -127,6 +118,7 @@ var config = {
 if(process.env.NODE_ENV == 'production'){
   delete config.devServer
   delete config.devtool
+  config.output.publicPath = "/build"
   config.plugins.push(
     //清空输出目录
     new CleanPlugin([], {
