@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { Button, Tabs, Icon } from 'antd'
 import SelectItem from '../../../components/searchSelectItem'
 
-import { addFliterMenuList, changeFilterMenuSelect, getReportData } from '../reducer/actions'
+import { addFliterMenuList, changeFilterMenuSelect, getReportData, clearReportData } from '../reducer/actions'
 
 import './index.scss'
 
@@ -13,14 +13,49 @@ class SelectContainer extends React.Component {
 
     constructor(props,context) {
         super(props,context)
+        this.state = {
+            pageSize: 6,
+            currentPage: 0,
+            isLoading: false
+        }
     }
     
     componentDidMount(){
+        this.setState({
+            currentPage: 0,
+            isLoading: false,
+        })
+
+        window.onscroll = (e)=>{
+            this.onScrollHandler(e)
+        }
+    }
+
+    onScrollHandler(e){
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if(this.isOnScroll) return
+        if(scrollTop + document.body.offsetHeight > document.body.scrollHeight - 50){
+            let { reportCount } = this.props, {pageSize, currentPage} = this.state
+            let pages = Math.ceil(reportCount / pageSize)
+            console.log(currentPage, pages, this.state.isLoading, "0000000000000000000")
+            if(currentPage < pages - 1 && this.state.isLoading == false){
+                this.setState({isLoading: true, currentPage: currentPage+1}, ()=>{
+                    this.sendReportData()
+                })
+            }
+        }
     }
 
     onGetReportHandler(){
-        this.props.getReportData(()=>{
+        this.props.clearReportData()
+        this.sendReportData()
+    }
+
+    sendReportData(){
+        let opt = {page: this.state.currentPage, size: this.state.pageSize}
+        this.props.getReportData(opt, ()=>{
             this.props.onChangeBtnFavoriteStatus(false)
+            this.setState({isLoading: false})
         })
     }
 
@@ -69,14 +104,17 @@ SelectContainer.PropTypes = {
     onShowFavorite: PropTypes.func.isRequired,
     btnFavoriteDisabled: PropTypes.bool.isRequired,
     onChangeBtnFavoriteStatus: PropTypes.func.isRequired,
+
+    reportCount: PropTypes.number.isRequired,
 }
 
 let mapStateToProps = state => ({
     filterMenuList: state.searchList.filterMenuList,
+    reportCount: state.searchList.reportCount
 })
 
 let mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({ addFliterMenuList, changeFilterMenuSelect, getReportData }, dispatch)
+    return bindActionCreators({ addFliterMenuList, changeFilterMenuSelect, getReportData, clearReportData }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SelectContainer)

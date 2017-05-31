@@ -36,7 +36,7 @@ class Headers extends React.Component {
         return(
             <Header className="header-div2">
                 <div className="wapper">
-                    <div className="logo2"></div>
+                    <div className="logo2" onClick={()=>hashHistory.push(RouterConst.ROUTER_HOME)}></div>
                     <div className="right" className={this.state.isShow==true?"right showInput":"right"} >
                          <Input className="search_input" />
                          <Icon type="search" className="search_icon" onClick={this.handlerSearch.bind(this)} />
