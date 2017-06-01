@@ -53,7 +53,6 @@ class App extends React.Component {
 
     getMenuByRouter() {
         let text=this.props.location.query.text;
-        console.log(text,3999)
         text&&this.props.getCurrent(text);
 
         if(this.props.location.pathname.indexOf(RouterConst.USER_MIRROR.substring(0, RouterConst.USER_MIRROR.indexOf('/:')))>=0){

@@ -21,7 +21,7 @@ class FavoritePage extends React.Component{
             rowData: null,
             columns: [
                 {
-                    title: '筛选事件',
+                    title: '筛选时间',
                     dataIndex: 'createTime',
                     // key: 'create_time',
                 },

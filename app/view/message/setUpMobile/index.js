@@ -36,6 +36,7 @@ class setUpMessage extends React.Component {
     this.setState({
         sendType:msg[0]
     })
+    console.log(msg[0])
   }
   handlerShow(e){
     this.setState({
@@ -47,7 +48,7 @@ class setUpMessage extends React.Component {
     let reg=/^1\d{10}$/;
     const {content,tel,wapLink} = this.state;
     if(!content){
-      msg="消息内容不能为空"
+      msg="消息内容不能为空1223"
     }else  if(!tel){
       msg="请输入短信预览手机号"
     }else if(!reg.test(tel)){
@@ -81,7 +82,6 @@ class setUpMessage extends React.Component {
     let reg=/^1\d{10}$/;
     let msg;
     let otime;
-    console.log(this.state)
     if(!name){
       msg="活动名称不能为空"
     }
@@ -94,8 +94,9 @@ class setUpMessage extends React.Component {
     if(sendType==1){
         otime=new Date().getTime()
     }else if(sendType==2&&time<new Date().getTime()){
-         otime=time;
          msg="推送时间必须大于当前时间"
+    }else{
+      otime=time
     }
     if(msg){
       Modal.error({
@@ -105,7 +106,7 @@ class setUpMessage extends React.Component {
     }
     this.props.messageSave({
       "name":name,
-      "userSelectGroupId":userSelectGroupId,
+      "userSelectGroupId":userSelectGroupId.split('&')[0],
       "content":wapLink?content+wapLink:content,
       "type":1,
       "sendType":sendType,
@@ -134,7 +135,7 @@ class setUpMessage extends React.Component {
     const {Population,message,sendType,ishow,content,wapLink,id,address,userSelectGroupId} = this.state;
     const children = [];
     Population&&Population.map((item,index)=> {
-        children.push(<Option key={item.userSelectId}>{item.name}[{item.createTime}]{item.num}人</Option>);
+        children.push(<Option key={index} value={item.userSelectId+"&"+index}>{item.name}[{item.createTime}]{item.num}人</Option>);
     });
     
     const oAddress = [];
@@ -148,7 +149,8 @@ class setUpMessage extends React.Component {
              <li><span>活动名称</span><Input onChange={this.handlerChanges.bind(this,['name'])}/></li>
              <li>
                <span>推送人群</span>
-               <Select   onChange={this.handleChange.bind(this,['userSelectGroupId'])} value={userSelectGroupId}>
+               <Select   onChange={this.handleChange.bind(this,['userSelectGroupId'])} 
+                  value={userSelectGroupId}>
                    {children}
                 </Select>
              </li>
