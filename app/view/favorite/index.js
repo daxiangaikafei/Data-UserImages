@@ -50,8 +50,8 @@ class FavoritePage extends React.Component{
                     width: 150,
                     render: (text, record) => (
                         <span>
-                            <Button className="btn_mail" onClick={(e)=>this.onMailHandler(e, record.userSelectId)}><span className="btn-icon"><Icon name="mail" color="#000" size="14" /></span>短信</Button>
-                            <Button className="btn_wx" onClick={(e)=>this.onWeiXinHandler(e, record.userSelectId)}><span className="btn-icon"><Icon name="weixing" color="#000" size="14" /></span>微信</Button>
+                            <Button className="btn_mail" onClick={(e)=>this.onMailHandler(e, record.userSelectId, record.id,record.num)}><span className="btn-icon"><Icon name="mail" color="#000" size="14" /></span>短信</Button>
+                            <Button className="btn_wx" onClick={(e)=>this.onWeiXinHandler(e, record.userSelectId, record.id,record.num)}><span className="btn-icon"><Icon name="weixing" color="#000" size="14" /></span>微信</Button>
                         </span>
                     )
                 }
@@ -75,20 +75,21 @@ class FavoritePage extends React.Component{
         this.sendData(pagination)
     }
 
-    onMailHandler(e, id){
+    onMailHandler(e, id, oid, number){
         e.stopPropagation()
         e.preventDefault()
         hashHistory.push({
                 pathname:RouterConst.MESSAGE_STEPUP_MOBILE,
                 query: {
                     text:'b1',
-                    id:id
-
+                    id:id,
+                    oid:oid,
+                    number:number
                 }
          })
     }
 
-    onWeiXinHandler(e, id){
+    onWeiXinHandler(e, id, oid, number){
         e.stopPropagation()
         e.preventDefault()
         
@@ -96,7 +97,9 @@ class FavoritePage extends React.Component{
                 pathname:RouterConst.WECHART,
                 query: {
                     text:'c2',
-                    id:id
+                    id:id,
+                    oid:oid,
+                    number:number
 
                 }
          })
