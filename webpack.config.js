@@ -114,16 +114,26 @@ var config = {
     alias: {
     }
   }
-};
+}
 
-if(process.env.NODE_ENV == 'production'){
+if(process.env.NODE_ENV === 'production'){
   delete config.devServer
   delete config.devtool
   config.output.publicPath = "/build/"
   config.plugins.push(
+    new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            },
+            output: {
+                comments: false,
+            }
+        })
+  )
+  config.plugins.push(
     //清空输出目录
-    new CleanPlugin([], {
-      "root": DIST_PATH,
+    new CleanPlugin(["build"], {
+      "root": ROOT_PATH,
       verbose: true,
       dry: false
     })

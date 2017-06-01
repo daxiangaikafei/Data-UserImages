@@ -18,6 +18,22 @@
         border: 1px solid #e2e6ef;
         padding: 20px 20px 0 20px;
 
+        .table-createTime{
+            width: 180px;
+        }
+
+        .table-name{
+            width: 150px;
+        }
+
+        .table-num{
+            width: 140px;
+        }
+
+        .table-operation{
+            width: 150px;
+        }
+
         .bnNew{
             width: 80px;
             height: 30px;
@@ -35,7 +51,6 @@
             white-space:nowrap;
             overflow:hidden;
             text-overflow:ellipsis;
-            width: 400px;
         }
 
         .ant-table-thead > tr > th{

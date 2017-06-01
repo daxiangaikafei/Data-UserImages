@@ -24,16 +24,18 @@ class FavoritePage extends React.Component{
                     title: '筛选时间',
                     dataIndex: 'createTime',
                     // key: 'create_time',
+                    className: "table-createTime"
                 },
                 {
                     title: '客群名称',
                     // key: 'name',
                     dataIndex: 'name',
-                    width: 140,
+                    className: "table-name"
                 },
                 {
                     title: '客群数量',
                     dataIndex: 'num',
+                    className: "table-num"
                     // key: 'count',
                 },
                 {
@@ -42,12 +44,12 @@ class FavoritePage extends React.Component{
                     // key: 'desc',
                     render: (text, record) => (
                         <div className="table-desc">{text}</div>
-                    )
+                    ),
                 },
                 {
                     title: '操作',
+                    className: "table-operation",
                     // key: "operation",
-                    width: 150,
                     render: (text, record) => (
                         <span>
                             <Button className="btn_mail" onClick={(e)=>this.onMailHandler(e, record.userSelectId, record.id,record.num)}><span className="btn-icon"><Icon name="mail" color="#000" size="14" /></span>短信</Button>
