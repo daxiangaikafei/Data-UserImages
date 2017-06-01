@@ -192,11 +192,12 @@ handlerChangePageUrl(e){
         this.props.setUrl(e.target.value)
     }
 componentDidMount(){
-    let loc=this.props.location.query
+    let loc=this.props.location.query;
+    let locc=loc.id?(loc.id+'&'+loc.number+'&'+loc.oid):""
     this.props.getUserList().then(data=>{
       this.setState({
         Population:data,
-        userSelectGroupId:loc.id+'&'+loc.number+'&'+loc.oid||""
+        userSelectGroupId:locc
       })
     })
     this.props.changeName("")

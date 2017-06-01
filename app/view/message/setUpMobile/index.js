@@ -123,11 +123,12 @@ class setUpMessage extends React.Component {
             }))
   }
   componentDidMount(){
-    let loc=this.props.location.query
+    let loc=this.props.location.query;
+    let locc=loc.id?(loc.id+'&'+loc.number+'&'+loc.oid):""
     this.props.getUserList().then(data=>{
       this.setState({
         Population:data,
-        userSelectGroupId:loc.id+'&'+loc.number+'&'+loc.oid||""
+        userSelectGroupId:locc
       })
     })
     
@@ -143,6 +144,7 @@ class setUpMessage extends React.Component {
     address&&address.map((item,index)=> {
         oAddress.push(<Option key={item.id+"&&"+item.wapLink} >{item.wapLink}</Option>);
     });
+    console.log(userSelectGroupId,123)
     return (
       <div className="content-wrapper">
           <h6>1.推送活动</h6>
