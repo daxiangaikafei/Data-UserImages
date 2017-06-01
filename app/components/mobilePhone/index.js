@@ -11,11 +11,13 @@ class Mobile extends React.Component{
         } 
       }
       handlerLinkUrl(e){
-        window.location.href=this.props.url
+       this.props.wapLink&&(window.location.href=this.props.wapLink)
+       
+       this.props.wapLink&&(window.location.href=this.props.wapLink)
       }
       render() {
           const {logo,title,url,content,data,reLang,oUrl,oImg,code,iframeUrl,fileString,wapLink}=this.props;
-          console.log(data)
+          console.log(wapLink,2344)
           let component=data?data.map((item, index)=>{
             return(
               <div key={index} className="showPhone">
@@ -41,12 +43,12 @@ class Mobile extends React.Component{
                       <div className={title||content?"oHead":""}>
                         {icon}
                         <div>{title}</div>
-                        {content||wapLink? <div className="content">{content} <span className="wapLink">{wapLink}</span></div>:""}
+                        {content? <div className="content">{content} </div>:""}
                        
                       </div>
                       {component}
 
-                      {iframe}
+                      {/*{iframe}*/}
 
                       {/*{oHtml}*/}
                   </div>

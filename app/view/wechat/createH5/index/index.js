@@ -63,6 +63,7 @@ handlerChangeName(msg){
     this.props.changeName(msg)
 }
 handlerChangePeople(msg){
+    console.log(msg)
     this.props.changePeople(msg)
 }
 
@@ -104,7 +105,8 @@ goNext(){
         msg="活动标题不能为空"
     }else if(!userSelectGroupId){
         msg="推送人群不能为空"
-    }else if(!title){
+    }
+    else if(!title){
         msg="消息标题不能为空"
     }else if(!content){
         msg="消息内容不能为空"
@@ -190,7 +192,6 @@ handlerChangePageUrl(e){
         this.props.setUrl(e.target.value)
     }
 componentDidMount(){
-    
     this.setState({
       userSelectGroupId:this.props.location.query.id||""
     });
@@ -228,8 +229,8 @@ render() {
     const {title,content,linkurl,data,pageUrl,fileString,logo}=this.props;
     const children = [];
     Population&&Population.map((item,index)=> {
-        children.push(<Option key={item.userSelectId}>{item.name}[{item.createTime}]{item.num}人</Option>);
-    });
+       children.push(<Option key={index} value={item.userSelectId+"&"+index}>{item.name}[{item.createTime}]{item.num}人</Option>);
+     });
     let components = data.map((data, index)=>{
             return <Pic key={index} 
             pic={(value,url)=>this.handlerPic(index, value,url)} 
@@ -257,6 +258,7 @@ render() {
             height: '30px',
             lineHeight: '30px',
         };
+        console.log(this.state.userSelectGroupId,383838)
     return (
     <div className="wechat">
          <Tabs type="card" onChange={this.handlerTab.bind(this)}>
@@ -333,7 +335,7 @@ render() {
                  </div>
             </TabPane>
         </Tabs>
-        {tabs==1&&ishow!=0?<Mobile oClose={this.handlerClick.bind(this)}  data={data} />:""}
+        {tabs==1&&ishow!=0?<Mobile oClose={this.handlerClick.bind(this)}  data={data} wapLink={this.props.linkurl} />:""}
         
         {tabs==2&&ishow!=0?<Mobile oClose={this.handlerClick.bind(this)}  fileString={fileString} iframeUrl={pageUrl} />:""}
     </div>

@@ -41,6 +41,7 @@ class DataSelect extends React.Component {
             day:e
         },()=>{
             let date=new Date().getFullYear()+"-"+this.state.month+"-"+this.state.day+" "+this.state.hour+":"+this.state.min+":"+"00"
+           console.log(new Date(date),11111)
             this.props.onChange(new Date(date).getTime())
         })
     }
@@ -71,7 +72,7 @@ class DataSelect extends React.Component {
             Month.push(<Option key={i}>{i}</Option>);
         }
         const Day = [];
-        for (let i = 1; i < allday+1; i++) {
+        for (let i = 0; i < allday+1; i++) {
             if(i<10){
                 i="0"+i
             }
@@ -79,11 +80,18 @@ class DataSelect extends React.Component {
         }
         
         const Hour = [];
-        for (let i = 1; i < 60; i++) {
+        for (let i = 0; i < 24; i++) {
             if(i<10){
                 i="0"+i
             }
             Hour.push(<Option key={i}>{i}</Option>);
+        }
+        const Min = [];
+        for (let i = 0; i < 60; i++) {
+            if(i<10){
+                i="0"+i
+            }
+            Min.push(<Option key={i}>{i}</Option>);
         }
         return(
             <ul className="dataSelect">
@@ -119,7 +127,7 @@ class DataSelect extends React.Component {
                             value={min}
                             optionFilterProp="children"
                             onChange={this.handleChangeMin.bind(this)}>
-                            {Hour}
+                            {Min}
                         </Select>
                 </li>
             </ul>

@@ -93,6 +93,7 @@ var config = {
   entry: entry,
   output: {
     path: DIST_PATH,
+   //publicPath:"/build/",
     filename: '[name].js',
     // 添加 chunkFilename
     chunkFilename: '[name].[chunkhash].chunk.js',
@@ -118,7 +119,7 @@ var config = {
 if(process.env.NODE_ENV === 'production'){
   delete config.devServer
   delete config.devtool
-  config.output.publicPath = "/build"
+  config.output.publicPath = "/build/"
   config.plugins.push(
     new webpack.optimize.UglifyJsPlugin({
             compress: {
