@@ -24,6 +24,9 @@
 
         .table-name{
             width: 150px;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
         }
 
         .table-num{
@@ -51,6 +54,7 @@
             white-space:nowrap;
             overflow:hidden;
             text-overflow:ellipsis;
+            width: 260px;
         }
 
         .ant-table-thead > tr > th{

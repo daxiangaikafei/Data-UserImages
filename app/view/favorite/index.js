@@ -12,9 +12,9 @@ import * as RouterConst from '../../static/const'
 
 import './index.scss'
 
-class FavoritePage extends React.Component{
+class FavoritePage extends React.Component {
 
-    constructor(props, context){
+    constructor(props, context) {
         super(props, context)
 
         this.state = {
@@ -30,7 +30,9 @@ class FavoritePage extends React.Component{
                     title: '客群名称',
                     // key: 'name',
                     dataIndex: 'name',
-                    className: "table-name"
+                    render: (text, record) => (
+                        <div className="table-name">{text}</div>
+                    ),
                 },
                 {
                     title: '客群数量',
@@ -52,8 +54,8 @@ class FavoritePage extends React.Component{
                     // key: "operation",
                     render: (text, record) => (
                         <span>
-                            <Button className="btn_mail" onClick={(e)=>this.onMailHandler(e, record.userSelectId)}><span className="btn-icon"><Icon name="mail" color="#000" size="14" /></span>短信</Button>
-                            <Button className="btn_wx" onClick={(e)=>this.onWeiXinHandler(e, record.userSelectId)}><span className="btn-icon"><Icon name="weixing" color="#000" size="14" /></span>微信</Button>
+                            <Button className="btn_mail" onClick={(e) => this.onMailHandler(e, record.userSelectId)}><span className="btn-icon"><Icon name="mail" color="#000" size="14" /></span>短信</Button>
+                            <Button className="btn_wx" onClick={(e) => this.onWeiXinHandler(e, record.userSelectId)}><span className="btn-icon"><Icon name="weixing" color="#000" size="14" /></span>微信</Button>
                         </span>
                     )
                 }
@@ -61,11 +63,11 @@ class FavoritePage extends React.Component{
         }
     }
 
-    componentDidMount(){
-        this.sendData()        
+    componentDidMount() {
+        this.sendData()
     }
 
-    sendData(pagination){
+    sendData(pagination) {
         let opt = {
             page: pagination ? pagination.current : 0,
             size: 10
@@ -73,64 +75,63 @@ class FavoritePage extends React.Component{
         this.props.getFavoriteData(opt)
     }
 
-    onPageChange(pagination){
+    onPageChange(pagination) {
         this.sendData(pagination)
     }
 
-    onMailHandler(e, id){
+    onMailHandler(e, id) {
         e.stopPropagation()
         e.preventDefault()
         hashHistory.push({
-                pathname:RouterConst.MESSAGE_STEPUP_MOBILE,
-                query: {
-                    text:'b1',
-                    id:id
+            pathname: RouterConst.MESSAGE_STEPUP_MOBILE,
+            query: {
+                text: 'b1',
+                id: id
 
-                }
-         })
+            }
+        })
     }
 
-    onWeiXinHandler(e, id){
+    onWeiXinHandler(e, id) {
         e.stopPropagation()
         e.preventDefault()
-        
+
         hashHistory.push({
-                pathname:RouterConst.WECHART,
-                query: {
-                    text:'c2',
-                    id:id
-
-                }
-         })
+            pathname: RouterConst.WECHART,
+            query: {
+                text: 'c2',
+                id: id
+            }
+        })
     }
 
-    onClickHandler(e){
-        this.setState({rowData: e})
+    onClickHandler(e) {
+        this.setState({ rowData: e })
     }
 
-    onCloseHandler(){
-        this.setState({rowData: null})
+    onCloseHandler() {
+        this.setState({ rowData: null })
     }
 
-    render(){
+    render() {
         let { columns, loading, rowData } = this.state
         console.log(this.props.pagination)
-        return(
+        return (
             <div className="favorite-page-container">
                 <div className="favorite-title">
                     <p>收藏群组</p>
                 </div>
                 <div className="favorite-tab">
                     <Table
-                            columns={columns} 
-                            dataSource={this.props.favoriteList}
-                            pagination={this.props.pagination}
-                            loading={this.props.loading}
-                            onRowClick={(e)=>this.onClickHandler(e)}
-                            onChange={(pagination)=>this.onPageChange(pagination)}
+                        columns={columns}
+                        dataSource={this.props.favoriteList}
+                        pagination={this.props.pagination}
+                        loading={this.props.loading}
+                        onRowClick={(e) => this.onClickHandler(e)}
+                        onChange={(pagination) => this.onPageChange(pagination)}
                     />
                 </div>
-                { rowData ? <FavoriteItemInfo data={rowData} onClose={()=>this.onCloseHandler()} /> : ""}
+                {rowData ? <FavoriteItemInfo data={rowData} onClose={() => this.onCloseHandler()} /> : ""}
             </div>
         )
     }
