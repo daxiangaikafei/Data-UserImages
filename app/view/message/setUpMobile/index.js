@@ -107,6 +107,7 @@ class setUpMessage extends React.Component {
     this.props.messageSave({
       "name":name,
       "userSelectGroupId":userSelectGroupId.split('&')[0],
+      "selectNum":userSelectGroupId.split('&')[1],
       "content":wapLink?content+wapLink:content,
       "type":1,
       "sendType":sendType,
@@ -122,26 +123,28 @@ class setUpMessage extends React.Component {
             }))
   }
   componentDidMount(){
-    this.props.getUserList().then(data=>{this.setState({
-        Population:data
+    let loc=this.props.location.query;
+    let locc=loc.id?(loc.id+'&'+loc.number+'&'+loc.oid):""
+    this.props.getUserList().then(data=>{
+      this.setState({
+        Population:data,
+        userSelectGroupId:locc
       })
     })
     
-    this.setState({
-      userSelectGroupId:this.props.location.query.id||""
-    });
   }
   render() {
     const {Population,message,sendType,ishow,content,wapLink,id,address,userSelectGroupId} = this.state;
     const children = [];
     Population&&Population.map((item,index)=> {
-        children.push(<Option key={index} value={item.userSelectId+"&"+index}>{item.name}[{item.createTime}]{item.num}人</Option>);
+        children.push(<Option key={item.userSelectId+"&"+item.num+'&'+item.id} >{item.name}[{item.createTime}]{item.num}人</Option>);
     });
     
     const oAddress = [];
     address&&address.map((item,index)=> {
         oAddress.push(<Option key={item.id+"&&"+item.wapLink} >{item.wapLink}</Option>);
     });
+    console.log(userSelectGroupId,123)
     return (
       <div className="content-wrapper">
           <h6>1.推送活动</h6>

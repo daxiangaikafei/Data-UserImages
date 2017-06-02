@@ -63,7 +63,6 @@ handlerChangeName(msg){
     this.props.changeName(msg)
 }
 handlerChangePeople(msg){
-    console.log(msg)
     this.props.changePeople(msg)
 }
 
@@ -103,7 +102,7 @@ goNext(){
     let msg;
     if(!name){
         msg="活动标题不能为空"
-    }else if(!userSelectGroupId){
+    }else if(!userSelectGroupId&&!this.state.userSelectGroupId){
         msg="推送人群不能为空"
     }
     else if(!title){
@@ -132,7 +131,8 @@ goNext(){
     else{
         this.props.commitWechat({
             name:name,
-            userSelectGroupId:userSelectGroupId,
+            userSelectGroupId:userSelectGroupId.split('&')[0]||this.state.userSelectGroupId.split('&')[0],
+            selectNum:userSelectGroupId.split('&')[1]||this.state.userSelectGroupId.split('&')[1],
             title:title,
             content:content,
             logo:logo,
@@ -192,11 +192,12 @@ handlerChangePageUrl(e){
         this.props.setUrl(e.target.value)
     }
 componentDidMount(){
-    this.setState({
-      userSelectGroupId:this.props.location.query.id||""
-    });
-    this.props.getUserList().then(data=>{this.setState({
-        Population:data
+    let loc=this.props.location.query;
+    let locc=loc.id?(loc.id+'&'+loc.number+'&'+loc.oid):""
+    this.props.getUserList().then(data=>{
+      this.setState({
+        Population:data,
+        userSelectGroupId:locc
       })
     })
     this.props.changeName("")
@@ -229,8 +230,8 @@ render() {
     const {title,content,linkurl,data,pageUrl,fileString,logo}=this.props;
     const children = [];
     Population&&Population.map((item,index)=> {
-       children.push(<Option key={index} value={item.userSelectId+"&"+index}>{item.name}[{item.createTime}]{item.num}人</Option>);
-     });
+        children.push(<Option key={item.userSelectId+"&"+item.num+'&'+item.id} >{item.name}[{item.createTime}]{item.num}人</Option>);
+    });
     let components = data.map((data, index)=>{
             return <Pic key={index} 
             pic={(value,url)=>this.handlerPic(index, value,url)} 
@@ -258,7 +259,6 @@ render() {
             height: '30px',
             lineHeight: '30px',
         };
-        console.log(this.state.userSelectGroupId,383838)
     return (
     <div className="wechat">
          <Tabs type="card" onChange={this.handlerTab.bind(this)}>
@@ -271,7 +271,7 @@ render() {
                         </li>
                         <li>
                             <span>推送人群</span>
-                            <Select  className="sel" onChange={this.handlerChangePeople.bind(this)} defaultValue={this.state.userSelectGroupId}>
+                            <Select  className="sel" onChange={this.handlerChangePeople.bind(this)} value={this.props.userSelectGroupId||this.state.userSelectGroupId}>
                                 {children}
                             </Select>
                         </li>
