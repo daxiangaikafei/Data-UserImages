@@ -119,7 +119,7 @@ var config = {
 if(process.env.NODE_ENV === 'production'){
   delete config.devServer
   delete config.devtool
-  // config.output.publicPath = "/build/"
+  //config.output.publicPath = "/build/"
   config.plugins.push(
     new webpack.optimize.UglifyJsPlugin({
             compress: {

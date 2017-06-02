@@ -98,7 +98,7 @@ goNext(){
         "url":item.url,
         "txt":item.txt
     }))
-    
+    console.log(userSelectGroupId,567,this.state.userSelectGroupId,1234)
     let msg;
     if(!name){
         msg="活动标题不能为空"
@@ -138,20 +138,21 @@ goNext(){
             logo:logo,
             link:linkurl,
             shortContent:datas,
-            type:2
-        }).then((data)=> 
-             hashHistory.push({
+            type:2,
+            token:this.randomChar()
+        }).then((data)=> {
+            hashHistory.push({
                 pathname:'wechartNext',
                 query:{
-                    userSelectGroupId:userSelectGroupId,
+                    userSelectGroupId:userSelectGroupId.split('&')[0]||this.state.userSelectGroupId.split('&')[0],
                     messageId:data.messageId,
                     text:'c2'
                 }
             })
-        )
-        
-        console.log(this.props)
-           
+            this.setState({
+                btnDisabled:true
+            })
+         })   
     }
 }
 handlerImport(){
@@ -223,6 +224,16 @@ componentDidMount(){
       this.setState({
           tabs:e
       })
+  }
+  
+  randomChar(l)  {
+    let  x="0123456789qwertyuioplkjhgfdsazxcvbnm";
+    let  tmp="";
+    let timestamp = new Date().getTime();
+    for(var  i=0;i<  l;i++)  {
+    tmp  +=  x.charAt(Math.ceil(Math.random()*100000000)%x.length);
+    }
+    return  timestamp+tmp;
   }
 render() {
     
