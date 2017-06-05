@@ -77,6 +77,15 @@ class setUpMessage extends React.Component {
       wapLink:e.split('&&')[1]
     })
   }
+  randomChar(l)  {
+    let  x="0123456789qwertyuioplkjhgfdsazxcvbnm";
+    let  tmp="";
+    let timestamp = new Date().getTime();
+    for(var  i=0;i<  l;i++)  {
+    tmp  +=  x.charAt(Math.ceil(Math.random()*100000000)%x.length);
+    }
+    return  timestamp+tmp;
+  }
   handlerCommit(e){
     const {name,userSelectGroupId,content,tel,sendType,time,wapLink,messageId}=this.state;
     let reg=/^1\d{10}$/;
@@ -84,9 +93,8 @@ class setUpMessage extends React.Component {
     let otime;
     if(!name){
       msg="活动名称不能为空"
-    }
-    else if(!userSelectGroupId){
-      msg="推送人群不能为空"
+    }else if(!userSelectGroupId){
+     // msg="推送人群不能为空"
     }
     else if(!content){
       msg="消息内容不能为空"
@@ -113,14 +121,14 @@ class setUpMessage extends React.Component {
       "sendType":sendType,
       "sendTime":otime,
       "tunnelId":1,
-      "messageId":messageId
-    }).then(()=> 
-             hashHistory.push({
-                pathname:'message',
-                query: {
-                    text:'a0'
-                }
-            }))
+      "messageId":messageId,
+      "token":this.state.token
+    }).then(()=> {
+          hashHistory.push({pathname:'message', query: { text:'a0'}})
+          this.setState({
+            btnDisabled:true
+          })
+    })
   }
   componentDidMount(){
     let loc=this.props.location.query;
@@ -128,13 +136,14 @@ class setUpMessage extends React.Component {
     this.props.getUserList().then(data=>{
       this.setState({
         Population:data,
-        userSelectGroupId:locc
+        userSelectGroupId:locc,
+        token:this.randomChar()
       })
     })
     
   }
   render() {
-    const {Population,message,sendType,ishow,content,wapLink,id,address,userSelectGroupId} = this.state;
+    const {Population,message,sendType,ishow,content,wapLink,id,address,userSelectGroupId,btnDisabled} = this.state;
     const children = [];
     Population&&Population.map((item,index)=> {
         children.push(<Option key={item.userSelectId+"&"+item.num+'&'+item.id} >{item.name}[{item.createTime}]{item.num}人</Option>);
@@ -202,7 +211,7 @@ class setUpMessage extends React.Component {
           </ul>
           <div className="textCenter">
             <Button className="ts" onClick={this.handlerShow.bind(this)}>推送预览</Button>
-            <Button className="send" onClick={this.handlerCommit.bind(this)} >确认发送</Button>
+            <Button className="send" onClick={this.handlerCommit.bind(this)}  disabled={btnDisabled?true:false}  >确认发送</Button>
           </div>
           {ishow==0?"":<Mobile oClose={this.handlerClick.bind(this)} content={content} wapLink={wapLink}/>}
       </div>

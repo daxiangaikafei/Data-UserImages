@@ -40,9 +40,7 @@ class SiderMenu extends React.Component {
     }
 
     getAncestorKeys = (key) => {
-        const map = {
-            sub3: ['sub2'],
-        };
+        const map = {};
         return map[key] || [];
     }
     render() {

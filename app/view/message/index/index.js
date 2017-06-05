@@ -61,7 +61,7 @@ const columns = [{
   }
 },{
   title: '操作时间',
-  dataIndex: 'sendTime'
+  dataIndex: 'createTime'
 }
 ];
 
