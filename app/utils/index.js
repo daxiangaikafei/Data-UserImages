@@ -57,3 +57,19 @@ export const getCookie = name => {
     return null;
 }
 
+export const checkStrEnglish = (str) => {
+    return str.replace(/\s/g,'').replace(/[\u4E00-\u9FA5\uF900-\uFA2D]/g, '').replace(/[\uFF00-\uFFEF]/g, '')
+}
+
+//是否含有中文（也包含日文和韩文）
+export const isChineseChar = str => {
+    let reg = /[\u4E00-\u9FA5\uF900-\uFA2D]/;
+    return reg.test(str);
+}
+
+//同理，是否含有全角符号的函数
+export const isFullwidthChar = str => {
+   let reg = /[\uFF00-\uFFEF]/;
+   return reg.test(str);
+} 
+

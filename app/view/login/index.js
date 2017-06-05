@@ -9,7 +9,7 @@ import * as RouterConst from '../../static/const'
 import ErrorMessage from '../../static/const/errorMessage'
 
 import { userLogin, checkLogin } from './reducer/action'
-import { checkEmail, setCookie } from '../../utils'
+import { checkEmail, setCookie, checkStrEnglish } from '../../utils'
 
 import './index.scss'
 
@@ -39,8 +39,8 @@ class Login extends React.Component{
 
     /**输入框改变事件 */
     onInputChange(e, type){
-        let value = e.currentTarget.value.replace(/\s/g,''), state = {}
-        state[type] = value
+        let state = {}
+        state[type] = checkStrEnglish(e.currentTarget.value)
         this.setState(state)
     }
 

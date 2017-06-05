@@ -11,7 +11,7 @@ import ErrorMessage from '../../../static/const/errorMessage'
 import CopyRights from '../../../components/copyRight'
 
 import { userRegister } from '../reducer/action'
-import { checkEmail } from '../../../utils'
+import { checkEmail, checkStrEnglish } from '../../../utils'
 
 import './index.scss'
 
@@ -30,8 +30,8 @@ class Register extends React.Component{
 
     /**输入框改变事件 */
     onInputChange(e, type){
-        let value = e.currentTarget.value.replace(/\s/g,''), state = {}
-        state[type] = value
+        let state = {}
+        state[type] = checkStrEnglish(e.currentTarget.value)
         this.setState(state)
     }
 
