@@ -45,6 +45,12 @@ loaders.push({
 　loader: 'url-loader?limit=1000&name=images/[hash:8].[name].[ext]'
 });
 
+//字体
+loaders.push({
+  test: /\.(woff|ttf)$/,
+　loader: 'url-loader?limit=1000&name=fonts/[hash:8].[name].[ext]'
+});
+
 var plugins = [];
 plugins.push(
     new webpack.DefinePlugin({

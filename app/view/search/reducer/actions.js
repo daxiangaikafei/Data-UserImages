@@ -81,7 +81,13 @@ let getFilterList = state => {
 
 let receiveReportData = data => ({
     type: ActionType.SEARCH_UPDATE_REPORT_DATA,
-    data: data,
+    data: {
+        ...data,
+        reports: data.reports.map(item=>({
+            ...item,
+            data: item.data.map(obj=>({name:obj.name, value: obj.count}))
+        }))
+    },
 })
 
 export const clearReportData = () => dispatch => {
@@ -89,7 +95,7 @@ export const clearReportData = () => dispatch => {
 }
 
 /**根据筛选条件获取报表 */
-export const getReportData = (opt, callBack) => (dispatch, getState) => {
+export const getReportData = (opt) => (dispatch, getState) => {
     let state = getState()
     let url = "/search/calculation.do";
     opt = {
@@ -98,7 +104,12 @@ export const getReportData = (opt, callBack) => (dispatch, getState) => {
         selectList: getFilterList(state)
     }
 
-    dispatch(HTTPUtil.fetchPost(url, opt, null)).then(data=>{dispatch(receiveReportData(data));callBack&&callBack()})
+    return new Promise((reslove, reject)=>{
+        dispatch(HTTPUtil.fetchPost(url, opt)).then(data=>{
+            dispatch(receiveReportData(data))
+            reslove&&reslove()
+        }, reject)
+    })
 }
 
 /**添加筛选条件 */

@@ -20,7 +20,7 @@ class SelectResultContainer extends React.Component{
                 if(item.isShowResult){
                     let value=""
                     if(item.type == "3" || item.type == "4"){
-                        value = getCityNameByValue(item.defaultValue, this.props.cityCode || [])
+                        value = getCityNameByValue(item.defaultValue, this.props.cityCode.cityCode3 || [])
                     }else{
                         value = item.options ? item.options.find(obj=>obj.value==item.defaultValue).name : ""
                     }

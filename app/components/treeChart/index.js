@@ -16,22 +16,10 @@ class TreeChart extends React.Component {
         }
     }
 
-    getChildrenDeep(list){
-        let arr = list.map(obj=>{
-            if (obj.children){
-                return 1 + this.getChildrenDeep(obj.children)
-            }else{
-                return 1
-            }
-        })
-        return Math.max.apply(null, arr)
-    }
-
     renderTree(nodes, edges, dx, chart) {
         chart.clear();
         let Stat = G2.Stat
         let height = Math.max(100, 40 / dx); // 最小高度 500
-        let deep = this.getMaxLen(nodes)
         chart.changeSize(450, height);
         // 首先绘制 edges，点要在边的上面
         // 创建单独的视图

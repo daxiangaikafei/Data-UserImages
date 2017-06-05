@@ -28,7 +28,7 @@ class SelectItem extends React.Component{
         if(type == 3 || type == 4){
             let value = defautlValue ? [defautlValue.substring(0, 2) + "0000", defautlValue.substring(0, 4) + "00", defautlValue] : ""
 
-            let opts = cityCode ? type == 3 ? cityCode.cityCode3 : cityCode2 : []
+            let opts = cityCode ? type == 3 ? cityCode.cityCode3 : cityCode.cityCode2 : []
             return (
                 <Cascader options={opts} onChange={(e)=>this.onCascaderChange(e)} value={value} placeholder="未选择" />
             )

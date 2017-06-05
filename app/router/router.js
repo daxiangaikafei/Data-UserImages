@@ -10,8 +10,8 @@ const ResetPW = cb => require.ensure([], require => { cb(null, require('../view/
 const Home = cb => require.ensure([], require => { cb(null, require('../view/home').default)}, "Home")
 const User = cb => require.ensure([], require => { cb(null, require('../view/user').default)}, "User")
 const Search = cb => require.ensure([], require => { cb(null, require('../view/search').default)}, "search")
-//const UserMirror = cb => require.ensure([], require => { cb(null, require('../view/userMirror').default)}, "userMirror")
-const UserMirror = cb => require.ensure([], require => { cb(null, require('../view/userMirrorTable').default)}, "userMirror")
+const UserMirror = cb => require.ensure([], require => { cb(null, require('../view/userMirror').default)}, "userMirror")
+//const UserMirror = cb => require.ensure([], require => { cb(null, require('../view/userMirrorTable').default)}, "userMirror")
 
 const Message = cb => require.ensure([], require => { cb(null, require('../view/message/index').default)}, "Message")
 const MessageSetUp = cb => require.ensure([], require => { cb(null, require('../view/message/setUp').default)}, "SetUp")

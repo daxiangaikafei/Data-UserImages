@@ -73,6 +73,7 @@ ul, li {
     }
 
     .number{
+      font-family: "DINCondensedBold";
       width: 50px;
       height: 80px;
       line-height: 80px;
@@ -152,4 +153,10 @@ ul, li {
         }
       }
     }
+}
+
+@font-face
+{
+    font-family: "DINCondensedBold";
+    src: url(../../../static/font/DIN_Condensed_Bold.ttf),
 }
