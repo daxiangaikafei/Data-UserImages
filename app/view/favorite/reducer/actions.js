@@ -17,7 +17,7 @@ let receiveData = (data, page) => ({
 export const getFavoriteData = opt => dispatch => {
     dispatch({type: ActionType.LOAD_FAVORITE_LIST})
     let url = '/search/usergroup.do'
-    dispatch(HTTPUtil.fetchGet(url, opt, null)).then(data=>dispatch(receiveData(data, opt.page)))
+    dispatch(HTTPUtil.fetchGet(url, opt, null)).then(data=>dispatch(receiveData(data, opt.page+1)))
 }
 
 export const getFavoriteDetailData = id => dispatch => {

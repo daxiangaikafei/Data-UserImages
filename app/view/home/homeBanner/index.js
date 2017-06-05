@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react'
 
+import { hashHistory } from 'react-router'
+
 import { Button } from 'antd'
 import BannerAnim from 'rc-banner-anim'
 import QueueAnim from 'rc-queue-anim'
@@ -9,6 +11,8 @@ import './index.scss'
 import '../../../static/css/banner.scss'
 import banner1 from '../image/banner1.jpg'
 import banner2 from '../image/banner2.jpg'
+
+import * as RouterConst from '../../../static/const'
 
 class HomeBanner extends React.Component {
 
@@ -30,7 +34,7 @@ class HomeBanner extends React.Component {
     }
 
     openHandler(){
-
+        hashHistory.push(RouterConst.GET_MESSAGE)
     }
 
     viewHandler(){

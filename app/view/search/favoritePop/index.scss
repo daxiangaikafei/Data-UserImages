@@ -34,7 +34,6 @@
 
         .favorite-div{
             width: 480px;
-            height: 320px;
             background: #fff;
             border-radius: 10px;
             position: absolute;
@@ -59,11 +58,11 @@
                 }
 
                 input{
-                    width: calc(~"100% - 84px");
+                    width: calc(~"100% - 100px");
                 }
 
                 textarea{
-                    width: calc(~"100% - 84px");
+                    width: calc(~"100% - 100px");
                     height: 64px;
                     vertical-align: top;
                     resize: none;
@@ -94,9 +93,6 @@
                     background: #bfbfbf;
                 }
             }
-
-            
-
         }
     }
 }

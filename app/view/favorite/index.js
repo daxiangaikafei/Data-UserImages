@@ -69,7 +69,7 @@ class FavoritePage extends React.Component {
 
     sendData(pagination) {
         let opt = {
-            page: pagination ? pagination.current : 0,
+            page: pagination ? pagination.current-1 : 0,
             size: 10
         }
         this.props.getFavoriteData(opt)
@@ -118,7 +118,6 @@ class FavoritePage extends React.Component {
 
     render() {
         let { columns, loading, rowData } = this.state
-        console.log(this.props.pagination)
         return (
             <div className="favorite-page-container">
                 <div className="favorite-title">

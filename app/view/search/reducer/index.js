@@ -62,19 +62,11 @@ let changeSelectValue = (state, data) => (
             ...menu,
             list: menu.list.map((obj, index) => {
                 if(obj.id == data.id && index==data.index){
-                    // if(data.value == ""){
-                    //     return {
-                    //         ...obj,
-                    //         defaultValue: data.value,
-                    //         isShowResult: false
-                    //     }
-                    // }else{
-                        return {
-                            ...obj,
-                            defaultValue: data.value,
-                            isShowResult: true
-                        }
-                    // }
+                    return {
+                        ...obj,
+                        defaultValue: data.value,
+                        isShowResult: true
+                    }
                 }
                 return obj
             })
@@ -158,7 +150,7 @@ export default function update(state = initialState, action) {
                 reportId: action.data.id,
                 reportDate: action.data.create_date,
                 reportNumber: action.data.number,
-                reportList: state.reportList.concat(action.data.reports),
+                reportList: action.data.reports,
                 reportCount: action.data.count
              }
         case ActionType.CLOSE_FILTER_MENU_LIST:
@@ -171,6 +163,7 @@ export default function update(state = initialState, action) {
                 reportDate: '',
                 reportNumber: 0,
                 reportList: [],
+                reportCount: 0
             }
         case ActionType.INIT_CITY_CODE:
             return {

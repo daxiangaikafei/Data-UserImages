@@ -9,7 +9,7 @@ import AntVContainer from './antVContainer'
 import FavoriteContainer from './favoritePop'
 
 import * as RouterConst from '../../static/const'
-import { getCityCode } from './reducer/actions'
+import { getCityCode, getReportData, clearCalculateResult } from './reducer/actions'
 
 import './index.scss'
 
@@ -18,14 +18,29 @@ class SearchList extends React.Component {
     constructor(props,context) {
         super(props,context)
 
+        this.props.clearCalculateResult()
         this.state = {
             isShowFavorite: false,
-            btnFavoriteStatus: true
+            btnFavoriteStatus: true,
+
+            pageSize: 9,
+            currentPage: 1,
         }
     }
     
     componentDidMount(){
         this.props.getCityCode()
+        this.setState({
+            isShowFavorite: false,
+            btnFavoriteStatus: true,
+            currentPage: 1,
+        })
+    }
+
+    onGetReportData(p){
+        let currentPage = p || 1
+        let opt = {page: currentPage - 1 ,size: this.state.pageSize}
+        this.props.getReportData(opt).then(()=>this.setState({btnFavoriteStatus: false, currentPage: currentPage}))
     }
 
     onShowFavorite = () => {
@@ -33,7 +48,7 @@ class SearchList extends React.Component {
     }
 
     onCloseFavorite = () => {
-        this.setState({isShowFavorite: false, btnFavoriteStatus: true})
+        this.setState({isShowFavorite: false})
     }
 
     onChangeBtnFavoriteStatus = val => {
@@ -49,8 +64,8 @@ class SearchList extends React.Component {
                 </div>
                 
                 <SelectResultContainer />
-                <SelectContainer onShowFavorite={()=>this.onShowFavorite()} btnFavoriteStatus={this.state.btnFavoriteStatus} onChangeBtnFavoriteStatus={(value)=>this.onChangeBtnFavoriteStatus(value)}/>
-                <AntVContainer />
+                <SelectContainer onShowFavorite={()=>this.onShowFavorite()} btnFavoriteStatus={this.state.btnFavoriteStatus} getReportData={(p)=>this.onGetReportData(p)}/>
+                <AntVContainer pageSize={this.state.pageSize} currentPage={this.state.currentPage} getReportData={(p)=>this.onGetReportData(p)} />
                 {this.state.isShowFavorite ? <FavoriteContainer onCloseHandler={()=>this.onCloseFavorite()}/> : ""}
             </div>
         )
@@ -66,7 +81,7 @@ let mapStateToProps = state => ({
 })
 
 let mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({ getCityCode }, dispatch)
+    return bindActionCreators({ getCityCode, getReportData, clearCalculateResult }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchList)

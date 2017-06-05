@@ -2,7 +2,9 @@ import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import SearchChart from '../../../components/searchChart'
+import { Pagination } from 'antd'
+
+import ChartItem from '../../../components/chartItem'
 
 import './index.scss'
 
@@ -19,12 +21,13 @@ class AntVContainer extends React.Component {
         return (
             <div className="chart-container">
                 <div className="chart-title-div">
-                    <p>标签图</p>
+                    <span>统计用户数：{this.props.reportNumber}</span>
                 </div>
+                <Pagination className="av-page" total={this.props.reportCount} current={this.props.currentPage} pageSize={this.props.pageSize} onChange={this.props.getReportData} />
                 <div className="chart-list">
                     {
                         this.props.reports.map((obj, index) =>
-                            <SearchChart key={index} title={obj.name} type={obj.type} data={obj.data} />
+                            <ChartItem key={index} title={obj.name} type={obj.type} data={obj.data} />
                         )
                     }
                 </div>  
@@ -34,10 +37,17 @@ class AntVContainer extends React.Component {
 }
 
 AntVContainer.PropTypes = {
+    pageSize:PropTypes.number.isRequired,
+    currentPage: PropTypes.number.isRequired,
+    reportCount: PropTypes.number.isRequired,
+    reportNumber: PropTypes.number.isRequired,
     reports: PropTypes.array.isRequired,
+    getReportData: PropTypes.func.isRequired
 }
 
 let mapStateToProps = state => ({
+    reportCount: state.searchList.reportCount,
+    reportNumber: state.searchList.reportNumber,
     reports: state.searchList.reportList,
 })
 
