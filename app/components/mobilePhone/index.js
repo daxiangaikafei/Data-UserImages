@@ -11,9 +11,9 @@ class Mobile extends React.Component{
         } 
       }
       handlerLinkUrl(e){
-       this.props.wapLink&&(window.location.href=this.props.wapLink)
+       this.props.wapLink&&window.open(this.props.wapLink)
        
-       this.props.wapLink&&(window.location.href=this.props.wapLink)
+       this.props.wapLink&&window.open(this.props.wapLink)
       }
       render() {
           const {logo,title,url,content,data,reLang,oUrl,oImg,code,iframeUrl,fileString,wapLink,showType}=this.props;
