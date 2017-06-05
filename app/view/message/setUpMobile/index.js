@@ -122,7 +122,7 @@ class setUpMessage extends React.Component {
       "sendTime":otime,
       "tunnelId":1,
       "messageId":messageId,
-      "token":this.randomChar()
+      "token":this.state.token
     }).then(()=> {
           hashHistory.push({pathname:'message', query: { text:'a0'}})
           this.setState({
@@ -136,7 +136,8 @@ class setUpMessage extends React.Component {
     this.props.getUserList().then(data=>{
       this.setState({
         Population:data,
-        userSelectGroupId:locc
+        userSelectGroupId:locc,
+        token:this.randomChar()
       })
     })
     

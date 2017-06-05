@@ -52,13 +52,16 @@ class App extends React.Component {
     }
 
     getMenuByRouter() {
+
         let text=this.props.location.query.text;
         text&&this.props.getCurrent(text);
 
         if(this.props.location.pathname.indexOf(RouterConst.USER_MIRROR.substring(0, RouterConst.USER_MIRROR.indexOf('/:')))>=0){
             return ''
         }
-
+        if(this.props.location.pathname.indexOf('dev')>=0){
+            return <Sider className="sider sider-dev"><SiderMenu data={menuData.data2} /></Sider>
+        }
         switch (this.props.location.pathname) {
             case RouterConst.ROUTER_HOME:
             case RouterConst.ROUTER_LOGIN:
@@ -69,6 +72,7 @@ class App extends React.Component {
             case RouterConst.SEARCH_LIST:
             case RouterConst.ROUTER_FAVORITE:
                 return <Sider className="sider siderSearchMenu"><SiderSearchMenu /></Sider>
+            
             default:
                 return <Sider className="sider"><SiderMenu data={this.state.data} /></Sider>
         }
@@ -80,7 +84,7 @@ class App extends React.Component {
 
     render() {
         
-
+        let title=this.props.location.pathname.indexOf('dev')>=0?<div className="technology">平台技术文档</div>:"";
         let curr = this.props.location.query.current;
         let top;
         let oClass;
@@ -109,6 +113,7 @@ class App extends React.Component {
             <div className={oClass}>
                 <Layout style={{ minHeight: '100%' }}>
                     {top}
+                    {title}
                     <Layout className="wapper">
                         {this.getMenuByRouter()}
                         <Content className={oClass ? "oBg wrap" : "wrap"}>

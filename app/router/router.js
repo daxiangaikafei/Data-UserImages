@@ -22,6 +22,8 @@ const Wechart = cb => require.ensure([], require => { cb(null, require('../view/
 const WechartNext= cb => require.ensure([], require => { cb(null, require('../view/wechat/createH5/next').default)}, "wechartNext")
 
 const Favorite = cb => require.ensure([], require => { cb(null, require('../view/favorite').default)}, "Favorite")
+const Dev = cb => require.ensure([], require => { cb(null, require('../view/dev').default)}, "Favorite")
+
 
 const Routers = {
 	path: RouterConst.ROUTER_HOME,
@@ -85,6 +87,10 @@ const Routers = {
 		{
 			path: RouterConst.ROUTER_FAVORITE,
 			getComponent(nextState, cb){ Favorite(cb) }
+		},
+		{
+			path: RouterConst.ROUTER_DEV+"/:list",
+			getComponent(nextState, cb){ Dev(cb) },
 		}
 	]
 }

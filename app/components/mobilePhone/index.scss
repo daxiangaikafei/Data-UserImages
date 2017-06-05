@@ -54,6 +54,10 @@
     overflow-x: none;
     overflow-y:scroll;
     border: 1px solid #dedede;
+    &.wx{
+      margin-top:68px;
+      height:425px;
+    }
     .content{
       margin-top: 20px;
       margin-left: 10px;
@@ -99,6 +103,7 @@
     background:rgba(0,0,0,.6);
      width: 100%;
     padding: 6px;
+    color:#fff;
   }
 }
 .iframes{

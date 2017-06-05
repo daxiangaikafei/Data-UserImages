@@ -6,22 +6,84 @@
 </head>
 <meta name ="viewport" content ="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
 <link rel="stylesheet" href="./css/main.css"/>
-<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="./js/jquery.touchSwipe.min.js"></script><!DOCTYPE html>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script type="text/javascript">
+    var token;
     $(document).ready(
             function() {
-                var url='http://localhost:8080/h5/61/1/15/content.do';
-                var mid=url.split('h5')[1].split('/')[2]
 
-                $.get("https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&type=wx_card",function(data){
-                    console.log(data)
+                var url=window.location.href;
+                var mid=url.split('h5')[1].split('/')[1];
+                var oHtml="";
+
+                var shareTitle;
+                var imgUrl;
+                var descContent;
+                var lineLink;
+                $.get("/wechat/token.do",{url:url},function(data){
+                    var oData=JSON.parse(data).data;
+                   // console.log(data.data.appid,1111)
+                    wx.config({
+                        //debug: true,
+                        appId: oData.appid,
+                        timestamp:oData.timestamp ,
+                        nonceStr:oData.nonceStr ,
+                        signature:oData.signature ,
+                        jsApiList: [
+                            'checkJsApi',
+                            'onMenuShareTimeline',
+                            'onMenuShareAppMessage',
+                            'onMenuShareQQ',
+                            'onMenuShareWeibo'
+                         ]
+                    });
                 })
-
-                $.getJSON("http://10.172.30.118:8080/h5/getShortContent.do?mid="+mid,
+                $.getJSON("/h5/getShortContent.do?mid="+mid,
                         function(data){
-                            console.log(data)
+                            var json=JSON.parse(data.data.shortContent);
+                            shareTitle = data.data.title;
+                            imgUrl = data.data.logo;
+                            descContent = data.data.content;
+                            $.each(json,function(i,e){
+                                    oHtml+='<div class="page">\
+                                       \<img src="'+e.url+'" />\
+                                       \ <div><span>"'+e.txt+'"</span></div>\
+                                       \ </div>'
+                            })
+                            $('.container').html(oHtml)
+
+
+                            wx.ready(function() {
+                                console.log(shareTitle,descContent,imgUrl)
+                                wx.onMenuShareTimeline({
+                                    title: shareTitle, // 分享标题
+                                    imgUrl:imgUrl, // 分享图标
+                                    success: function() {
+                                        // 用户确认分享后执行的回调函数
+                                        console.log(shareTitle)
+                                    },
+                                    cancel: function() {
+                                        // 用户取消分享后执行的回调函数
+                                    }
+                                });
+
+                                wx.onMenuShareAppMessage({
+                                    title: shareTitle, // 分享标题
+                                    desc: descContent, // 分享描述
+                                    imgUrl: imgUrl, // 分享图标
+                                    success: function() {
+                                        // 用户确认分享后执行的回调函数
+                                    },
+                                    cancel: function() {
+                                        // 用户取消分享后执行的回调函数
+                                    }
+                                });
+
+                            });
                 });
+
                 var nowpage = 0;
                 //给最大的盒子增加事件监听
                 $(".container").swipe(
@@ -33,8 +95,8 @@
                                     nowpage = nowpage - 1;
                                 }
 
-                                if(nowpage > 1){
-                                    nowpage = 1;
+                                if(nowpage > $(".container>div").length-1){
+                                    nowpage = $(".container>div").length-1;
                                 }
 
                                 if(nowpage < 0){
@@ -50,19 +112,58 @@
             }
 
     );
+
+    function randomString(len) {
+        len = len || 32;
+        var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';    /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/
+        var maxPos = $chars.length;
+        var pwd = '';
+        for (i = 0; i < len; i++) {
+            pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+        }
+        return pwd;
+    }
+
+
+
+    wx.config({
+//        debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+//        appId: '', // 必填，公众号的唯一标识
+//        timestamp:'' , // 必填，生成签名的时间戳
+//        nonceStr: '', // 必填，生成签名的随机串
+//        signature: '',// 必填，签名，见附录1
+        debug: true,
+        appId: "wxbd7f2ffc04fba2ed",
+        timestamp: new Date().getTime(),
+        nonceStr: randomString(32),
+        signature: "ef1ffc35b7b1b3e22b65994edc2d1546a1016b0f",
+        jsApiList: [
+            'checkJsApi',
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage',
+            'onMenuShareQQ',
+            'onMenuShareWeibo'
+        ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+    });
+    wx.ready(function () {
+        wx.checkJsApi({
+            jsApiList: [
+                'onMenuShareAppMessage',
+            ]
+        });
+
+        wx.onMenuShareAppMessage({
+            title: '互联网之子',
+            desc:'222222222222',
+            imgUrl: 'http://wx.vland.cc/resource/attachment/images/7/2015/01/fl2Lk2p5o3iOJP3jdp9iPXI9i93iPm.jpg'
+        });
+    });
 </script>
 
 </head>
 <body onmousewheel="return false;">
 <div class="container">
-    <div class="page page1">
-        <img  src="./images/1.jpg" />
-        <div><span>229393</span></div>
-    </div>
-    <div class="page page2">
-        <img src="./images/2.jpg" />
-        <div>2222222222</div>
-    </div>
+
 </div>
 
 <div class="xiangxiatishi" ></div>

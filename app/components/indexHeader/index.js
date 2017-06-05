@@ -45,7 +45,7 @@ class Headers extends React.Component {
                         <Menu.Item key="home" className="menuLi"><Link to='/'>首页</Link></Menu.Item>
                         <Menu.Item key="user" className="menuLi"><Link to='/searchList'>用户画像</Link></Menu.Item>
                         <Menu.Item key="pic" className="menuLi"><Link to='/message'>画像营销</Link></Menu.Item>
-                        <Menu.Item key="doc" className="menuLi">说明文档</Menu.Item>
+                        <Menu.Item key="doc" className="menuLi"><Link to='/dev/list1'>说明文档</Link></Menu.Item>
                     </Menu>
                 </div>
             </Header>

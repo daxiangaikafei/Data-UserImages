@@ -41,4 +41,49 @@ let data={
 
 
 
-export {data};
+let data2={
+    "data":[
+        {
+            "name":"开始前必读",
+            "children":[{
+                "name":"首页",
+                "url":"/dev/list1",
+                "id":"a"
+            },{
+                "name":"更新日志",
+                "url":"/dev/list2",
+                "id":"b"
+            },{
+                "name":"开发者规范",
+                "icon":"",
+                "id":"c"
+            }]
+        },
+        {
+            "name":"开始开发",
+            "children":[{
+                "name":"设置",
+                "icon":"",
+                "id":"e"
+            }]
+        },
+        {
+            "name":"开始开发",
+            "children":[{
+                "name":"设置",
+                "icon":"",
+                "id":"f"
+            }]
+        },
+        {
+            "name":"开始开发",
+            "children":[{
+                "name":"设置",
+                "icon":"",
+                "id":"g"
+            }]
+        }
+    ]
+}
+
+export {data,data2};

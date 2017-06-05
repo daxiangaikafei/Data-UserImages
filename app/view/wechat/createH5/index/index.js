@@ -139,7 +139,7 @@ goNext(){
             link:linkurl,
             shortContent:datas,
             type:2,
-            token:this.randomChar()
+            token:this.state.token
         }).then((data)=> {
             hashHistory.push({
                 pathname:'wechartNext',
@@ -198,7 +198,8 @@ componentDidMount(){
     this.props.getUserList().then(data=>{
       this.setState({
         Population:data,
-        userSelectGroupId:locc
+        userSelectGroupId:locc,
+        token:this.randomChar()
       })
     })
     this.props.changeName("")
@@ -346,9 +347,9 @@ render() {
                  </div>
             </TabPane>
         </Tabs>
-        {tabs==1&&ishow!=0?<Mobile oClose={this.handlerClick.bind(this)}  data={data} wapLink={this.props.linkurl} />:""}
+        {tabs==1&&ishow!=0?<Mobile oClose={this.handlerClick.bind(this)}  data={data} wapLink={this.props.linkurl} showType="weixing" />:""}
         
-        {tabs==2&&ishow!=0?<Mobile oClose={this.handlerClick.bind(this)}  fileString={fileString} iframeUrl={pageUrl} />:""}
+        {tabs==2&&ishow!=0?<Mobile oClose={this.handlerClick.bind(this)}  fileString={fileString} iframeUrl={pageUrl}  showType="weixing" />:""}
     </div>
     );
     }

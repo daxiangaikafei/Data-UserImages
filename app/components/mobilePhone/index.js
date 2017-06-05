@@ -16,7 +16,7 @@ class Mobile extends React.Component{
        this.props.wapLink&&(window.location.href=this.props.wapLink)
       }
       render() {
-          const {logo,title,url,content,data,reLang,oUrl,oImg,code,iframeUrl,fileString,wapLink}=this.props;
+          const {logo,title,url,content,data,reLang,oUrl,oImg,code,iframeUrl,fileString,wapLink,showType}=this.props;
           console.log(wapLink,2344)
           let component=data?data.map((item, index)=>{
             return(
@@ -37,9 +37,8 @@ class Mobile extends React.Component{
               <div className="mobileClose" onClick={this.props.oClose.bind(this,0)}>
                 <Icon type="close" className="mob_closeicon"/>
               </div>
-
-              <div className="ip"  onClick={(e)=>this.handlerLinkUrl(e)}>
-                  <div className="oIp">
+              <div className="ip" onClick={(e)=>this.handlerLinkUrl(e)}>
+                  <div className={showType=="weixing"?"oIp wx":"oIp"} >
                       <div className={title||content?"oHead":""}>
                         {icon}
                         <div>{title}</div>
