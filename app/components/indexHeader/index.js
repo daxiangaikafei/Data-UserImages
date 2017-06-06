@@ -28,8 +28,18 @@ class Headers extends React.Component {
         this.setState({
             isShow:true
         })
+        this.state.value&&hashHistory.push('/userMirror/'+this.state.value)
     }
-
+    handlerKeyUp(e){
+        if(e.keyCode==13){
+            this.handlerSearch()
+        }
+    }
+    handlerChange(e){
+        this.setState({
+            value:e.target.value
+        })
+    }
     render() {
         let { Header } = Layout, SubMenu = Menu.SubMenu, MenuItemGroup = Menu.ItemGroup
 
@@ -38,7 +48,7 @@ class Headers extends React.Component {
                 <div className="wapper">
                     <div className="logo2" onClick={()=>hashHistory.push(RouterConst.ROUTER_HOME)}></div>
                     <div className="right" className={this.state.isShow==true?"right showInput":"right"} >
-                         <Input className="search_input" />
+                         <Input className="search_input"  onChange={this.handlerChange.bind(this)} onKeyUp={this.handlerKeyUp.bind(this)} />
                          <Icon type="search" className="search_icon" onClick={this.handlerSearch.bind(this)} />
                     </div>
                     <Menu onClick={(e) => this.handleClick(e)} selectedKeys={[this.state.selectedTab]} mode="horizontal" className="menuUl">
