@@ -21,8 +21,8 @@ class SiderMenu extends React.Component {
         this.props.getCurrent(e.key)
     }
     componentDidMount(e) {
-        this.props.getCurrent('a0')
-        this.props.getOpenKeys(this.props.openKeys)
+        // this.props.getCurrent(text?text:'a0')
+        // this.props.getOpenKeys(this.props.openKeys)
     }
     onOpenChange(openKeys) {
         const state = this.props;

@@ -55,7 +55,7 @@ class App extends React.Component {
 
         let text=this.props.location.query.text;
         text&&this.props.getCurrent(text);
-
+        
         if(this.props.location.pathname.indexOf(RouterConst.USER_MIRROR.substring(0, RouterConst.USER_MIRROR.indexOf('/:')))>=0){
             return ''
         }

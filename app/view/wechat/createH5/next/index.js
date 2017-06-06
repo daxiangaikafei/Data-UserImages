@@ -55,6 +55,9 @@ class Wechat extends React.Component {
             mobileNo:e.target.value
         })
     }
+    handlerClick(e){
+        hashHistory.push({pathname:'message', query: { text:'a0'}})
+    }
     render() {
 
         const {stepNum,imageUrl,status, oUrl}=this.state;
@@ -82,6 +85,7 @@ class Wechat extends React.Component {
                       }
                   </li>
               </ul>
+              <Button className="ant-btn  over" onClick={this.handlerClick.bind(this)}>完成</Button>
           </div>
         );
     }
