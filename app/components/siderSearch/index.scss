@@ -6,6 +6,10 @@
         line-height: 64px;
         background: #e2e6ef;
         border-bottom: 1px solid #c8c8c8;
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .ant-menu-submenu-open{

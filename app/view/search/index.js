@@ -23,7 +23,7 @@ class SearchList extends React.Component {
             isShowFavorite: false,
             btnFavoriteStatus: true,
 
-            pageSize: 9,
+            pageSize: 10,
             currentPage: 1,
         }
     }

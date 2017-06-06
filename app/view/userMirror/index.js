@@ -24,7 +24,9 @@ class UserMirror extends React.Component{
         return (
             <div className="user-mirror-container">
                 <div className="user-mirror-title">用户标签: {this.props.username}</div>
-                { this.props.data.map((obj, key) => <MirrorItem key={key} data={obj} />) }
+                <div className="user-mirror-list">
+                    { this.props.data.map((obj, key) => <MirrorItem key={key} data={obj} />) }
+                </div>
             </div>
         )
     }

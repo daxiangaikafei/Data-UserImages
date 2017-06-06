@@ -1,6 +1,6 @@
 .user-mirror-container{
     padding: 10px;
-    display: table;
+    overflow: auto;
 
     .user-mirror-title{
         display: table-header-group;

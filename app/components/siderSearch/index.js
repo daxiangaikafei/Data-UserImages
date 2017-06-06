@@ -18,7 +18,7 @@ class SiderSearchMenu extends React.Component {
         super(props, context)
 
         this.state = {
-            openKeys: ["0"],
+            openKeys: ["0"]
         }
     }
 
@@ -58,13 +58,14 @@ class SiderSearchMenu extends React.Component {
     }
 
     render() {
+        let { silderFold } = this.props
         let { openKeys } = this.state
+        
         return (
             <div className="silder">
                 <div className="silder-title">
-                    <Icon />
-                    <span>展示图标</span>
-                    <Icon />
+                    <span style={{display: silderFold ? "none" : "block"}}>展示图标</span>
+                    <span style={{cursor: "pointer"}} onClick={()=>this.props.onChangeSilderFold(!silderFold)}><Icon name="show" size="20" color="#000" /></span>
                 </div>
                 <Menu
                     //defaultSelectedKeys={SelectedKeys}
@@ -72,16 +73,17 @@ class SiderSearchMenu extends React.Component {
                     openKeys={openKeys}
                     onOpenChange={this.onSubMenuHandler}
                     onClick={this.handleClick}
-                    mode="inline" >
+                    mode={silderFold ? "vertical" : "inline"}>
                     {this.getMenu()}
                 </Menu>
             </div>
-            
         )
     }
 }
 
 SiderSearchMenu.PropTypes = {
+    onChangeSilderFold: PropTypes.func.isRequired,
+    silderFold: PropTypes.bool.isRequired,
     menuData: PropTypes.array.isRequired
 }
 

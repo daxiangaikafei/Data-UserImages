@@ -18,12 +18,15 @@ import SiderSearchMenu from '../../components/siderSearch'
 import { checkLogin } from '../login/reducer/action'
 import { getCurrent } from '../../components/siderMenu/reducer/action';
 
+import classnames from 'classnames'
+
 class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             title: "",
-            data: ""
+            data: "",
+            silderFold: false
         }
     }
 
@@ -51,16 +54,26 @@ class App extends React.Component {
         })
     }
 
+    onChangeSilderFold(val){
+        this.setState({silderFold: val})
+    }
+
     getMenuByRouter() {
 
         let text=this.props.location.query.text;
         text&&this.props.getCurrent(text);
-
+        let { silderFold } = this.state
+        let classSilder = {
+            sider: true,
+            siderSearchMenu: !silderFold,
+            silderFold: silderFold
+        }
+        let cssStyle = silderFold ? {flex:"0 0 72px", color:"red"} : {flex: "0 0 280px",color:"red"}
         if(this.props.location.pathname.indexOf(RouterConst.USER_MIRROR.substring(0, RouterConst.USER_MIRROR.indexOf('/:')))>=0){
             return ''
         }
         if(this.props.location.pathname.indexOf('dev')>=0){
-            return <Sider className="sider sider-dev"><SiderMenu data={menuData.data2} /></Sider>
+            return <Sider className="sider sider-dev" style={{flex: "0 0 280px"}}><SiderMenu data={menuData.data2} /></Sider>
         }
         switch (this.props.location.pathname) {
             case RouterConst.ROUTER_HOME:
@@ -71,10 +84,9 @@ class App extends React.Component {
                 return ""
             case RouterConst.SEARCH_LIST:
             case RouterConst.ROUTER_FAVORITE:
-                return <Sider className="sider siderSearchMenu"><SiderSearchMenu /></Sider>
-            
+                return <Sider className={classSilder}><SiderSearchMenu silderFold={this.state.silderFold} onChangeSilderFold={(b)=>this.onChangeSilderFold(b)} /></Sider>
             default:
-                return <Sider className="sider"><SiderMenu data={this.state.data} /></Sider>
+                return <Sider className="sider" style={{flex: "0 0 280px"}}><SiderMenu data={this.state.data} /></Sider>
         }
     }
 

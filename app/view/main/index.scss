@@ -29,10 +29,14 @@ body{
     background:#fff;
 }
 
-.siderSearchMenu{
+.silderFold{
     background:#f5f9fe;
+    flex: 0 0 72px !important;
+}
+
+.siderSearchMenu{
     flex: 0 0 280px !important;
-    width: 280px  !important;
+    background:#f5f9fe;
 }
 
 .oBg{
@@ -54,7 +58,6 @@ body{
     }
     .sider{
         flex: 0 0 280px !important;
-        width: 280px  !important;
     }
     .ant-menu-root.ant-menu-inline{
         background:#e2e6ef;

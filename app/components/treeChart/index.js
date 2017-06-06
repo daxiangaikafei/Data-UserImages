@@ -19,6 +19,7 @@ class TreeChart extends React.Component {
     renderTree(nodes, edges, dx, chart) {
         chart.clear();
         let Stat = G2.Stat
+        let MaxLength = 8
         let height = Math.max(100, 40 / dx); // 最小高度 500
         chart.changeSize(450, height);
         // 首先绘制 edges，点要在边的上面
@@ -56,11 +57,12 @@ class TreeChart extends React.Component {
             value: { min: 0 }
         }, ['id', 'x', 'y', 'name', 'children', 'collapsed']); // 由于数据中没有 'collapsed' 字段，所以需要设置所有的字段名称
         nodeView.point().position('x*y').color('steelblue').size('name', function (name) {
-            var length = strLen(name);
-            return length * 6 + 5 * 2;
+            let length = name.length > MaxLength ? strLen(name.substring(0, MaxLength) + "...") : strLen(name)
+            return length * 6 + 6 * 2;
         }).label('name', {
             offset: 6,
-            labelEmit: true
+            labelEmit: true,
+            renderer: (text, item, index)=>{ let str = text.length > MaxLength ? text.substring(0, MaxLength) + "..." : text; return str}
         }).shape('children*collapsed', function (children, collapsed) {
             if (children) {
                 if (collapsed) {
@@ -70,7 +72,7 @@ class TreeChart extends React.Component {
                 }
             }
             return 'leaf';
-        }).tooltip('name');
+        })
         chart.render();
     }
 
@@ -135,18 +137,6 @@ class TreeChart extends React.Component {
         return Math.max.apply(null, result)
     }
 
-    strLen(str) {
-        var len = 0;
-        for (var i = 0; i < str.length; i++) {
-            if (str.charCodeAt(i) > 0 && str.charCodeAt(i) < 128) {
-                len++;
-            } else {
-                len += 2;
-            }
-        }
-        return len;
-    }
-
     getTreeChart() {
         return createG2(chart => {
             G2.Shape.registShape('point', 'collapsed', {
@@ -179,7 +169,11 @@ class TreeChart extends React.Component {
             chart.animate(false);
             // 不显示title
             chart.tooltip({
-                title: null
+                title: null,
+                map: {
+                    name: "提示",
+                    value: "name"
+                }
             });
             chart.legend('children', false);
             chart.legend('name', false);
