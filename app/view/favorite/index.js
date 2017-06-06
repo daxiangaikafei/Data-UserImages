@@ -91,6 +91,7 @@ class FavoritePage extends React.Component {
                 number: number
             }
         })
+        
     }
 
     onWeiXinHandler(e, id, oid, number) {

@@ -99,13 +99,8 @@ class Message extends React.Component {
             <div className="white-bg">
               <Button className="oButton" onClick={this.handlerCreatMail.bind(this)}><Icons className="btn-icon" name="mail" color={'#666'} />新建短信推送</Button>
               <Button className="oButton" onClick={this.handlerCreateWeixin.bind(this)}><Icons  className="btn-icon" name="weixing" color={'#666'} />新建微信推送</Button>
-              <Table 
-                            rowKey="id"
-                            columns={columns} 
-                            dataSource={this.props.data} 
-                            onChange={this.handleTableChange.bind()} />
-                            {this.props.count?<Pagination 
-                            onChange={(e)=>this.handleTableChange(e)} total={this.props.count} />:""} 
+              <Table  rowKey="id" columns={columns} dataSource={this.props.data}  onChange={this.handleTableChange.bind()} />
+               {this.props.count?<Pagination  style={{marginTop:18}} onChange={(e)=>this.handleTableChange(e)} total={this.props.count} />:""} 
             </div>
             
           </div>

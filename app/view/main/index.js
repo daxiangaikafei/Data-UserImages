@@ -68,7 +68,6 @@ class App extends React.Component {
             siderSearchMenu: !silderFold,
             silderFold: silderFold
         }
-        let cssStyle = silderFold ? {flex:"0 0 72px", color:"red"} : {flex: "0 0 280px",color:"red"}
         if(this.props.location.pathname.indexOf(RouterConst.USER_MIRROR.substring(0, RouterConst.USER_MIRROR.indexOf('/:')))>=0){
             return ''
         }
