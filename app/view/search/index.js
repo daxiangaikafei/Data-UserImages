@@ -70,6 +70,7 @@ class SearchList extends React.Component {
     }
 
     render(){
+        console.log(this.state.btnFavoriteStatus,11111111345)
         return (
             <div className="search-container">
                 <div className="search-title">
