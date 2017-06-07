@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19e9448e-5944-4226-8383-b5c0c7efc3ae" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/mobilePhone/index.js" afterPath="$PROJECT_DIR$/app/components/mobilePhone/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/mobilePhone/index.scss" afterPath="$PROJECT_DIR$/app/components/mobilePhone/index.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/message/setUpMobile/index.js" afterPath="$PROJECT_DIR$/app/view/message/setUpMobile/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/wechat/createH5/index/index.js" afterPath="$PROJECT_DIR$/app/view/wechat/createH5/index/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/siderSearch/index.js" afterPath="$PROJECT_DIR$/app/components/siderSearch/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/siderSearch/index.scss" afterPath="$PROJECT_DIR$/app/components/siderSearch/index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/const/errorMessage.js" afterPath="$PROJECT_DIR$/app/static/const/errorMessage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/main/index.js" afterPath="$PROJECT_DIR$/app/view/main/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/search/antVContainer/index.js" afterPath="$PROJECT_DIR$/app/view/search/antVContainer/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/search/antVContainer/index.scss" afterPath="$PROJECT_DIR$/app/view/search/antVContainer/index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/search/index.js" afterPath="$PROJECT_DIR$/app/view/search/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/search/reducer/actions.js" afterPath="$PROJECT_DIR$/app/view/search/reducer/actions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/userMirror/index.js" afterPath="$PROJECT_DIR$/app/view/userMirror/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/userMirror/index.scss" afterPath="$PROJECT_DIR$/app/view/userMirror/index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/userMirror/reducer/actions.js" afterPath="$PROJECT_DIR$/app/view/userMirror/reducer/actions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="$PROJECT_DIR$/npm-debug.log" />
     </list>
     <ignored path="Data-UserImages.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,10 +67,32 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/message/index/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3234">
-              <caret line="106" column="50" selection-start-line="106" selection-start-column="47" selection-end-line="106" selection-end-column="50" />
+            <state relative-caret-position="3069">
+              <caret line="101" column="50" selection-start-line="101" selection-start-column="50" selection-end-line="101" selection-end-column="50" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
+                <marker date="1496738253961" expanded="true" signature="410:495" ph="[...]" />
+                <marker date="1496738253961" expanded="true" signature="411:477" ph="{&quot;title&quot;: '预览'...}" />
+                <marker date="1496738253961" expanded="true" signature="496:563" ph="{...}" />
+                <marker date="1496738253961" expanded="true" signature="585:657" ph="{...}" />
+                <marker date="1496738253961" expanded="true" signature="665:777" ph="{...}" />
+                <marker date="1496738253961" expanded="true" signature="779:943" ph="{...}" />
+                <marker date="1496738253961" expanded="true" signature="843:941" ph="{...}" />
+                <marker date="1496738253961" expanded="true" signature="912:937" ph="{...}" />
+                <marker date="1496738253961" expanded="true" signature="945:1027" ph="//..." />
+                <marker date="1496738253961" expanded="true" signature="1028:1075" ph="{...}" />
+                <marker date="1496738253961" expanded="true" signature="1077:1323" ph="{...}" />
+                <marker date="1496738253961" expanded="true" signature="1135:1321" ph="{...}" />
+                <marker date="1496738253961" expanded="true" signature="1235:1294" ph="{...}" />
+                <marker date="1496738253961" expanded="true" signature="1324:1370" ph="{...}" />
+                <marker date="1496738253961" expanded="true" signature="1431:2757" ph="{...}" />
+                <marker date="1496738253961" expanded="true" signature="1456:1561" ph="{...}" />
+                <marker date="1496738253961" expanded="true" signature="1500:1555" ph="{&quot;title&quot;: &quot;&quot;...}" />
+                <marker date="1496738253961" expanded="true" signature="1585:1592" ph="{...}" />
+                <marker date="1496738253961" expanded="true" signature="1686:1731" ph="{...}" />
+                <marker date="1496738253961" expanded="true" signature="1755:1839" ph="{...}" />
+                <marker date="1496738253961" expanded="true" signature="1951:2755" ph="{...}" />
+                <marker date="1496738253961" expanded="true" signature="2614:2688" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -79,14 +110,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webpack.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="693">
+              <caret line="101" column="6" selection-start-line="101" selection-start-column="6" selection-end-line="101" selection-end-column="6" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1496626621507" expanded="true" signature="3253:3304" ph="{&quot;root&quot;: DIST_PATH...}" />
               </folding>
             </state>
           </provider>
@@ -112,7 +142,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="action.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="action.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/wechat/createH5/index/reducer/action.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="760">
@@ -138,7 +168,7 @@
         <entry file="file://$PROJECT_DIR$/app/view/userMirror/reducer/actions.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
-              <caret line="13" column="89" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="89" />
+              <caret line="24" column="6" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="6" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
@@ -166,6 +196,7 @@
       <list>
         <option value="$PROJECT_DIR$/app/view/h5/list/index.html" />
         <option value="$PROJECT_DIR$/app/view/message/setUpMobile/index.js" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
       </list>
     </option>
   </component>
@@ -211,6 +242,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -454,13 +486,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TRAdminManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -490,15 +521,16 @@
       <workItem from="1496278811764" duration="4000" />
       <workItem from="1496381666010" duration="659000" />
       <workItem from="1496627034368" duration="20000" />
+      <workItem from="1496801486540" duration="624000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12925000" />
+    <option name="totallyTimeSpent" value="13549000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2869" y="-11" width="2902" height="1582" extended-state="6" />
-    <editor active="false" />
+    <frame x="2869" y="-11" width="2902" height="1582" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21925509" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -506,7 +538,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32850942" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32850942" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -593,7 +625,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1496626621507" expanded="true" signature="3253:3304" ph="{&quot;root&quot;: DIST_PATH...}" />
           </folding>
         </state>
       </provider>
@@ -868,7 +899,7 @@
     <entry file="file://$PROJECT_DIR$/app/view/userMirror/reducer/actions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
-          <caret line="13" column="89" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="89" />
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="6" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
           </folding>
@@ -902,17 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1496626621507" expanded="true" signature="3253:3304" ph="{&quot;root&quot;: DIST_PATH...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -935,10 +955,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/message/index/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3234">
-          <caret line="106" column="50" selection-start-line="106" selection-start-column="47" selection-end-line="106" selection-end-column="50" />
+        <state relative-caret-position="3069">
+          <caret line="101" column="50" selection-start-line="101" selection-start-column="50" selection-end-line="101" selection-end-column="50" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
+            <marker date="1496738253961" expanded="true" signature="410:495" ph="[...]" />
+            <marker date="1496738253961" expanded="true" signature="411:477" ph="{&quot;title&quot;: '预览'...}" />
+            <marker date="1496738253961" expanded="true" signature="496:563" ph="{...}" />
+            <marker date="1496738253961" expanded="true" signature="585:657" ph="{...}" />
+            <marker date="1496738253961" expanded="true" signature="665:777" ph="{...}" />
+            <marker date="1496738253961" expanded="true" signature="779:943" ph="{...}" />
+            <marker date="1496738253961" expanded="true" signature="843:941" ph="{...}" />
+            <marker date="1496738253961" expanded="true" signature="912:937" ph="{...}" />
+            <marker date="1496738253961" expanded="true" signature="945:1027" ph="//..." />
+            <marker date="1496738253961" expanded="true" signature="1028:1075" ph="{...}" />
+            <marker date="1496738253961" expanded="true" signature="1077:1323" ph="{...}" />
+            <marker date="1496738253961" expanded="true" signature="1135:1321" ph="{...}" />
+            <marker date="1496738253961" expanded="true" signature="1235:1294" ph="{...}" />
+            <marker date="1496738253961" expanded="true" signature="1324:1370" ph="{...}" />
+            <marker date="1496738253961" expanded="true" signature="1431:2757" ph="{...}" />
+            <marker date="1496738253961" expanded="true" signature="1456:1561" ph="{...}" />
+            <marker date="1496738253961" expanded="true" signature="1500:1555" ph="{&quot;title&quot;: &quot;&quot;...}" />
+            <marker date="1496738253961" expanded="true" signature="1585:1592" ph="{...}" />
+            <marker date="1496738253961" expanded="true" signature="1686:1731" ph="{...}" />
+            <marker date="1496738253961" expanded="true" signature="1755:1839" ph="{...}" />
+            <marker date="1496738253961" expanded="true" signature="1951:2755" ph="{...}" />
+            <marker date="1496738253961" expanded="true" signature="2614:2688" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -959,6 +1001,16 @@
           <caret line="53" column="22" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="22" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="101" column="6" selection-start-line="101" selection-start-column="6" selection-end-line="101" selection-end-column="6" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
