@@ -23,7 +23,7 @@ class AntVContainer extends React.Component {
                 <div className="chart-title-div">
                     <span>统计用户数：{this.props.reportNumber}</span>
                 </div>
-                <Pagination className="av-page" total={this.props.reportCount} current={this.props.currentPage} pageSize={this.props.pageSize} onChange={this.props.getReportData} />
+                <Pagination className="av-page" total={this.props.reportCount} current={this.props.currentPage} pageSize={this.props.pageSize} onChange={(page)=>this.props.getReportData(page)} />
                 <div className="chart-list">
                     {
                         this.props.reports.map((obj, index) =>

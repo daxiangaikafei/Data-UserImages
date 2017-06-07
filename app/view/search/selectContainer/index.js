@@ -19,7 +19,7 @@ class SelectContainer extends React.Component {
     }
 
     onGetReportHandler(){
-        this.props.getReportData()
+        this.props.getReportData(null, true)
     }
 
     getTabs(){

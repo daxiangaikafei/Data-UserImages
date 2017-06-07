@@ -64,7 +64,7 @@ class App extends React.Component {
         text&&this.props.getCurrent(text);
         let { silderFold } = this.state
         let classSilder = {
-            sider: true,
+            sider: !silderFold,
             siderSearchMenu: !silderFold,
             silderFold: silderFold
         }

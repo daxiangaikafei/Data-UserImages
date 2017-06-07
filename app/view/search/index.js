@@ -39,11 +39,13 @@ class SearchList extends React.Component {
         })
     }
 
-    onGetReportData(p){
-        let currentPage = p || 1
+    onGetReportData(page, isBtn){
+        let currentPage = page || 1
         let opt = {page: currentPage - 1 ,size: this.state.pageSize}
+        let state = {currentPage: currentPage}
+        if(isBtn) state.btnFavoriteStatus = false
         this.props.getReportData(opt).then(
-            ()=>this.setState({btnFavoriteStatus: false, currentPage: currentPage}),
+            ()=>this.setState(state),
             ()=>Modal.error({
                 title: "提示",
                 content: ErrorMessage.Error_Reports_Empty
@@ -55,8 +57,12 @@ class SearchList extends React.Component {
         this.setState({isShowFavorite: true})
     }
 
-    onCloseFavorite = () => {
-        this.setState({isShowFavorite: false})
+    onCloseFavorite = (val) => {
+        var state = {
+            isShowFavorite: false
+        }
+        if(val) state.btnFavoriteStatus = true
+        this.setState(state)
     }
 
     onChangeBtnFavoriteStatus = val => {
@@ -72,9 +78,9 @@ class SearchList extends React.Component {
                 </div>
                 
                 <SelectResultContainer />
-                <SelectContainer onShowFavorite={()=>this.onShowFavorite()} btnFavoriteStatus={this.state.btnFavoriteStatus} getReportData={(p)=>this.onGetReportData(p)}/>
-                <AntVContainer pageSize={this.state.pageSize} currentPage={this.state.currentPage} getReportData={(p)=>this.onGetReportData(p)} />
-                {this.state.isShowFavorite ? <FavoriteContainer onCloseHandler={()=>this.onCloseFavorite()}/> : ""}
+                <SelectContainer onShowFavorite={()=>this.onShowFavorite()} btnFavoriteStatus={this.state.btnFavoriteStatus} getReportData={(page, isBtn)=>this.onGetReportData(page, isBtn)}/>
+                <AntVContainer pageSize={this.state.pageSize} currentPage={this.state.currentPage} getReportData={(page, isBtn)=>this.onGetReportData(page, isBtn)} />
+                {this.state.isShowFavorite ? <FavoriteContainer onCloseHandler={(val)=>this.onCloseFavorite(val)}/> : ""}
             </div>
         )
     }
