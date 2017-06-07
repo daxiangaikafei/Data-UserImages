@@ -8,6 +8,9 @@ const ErrorMessage = {
     Error_Read_And_Agree            : "请先同意条款",
     Error_PassWord_Invalid          : "密码格式不正确",
     Error_FAVORITE_NAME             : "客群名称不能为空",
+
+    Error_Reports_Empty             : "统计用户图表失败",
+    Error_Mirror_Empty              : "获取用户画像数据失败"
 }
 
 export default ErrorMessage

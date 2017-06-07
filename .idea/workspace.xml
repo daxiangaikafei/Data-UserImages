@@ -3,6 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="19e9448e-5944-4226-8383-b5c0c7efc3ae" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/siderSearch/index.js" afterPath="$PROJECT_DIR$/app/components/siderSearch/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/siderSearch/index.scss" afterPath="$PROJECT_DIR$/app/components/siderSearch/index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/const/errorMessage.js" afterPath="$PROJECT_DIR$/app/static/const/errorMessage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/main/index.js" afterPath="$PROJECT_DIR$/app/view/main/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/search/antVContainer/index.js" afterPath="$PROJECT_DIR$/app/view/search/antVContainer/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/search/antVContainer/index.scss" afterPath="$PROJECT_DIR$/app/view/search/antVContainer/index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/search/index.js" afterPath="$PROJECT_DIR$/app/view/search/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/search/reducer/actions.js" afterPath="$PROJECT_DIR$/app/view/search/reducer/actions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/userMirror/index.js" afterPath="$PROJECT_DIR$/app/view/userMirror/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/userMirror/index.scss" afterPath="$PROJECT_DIR$/app/view/userMirror/index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/userMirror/reducer/actions.js" afterPath="$PROJECT_DIR$/app/view/userMirror/reducer/actions.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="$PROJECT_DIR$/npm-debug.log" />
     </list>
     <ignored path="Data-UserImages.iws" />
@@ -102,7 +113,7 @@
       <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webpack.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
+            <state relative-caret-position="693">
               <caret line="101" column="6" selection-start-line="101" selection-start-column="6" selection-end-line="101" selection-end-column="6" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -157,7 +168,7 @@
         <entry file="file://$PROJECT_DIR$/app/view/userMirror/reducer/actions.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
-              <caret line="13" column="89" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="89" />
+              <caret line="24" column="6" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="6" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
@@ -510,15 +521,15 @@
       <workItem from="1496278811764" duration="4000" />
       <workItem from="1496381666010" duration="659000" />
       <workItem from="1496627034368" duration="20000" />
-      <workItem from="1496801486540" duration="32000" />
+      <workItem from="1496801486540" duration="624000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12957000" />
+    <option name="totallyTimeSpent" value="13549000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2869" y="-11" width="2902" height="1582" extended-state="6" />
+    <frame x="2869" y="-11" width="2902" height="1582" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21925509" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -888,7 +899,7 @@
     <entry file="file://$PROJECT_DIR$/app/view/userMirror/reducer/actions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
-          <caret line="13" column="89" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="89" />
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="6" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
           </folding>
@@ -996,7 +1007,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
+        <state relative-caret-position="693">
           <caret line="101" column="6" selection-start-line="101" selection-start-column="6" selection-end-line="101" selection-end-column="6" />
           <folding>
             <element signature="n#!!doc" expanded="true" />

@@ -21,12 +21,20 @@ class UserMirror extends React.Component{
     }
 
     render(){
+        const {data} = this.props;
         return (
-            <div className="user-mirror-container">
-                <div className="user-mirror-title">用户标签: {this.props.username}</div>
-                <div className="user-mirror-list">
-                    { this.props.data.map((obj, key) => <MirrorItem key={key} data={obj} />) }
-                </div>
+            <div className="oFlex">
+                {
+                    data.length===0?
+                    <div className="nData">暂无数据</div>:
+                    <div className="user-mirror-container">
+                        <div className="user-mirror-title">用户标签: {this.props.username}</div>
+                        <div className="user-mirror-list">
+                            { data.map((obj, key) => <MirrorItem key={key} data={obj} />) }
+                        </div>
+                    </div>
+                }
+                
             </div>
         )
     }

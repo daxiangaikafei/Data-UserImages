@@ -1,5 +1,7 @@
 import * as HTTPUtil from '../../../components/fetch'
 import * as ActionType from './actionType'
+import { Modal } from 'antd'
+import ErrorMessage from '../../../static/const/errorMessage'
 
 let receiveData = data => ({
     type: ActionType.USER_MIRROR_UPDATE,
@@ -11,5 +13,14 @@ export const getUserMirror = (username) => dispatch => {
     let opt = {
         id: username
     }
-    dispatch(HTTPUtil.fetchGet(url, opt, null)).then((data)=>dispatch(receiveData(data)))
+    dispatch(HTTPUtil.fetchGet(url, opt, null)).then((data)=>{
+        if(data.mirrorData.length > 0){
+            dispatch(receiveData(data))
+        } else{
+            Modal.error({
+                title: "提示",
+                content: ErrorMessage.Error_Mirror_Empty
+            })
+        }
+    })
 }

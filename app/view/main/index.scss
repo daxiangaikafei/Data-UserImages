@@ -2,6 +2,7 @@ body{
     min-width:1280px;
     min-height:100%;
     overflow-y:scroll;
+    background:#f6f7fa; 
 }
 .technology{
     width:1280px;
@@ -55,6 +56,7 @@ body{
     .ant-layout{
         background:#f6f7fa;
         overflow:hidden;
+        height:100%;
     }
     .sider{
         flex: 0 0 280px !important;
