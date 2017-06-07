@@ -64,7 +64,7 @@ class SiderSearchMenu extends React.Component {
         return (
             <div className="silder">
                 <div className="silder-title">
-                    <span style={{display: silderFold ? "none" : "block"}}>展示图标</span>
+                    <span style={{display: silderFold ? "none" : "block"}}>展示图表</span>
                     <span style={{cursor: "pointer"}} onClick={()=>this.props.onChangeSilderFold(!silderFold)}><Icon name="show" size="20" color="#000" /></span>
                 </div>
                 <Menu

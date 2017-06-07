@@ -106,8 +106,12 @@ export const getReportData = (opt) => (dispatch, getState) => {
 
     return new Promise((reslove, reject)=>{
         dispatch(HTTPUtil.fetchPost(url, opt)).then(data=>{
-            dispatch(receiveReportData(data))
-            reslove&&reslove()
+            if(data.reports.length > 0) {
+                dispatch(receiveReportData(data))
+                reslove&&reslove()
+            }else{
+                reject&&reject()
+            }
         }, reject)
     })
 }

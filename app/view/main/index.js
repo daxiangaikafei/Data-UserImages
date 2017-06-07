@@ -72,7 +72,7 @@ class App extends React.Component {
             return ''
         }
         if(this.props.location.pathname.indexOf('dev')>=0){
-            return <Sider className="sider sider-dev" style={{flex: "0 0 280px"}}><SiderMenu data={menuData.data2} /></Sider>
+            return <Sider className="sider sider-dev"><SiderMenu data={menuData.data2} /></Sider>
         }
         switch (this.props.location.pathname) {
             case RouterConst.ROUTER_HOME:
@@ -85,7 +85,7 @@ class App extends React.Component {
             case RouterConst.ROUTER_FAVORITE:
                 return <Sider className={classSilder}><SiderSearchMenu silderFold={this.state.silderFold} onChangeSilderFold={(b)=>this.onChangeSilderFold(b)} /></Sider>
             default:
-                return <Sider className="sider" style={{flex: "0 0 280px"}}><SiderMenu data={this.state.data} /></Sider>
+                return <Sider className="sider"><SiderMenu data={this.state.data} /></Sider>
         }
     }
 
