@@ -1,11 +1,13 @@
-.ant-table-wrapper .ant-pagination {
-    display:none;
-}
-.ant-pagination {
-    text-align:center;
-    margin-top:18px !important;
-}
 .content-wrapper{
+
+    .ant-table-wrapper .ant-pagination {
+        display:none;
+    }
+    .ant-pagination {
+        text-align:center;
+        margin-top:18px !important;
+    }
+
     margin-top:20px;
     margin-left:20px;
     h6{
