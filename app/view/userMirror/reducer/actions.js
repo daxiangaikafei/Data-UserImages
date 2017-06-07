@@ -14,7 +14,7 @@ export const getUserMirror = (username) => dispatch => {
         id: username
     }
     dispatch(HTTPUtil.fetchGet(url, opt, null)).then((data)=>{
-        if(data.mirrorData.length > 0){
+        if(data.result && data.result.mirror.length > 0){
             dispatch(receiveData(data))
         } else{
             Modal.error({
