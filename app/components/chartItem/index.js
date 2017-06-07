@@ -156,11 +156,12 @@ class ChartItem extends React.Component {
 
     render() {
         let { title, data, type } = this.props, opts
-        data = data.filter(obj => obj.value != 0)
         if (type === "pie") {
+            data = data.filter(obj => obj.value != 0)
             opts = this.getPieOption(data)
         }
         else if (type === "line") {
+            data = data.filter(obj => obj.value != 0)
             opts = this.getLineOption(data)
         }
         else if (type === "bar-y") {
