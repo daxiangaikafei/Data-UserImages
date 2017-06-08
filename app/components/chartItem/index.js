@@ -104,7 +104,10 @@ class ChartItem extends React.Component {
                 {
                     show: true,
                     type: 'category',
-                    data: data.map(obj=>obj.name)
+                    data: data.map(obj=>obj.name),
+                    axisLabel: {
+                        interval: 0
+                    }
                 }
             ],
             yAxis: [
@@ -156,25 +159,30 @@ class ChartItem extends React.Component {
 
     render() {
         let { title, data, type } = this.props, opts
-        if (type === "pie") {
-            data = data.filter(obj => obj.value != 0)
-            opts = this.getPieOption(data)
-        }
-        else if (type === "line") {
-            data = data.filter(obj => obj.value != 0)
-            opts = this.getLineOption(data)
-        }
-        else if (type === "bar-y") {
-            opts = this.getBarYOption(data)
-        }
-        else {
-            opts = this.getBarOption(data)
+        let temp = data.filter(obj => obj.value != 0)
+        if(temp.length>0){
+            if (type === "pie") {
+                data = temp
+                opts = this.getPieOption(data)
+            }
+            else if (type === "line") {
+                data = data.filter(obj => obj.value != 0)
+                opts = this.getLineOption(data)
+            }
+            else if (type === "bar-y") {
+                opts = this.getBarYOption(data)
+            }
+            else {
+                opts = this.getBarOption(data)
+            }
         }
         return (
             <div className="search-chart-item">
                 <div className="chart-title">{title}</div>
                 <div className="chart-div">
-                    <ReactEcharts option={opts} />
+                    {
+                        opts ? <ReactEcharts option={opts} /> : <div className="chart-no-data-tip">无数据</div>
+                    }
                 </div>
             </div>
         )
