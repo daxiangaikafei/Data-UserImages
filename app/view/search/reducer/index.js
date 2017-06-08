@@ -4,8 +4,6 @@ import * as ActionType from './actionType'
 const initialState = {
     menuData: [],
     filterMenuList: [],
-
-    reportId: 0,
     reportDate: "",
     reportNumber: 0,
     reportList: [],
@@ -147,7 +145,6 @@ export default function update(state = initialState, action) {
         case ActionType.SEARCH_UPDATE_REPORT_DATA:
             return { 
                 ...state,
-                reportId: action.data.id,
                 reportDate: action.data.create_date,
                 reportNumber: action.data.number,
                 reportList: action.data.reports,
@@ -159,7 +156,6 @@ export default function update(state = initialState, action) {
         case ActionType.CLEAR_CALCULATE_RESULT:
             return {
                 ...state,
-                reportId: 0,
                 reportDate: '',
                 reportNumber: 0,
                 reportList: [],

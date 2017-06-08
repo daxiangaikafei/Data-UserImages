@@ -40,14 +40,27 @@
         width:800px;
         border-top:1px dotted #8a8a8b
     }
-    .nextRow2 td{
-        border-bottom:1px dotted #8a8a8b
+    .nextRow2 {
+        td{
+            border-bottom:1px dotted #8a8a8b;
+            &:nth-child(1){
+                background:#f9f9f9;
+            }
+            &:nth-child(2){
+                width:660px;
+            }
+        }
+        a{display:block}
     }
-    .nextRow2 td:nth-child(1){
-        background:#f9f9f9;
-    }
-    
-    .nextRow2 td:nth-child(2){
-        width:660px;
+    .oTable{
+        width:100%;
+        border-top:0px;
+        border-right:1px solid #d9d9d9;
+        border-bottom:1px solid #d9d9d9;
+        td{
+            border-left:1px solid #d9d9d9;
+            border-top:1px solid #d9d9d9;
+            padding:10px;
+        }
     }
 }

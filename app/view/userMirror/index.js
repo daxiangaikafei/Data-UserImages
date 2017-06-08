@@ -34,7 +34,6 @@ class UserMirror extends React.Component{
                         </div>
                     </div>
                 }
-                
             </div>
         )
     }

@@ -7,7 +7,7 @@ import './index.scss'
 class Wechat extends React.Component {
     componentDidMount() {
         let list = ListConst.List[this.props.params.list];
-        this.setState({
+        list&&this.setState({
             title:list.title,
             content:list.content
         })

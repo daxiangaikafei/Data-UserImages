@@ -28,7 +28,9 @@
         background: #e2e6ef;
         border-bottom: 1px solid #c8c8c8;
     }
-
+     .ant-menu{
+        min-width: 300px ;
+    }
     .ant-menu-submenu-title::after{
         pointer-events: none;
     }

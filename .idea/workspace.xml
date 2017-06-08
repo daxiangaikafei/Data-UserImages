@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19e9448e-5944-4226-8383-b5c0c7efc3ae" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/siderSearch/index.scss" afterPath="$PROJECT_DIR$/app/components/siderSearch/index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/const/dev.js" afterPath="$PROJECT_DIR$/app/static/const/dev.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/const/menu.js" afterPath="$PROJECT_DIR$/app/static/const/menu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/dev/index.js" afterPath="$PROJECT_DIR$/app/view/dev/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/search/favoritePop/index.js" afterPath="$PROJECT_DIR$/app/view/search/favoritePop/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/search/index.js" afterPath="$PROJECT_DIR$/app/view/search/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/userMirror/reducer/actions.js" afterPath="$PROJECT_DIR$/app/view/userMirror/reducer/actions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/search/reducer/actions.js" afterPath="$PROJECT_DIR$/app/view/search/reducer/actions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/search/reducer/index.js" afterPath="$PROJECT_DIR$/app/view/search/reducer/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/userMirror/index.js" afterPath="$PROJECT_DIR$/app/view/userMirror/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
     </list>
     <ignored path="Data-UserImages.iws" />
@@ -63,27 +67,6 @@
               <caret line="101" column="50" selection-start-line="101" selection-start-column="50" selection-end-line="101" selection-end-column="50" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
-                <marker date="1496738253961" expanded="true" signature="410:495" ph="[...]" />
-                <marker date="1496738253961" expanded="true" signature="411:477" ph="{&quot;title&quot;: '预览'...}" />
-                <marker date="1496738253961" expanded="true" signature="496:563" ph="{...}" />
-                <marker date="1496738253961" expanded="true" signature="585:657" ph="{...}" />
-                <marker date="1496738253961" expanded="true" signature="665:777" ph="{...}" />
-                <marker date="1496738253961" expanded="true" signature="779:943" ph="{...}" />
-                <marker date="1496738253961" expanded="true" signature="843:941" ph="{...}" />
-                <marker date="1496738253961" expanded="true" signature="912:937" ph="{...}" />
-                <marker date="1496738253961" expanded="true" signature="945:1027" ph="//..." />
-                <marker date="1496738253961" expanded="true" signature="1028:1075" ph="{...}" />
-                <marker date="1496738253961" expanded="true" signature="1077:1323" ph="{...}" />
-                <marker date="1496738253961" expanded="true" signature="1135:1321" ph="{...}" />
-                <marker date="1496738253961" expanded="true" signature="1235:1294" ph="{...}" />
-                <marker date="1496738253961" expanded="true" signature="1324:1370" ph="{...}" />
-                <marker date="1496738253961" expanded="true" signature="1431:2757" ph="{...}" />
-                <marker date="1496738253961" expanded="true" signature="1456:1561" ph="{...}" />
-                <marker date="1496738253961" expanded="true" signature="1500:1555" ph="{&quot;title&quot;: &quot;&quot;...}" />
-                <marker date="1496738253961" expanded="true" signature="1585:1592" ph="{...}" />
-                <marker date="1496738253961" expanded="true" signature="1686:1731" ph="{...}" />
-                <marker date="1496738253961" expanded="true" signature="1755:1839" ph="{...}" />
-                <marker date="1496738253961" expanded="true" signature="1951:2755" ph="{...}" />
                 <marker date="1496738253961" expanded="true" signature="2614:2688" ph="{...}" />
               </folding>
             </state>
@@ -137,7 +120,7 @@
       <file leaf-file-name="action.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/wechat/createH5/index/reducer/action.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
+            <state relative-caret-position="1716">
               <caret line="53" column="22" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="22" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
@@ -159,10 +142,10 @@
       <file leaf-file-name="actions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/userMirror/reducer/actions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="693">
               <caret line="24" column="6" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="6" />
               <folding>
-                <marker date="1496823513206" expanded="true" signature="7:96" ph="..." />
+                <marker date="1496832219266" expanded="true" signature="7:96" ph="..." />
               </folding>
             </state>
           </provider>
@@ -204,10 +187,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-11" />
+    <option name="x" value="2869" />
     <option name="y" value="-11" />
-    <option name="width" value="1942" />
-    <option name="height" value="1042" />
+    <option name="width" value="2902" />
+    <option name="height" value="1582" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -235,7 +218,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -478,12 +460,13 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -514,23 +497,24 @@
       <workItem from="1496381666010" duration="659000" />
       <workItem from="1496627034368" duration="20000" />
       <workItem from="1496801486540" duration="624000" />
+      <workItem from="1496907215614" duration="39000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13549000" />
+    <option name="totallyTimeSpent" value="13588000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <frame x="2869" y="-11" width="2902" height="1582" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33085898" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21925509" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5391924" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32778582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -660,7 +644,7 @@
         <state relative-caret-position="396">
           <caret line="13" column="89" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="89" />
           <folding>
-            <marker date="1496823513206" expanded="true" signature="7:96" ph="..." />
+            <marker date="1496832219266" expanded="true" signature="7:96" ph="..." />
           </folding>
         </state>
       </provider>
@@ -735,7 +719,7 @@
         <state relative-caret-position="396">
           <caret line="13" column="89" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="89" />
           <folding>
-            <marker date="1496823513206" expanded="true" signature="7:96" ph="..." />
+            <marker date="1496832219266" expanded="true" signature="7:96" ph="..." />
           </folding>
         </state>
       </provider>
@@ -890,10 +874,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/userMirror/reducer/actions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state relative-caret-position="693">
           <caret line="24" column="6" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="6" />
           <folding>
-            <marker date="1496823513206" expanded="true" signature="7:96" ph="..." />
+            <marker date="1496832219266" expanded="true" signature="7:96" ph="..." />
           </folding>
         </state>
       </provider>
@@ -951,27 +935,6 @@
           <caret line="101" column="50" selection-start-line="101" selection-start-column="50" selection-end-line="101" selection-end-column="50" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <marker date="1496738253961" expanded="true" signature="410:495" ph="[...]" />
-            <marker date="1496738253961" expanded="true" signature="411:477" ph="{&quot;title&quot;: '预览'...}" />
-            <marker date="1496738253961" expanded="true" signature="496:563" ph="{...}" />
-            <marker date="1496738253961" expanded="true" signature="585:657" ph="{...}" />
-            <marker date="1496738253961" expanded="true" signature="665:777" ph="{...}" />
-            <marker date="1496738253961" expanded="true" signature="779:943" ph="{...}" />
-            <marker date="1496738253961" expanded="true" signature="843:941" ph="{...}" />
-            <marker date="1496738253961" expanded="true" signature="912:937" ph="{...}" />
-            <marker date="1496738253961" expanded="true" signature="945:1027" ph="//..." />
-            <marker date="1496738253961" expanded="true" signature="1028:1075" ph="{...}" />
-            <marker date="1496738253961" expanded="true" signature="1077:1323" ph="{...}" />
-            <marker date="1496738253961" expanded="true" signature="1135:1321" ph="{...}" />
-            <marker date="1496738253961" expanded="true" signature="1235:1294" ph="{...}" />
-            <marker date="1496738253961" expanded="true" signature="1324:1370" ph="{...}" />
-            <marker date="1496738253961" expanded="true" signature="1431:2757" ph="{...}" />
-            <marker date="1496738253961" expanded="true" signature="1456:1561" ph="{...}" />
-            <marker date="1496738253961" expanded="true" signature="1500:1555" ph="{&quot;title&quot;: &quot;&quot;...}" />
-            <marker date="1496738253961" expanded="true" signature="1585:1592" ph="{...}" />
-            <marker date="1496738253961" expanded="true" signature="1686:1731" ph="{...}" />
-            <marker date="1496738253961" expanded="true" signature="1755:1839" ph="{...}" />
-            <marker date="1496738253961" expanded="true" signature="1951:2755" ph="{...}" />
             <marker date="1496738253961" expanded="true" signature="2614:2688" ph="{...}" />
           </folding>
         </state>
@@ -989,7 +952,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/wechat/createH5/index/reducer/action.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
+        <state relative-caret-position="1716">
           <caret line="53" column="22" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="22" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />

@@ -99,7 +99,7 @@ var config = {
   entry: entry,
   output: {
     path: DIST_PATH,
-   // publicPath:"/build/",
+    // publicPath:"/build/",
     filename: '[name].js',
     // 添加 chunkFilename
     chunkFilename: '[name].[chunkhash].chunk.js',
@@ -125,6 +125,7 @@ var config = {
 if(process.env.NODE_ENV === 'production'){
   delete config.devServer
   delete config.devtool
+  config.output.publicPath = "/build/"
   config.plugins.push(
     new webpack.optimize.UglifyJsPlugin({
             compress: {
@@ -144,7 +145,6 @@ if(process.env.NODE_ENV === 'production'){
     })
   )
 }else{
-  
   config.plugins.push(new webpack.HotModuleReplacementPlugin());
   config.plugins.push(new webpack.NamedModulesPlugin());
   // 根据文件内容生成 hash

@@ -77,8 +77,7 @@ let getFilterList = state => {
         }
     }
     return result
-}
-
+} 
 let receiveReportData = data => ({
     type: ActionType.SEARCH_UPDATE_REPORT_DATA,
     data: {
@@ -141,7 +140,13 @@ export const onCloseFilter = (id, index) => dispatch => {
 }
 
 /**收藏筛选结果 */
-export const collectionFavrite = opt => dispatch => {
+export const collectionFavrite =(opt) => (dispatch, getState) => {
+    let state = getState()
+    opt = {
+        ...opt,
+        selectList: getFilterList(state)
+    }
+
     let url = '/search/collection.do'
     return dispatch(HTTPUtil.fetchPost(url, opt, null))
 }

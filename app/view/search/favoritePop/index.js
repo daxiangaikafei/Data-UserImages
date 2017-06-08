@@ -5,7 +5,7 @@ import { Input, Button, Modal } from 'antd'
 
 import ErrorMessage from '../../../static/const/errorMessage'
 import { formatDate } from '../../../utils'
-import { collectionFavrite, clearCalculateResult } from '../reducer/actions'
+import { collectionFavrite, clearCalculateResult ,getFilterList} from '../reducer/actions'
 
 import './index.scss'
 
@@ -26,7 +26,6 @@ class Favorite extends React.Component{
 
     onConfirmHandler = () => {
         let { favoriteName, favoriteDesc } = this.state
-        if(!this.props.reportId) return
         if(favoriteName == ""){
             Modal.error({ title: '提示', content: ErrorMessage.Error_FAVORITE_NAME });
             return
@@ -37,7 +36,6 @@ class Favorite extends React.Component{
             })
         }
         let opt = {
-            id: this.props.reportId,
             number: this.props.reportNumber,
             name: favoriteName,
             remark: favoriteDesc
@@ -79,20 +77,18 @@ class Favorite extends React.Component{
 }
 
 Favorite.PropTypes = {
-    reportId: PropTypes.number.isRequired,
     reportDate: PropTypes.number.isRequired,
     reportNumber: PropTypes.number.isRequired,
     onCloseHandler: PropTypes.func.isRequired
 }
 
 let mapStateToProps = state => ({
-    reportId: state.searchList.reportId,
     reportDate: state.searchList.reportDate,
     reportNumber: state.searchList.reportNumber,
 })
 
 let mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({ collectionFavrite, clearCalculateResult }, dispatch)
+    return bindActionCreators({ collectionFavrite, clearCalculateResult ,getFilterList}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Favorite)
