@@ -31,7 +31,11 @@ class Favorite extends React.Component{
             Modal.error({ title: '提示', content: ErrorMessage.Error_FAVORITE_NAME });
             return
         }
-
+        else{
+            this.setState({
+                disabled:true
+            })
+        }
         let opt = {
             id: this.props.reportId,
             number: this.props.reportNumber,
@@ -44,6 +48,7 @@ class Favorite extends React.Component{
                 content: '收藏成功!',
                 onOk: ()=>{this.props.onCloseHandler(true)}
             })
+            this.setState({disabled:false})
         })
     }
 
@@ -63,7 +68,7 @@ class Favorite extends React.Component{
                         <div><span>客群名称:</span><Input maxLength="20" value={this.state.favoriteName} onChange={(e)=>this.onChangeHandler(e, 'favoriteName')} /></div>
                         <div><span>客群备注:</span><Input type="textarea" value={this.state.favoriteDesc} maxLength="120" onChange={(e)=>this.onChangeHandler(e, 'favoriteDesc')} /></div>
                         <div className="btn-div">
-                            <Button className="bnConfirm" onClick={()=>this.onConfirmHandler()}>确认收藏</Button>
+                            <Button className="bnConfirm" onClick={()=>this.onConfirmHandler()} disabled={this.state.disabled}>确认收藏</Button>
                             <Button className="bnCancel" onClick={()=>this.onCancelHandler()}>取消</Button>
                         </div>
                     </div>

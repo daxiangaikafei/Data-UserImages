@@ -46,41 +46,13 @@ let data2={
         {
             "name":"开始前必读",
             "children":[{
-                "name":"首页",
+                "name":"接口返回码说明",
                 "url":"/dev/list1",
                 "id":"a"
             },{
-                "name":"更新日志",
+                "name":"对外接口汇总",
                 "url":"/dev/list2",
                 "id":"b"
-            },{
-                "name":"开发者规范",
-                "icon":"",
-                "id":"c"
-            }]
-        },
-        {
-            "name":"开始开发",
-            "children":[{
-                "name":"设置",
-                "icon":"",
-                "id":"e"
-            }]
-        },
-        {
-            "name":"开始开发",
-            "children":[{
-                "name":"设置",
-                "icon":"",
-                "id":"f"
-            }]
-        },
-        {
-            "name":"开始开发",
-            "children":[{
-                "name":"设置",
-                "icon":"",
-                "id":"g"
             }]
         }
     ]

@@ -20,4 +20,34 @@
             margin-bottom:14px;
         }
     }
+    .firstRow td{
+        border-width: 2px 1px 1px;
+        border-top-color: rgb(187, 187, 187);
+        padding: 5px 10px;
+        background: rgb(247, 247, 247);
+    }
+    .nextRow td{
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: none;
+        padding: 5px 10px;
+        min-width:140px;
+        vertical-align: top;
+    }
+    table{
+        margin-bottom:16px;
+        width:800px;
+        border-top:1px dotted #8a8a8b
+    }
+    .nextRow2 td{
+        border-bottom:1px dotted #8a8a8b
+    }
+    .nextRow2 td:nth-child(1){
+        background:#f9f9f9;
+    }
+    
+    .nextRow2 td:nth-child(2){
+        width:660px;
+    }
 }
