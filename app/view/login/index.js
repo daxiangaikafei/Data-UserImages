@@ -84,7 +84,7 @@ class Login extends React.Component{
                         </div>
                         <div className="password-div">
                             <Input className="password-input" type="password" placeholder="6-12位登录密码" maxLength="12" value={password} onChange={(e)=>this.onInputChange(e, "password")} />
-                            <span className="forgetPw-txt">忘记密码?</span>
+                            {/*<span className="forgetPw-txt">忘记密码?</span>*/}
                         </div>
                         <div className="login-code">
                             {/*<Checkbox className="checkbox" onChange={(e)=>console.log(e.target.checked)}>7日内免登陆</Checkbox>*/}

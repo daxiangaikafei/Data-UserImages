@@ -48,7 +48,7 @@ class setUpMessage extends React.Component {
     let reg=/^1\d{10}$/;
     const {content,tel,wapLink} = this.state;
     if(!content){
-      msg="消息内容不能为空1223"
+      msg="消息内容不能为空"
     }else  if(!tel){
       msg="请输入短信预览手机号"
     }else if(!reg.test(tel)){
@@ -60,7 +60,12 @@ class setUpMessage extends React.Component {
       });
       return false;
     }else{
-      this.props.sendMessage({"phone":tel,"content":wapLink?content+wapLink:content})
+      let con=wapLink?(content+wapLink+""):content+""
+      console.log(con)
+      this.props.sendMessage({
+        "phone":tel,
+        "content":encodeURIComponent(con)
+      })
     }
   }
   handlerClick(msg){
@@ -94,7 +99,7 @@ class setUpMessage extends React.Component {
     if(!name){
       msg="活动名称不能为空"
     }else if(!userSelectGroupId){
-     // msg="推送人群不能为空"
+      msg="推送人群不能为空"
     }
     else if(!content){
       msg="消息内容不能为空"
@@ -173,7 +178,7 @@ class setUpMessage extends React.Component {
             
               <li className="displayTable">
                 <span>消息内容</span>
-                <NumberInput number={240} isOne={6} otherContent={wapLink} nInputValue={this.handleChange.bind(this,['content'])}/>
+                <NumberInput number={180} isOne={6} otherContent={wapLink} nInputValue={this.handleChange.bind(this,['content'])}/>
               </li>
 
               

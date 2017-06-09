@@ -14,7 +14,7 @@ export const getLinkUrl = (data) => dispatch => {
 //发送消息
 export const sendMessage = (data) => dispatch => {
     let url = "/message/sendMobile.do";
-    dispatch(HTTPUtil.fetchGet(url, data, null)).then((data)=>data)
+    return dispatch(HTTPUtil.fetchGet(url, data, null))
 }
 //保存
 export const messageSave = (data) => dispatch => {
