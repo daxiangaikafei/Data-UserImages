@@ -43,6 +43,7 @@ class FavoriteItemInfo extends React.Component{
                             <div className="title-div">客群备注:</div>
                             <div className="content-div">{ data.desc }</div>
                         </div>
+                        {options.length>0&&
                         <div className="favoriteItem-item">
                             <div className="title-div-1">标签筛选条件:</div>
                             <div className="favoriteItem-list">
@@ -50,7 +51,7 @@ class FavoriteItemInfo extends React.Component{
                                     <div className="list-item" key={index}><div>{obj.name}</div><div>{obj.value}</div></div>
                                 )}
                             </div>
-                        </div>
+                        </div>}
                         <div className="btn-div" onClick={()=>this.onCancelHandler()}><Button>返回</Button></div>
                     </div>
                 </div>

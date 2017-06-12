@@ -60,7 +60,7 @@ class setUpMessage extends React.Component {
       });
       return false;
     }else{
-      let con=wapLink?(content+wapLink+""):content+""
+      let con=wapLink?(content+wapLink):content
       console.log(con)
       this.props.sendMessage({
         "phone":tel,
@@ -218,7 +218,7 @@ class setUpMessage extends React.Component {
             <Button className="ts" onClick={this.handlerShow.bind(this)}>推送预览</Button>
             <Button className="send" onClick={this.handlerCommit.bind(this)}  disabled={btnDisabled?true:false}  >确认发送</Button>
           </div>
-          {ishow==0?"":<Mobile oClose={this.handlerClick.bind(this)} content={content} wapLink={wapLink}/>}
+          {ishow==0?"":<Mobile oClose={this.handlerClick.bind(this)} content={wapLink?(content+wapLink):content} wapLink={wapLink}/>}
       </div>
      
     );

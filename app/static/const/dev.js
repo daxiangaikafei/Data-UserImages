@@ -358,14 +358,11 @@ export const List = {
                             <td width="229">品类购买偏好<br>\
                             </td>\
                             <td width="229">buy_goods_prefer</td>\
-                            <td width="651"><br>\
-                                <br>\
+                            <td width="651">\
                                 用户15天内成功下单的产品类型如上所示，按下单次数降序排列产品类型,取top5<br>\
-                                <br>\
                                 输出例子：  海鲜/大家电/成人用品，    家装/电子数码/珠宝首饰/农业  ， 母婴儿童<br>\
-                                <br>\
                                 产品类目表见《产品类目表》底部分页面<br>\
-                                <br></td>\
+                                </td>\
                             </tr>\
                             <tr>\
                             <td width="229">平均客单价</td>\
@@ -836,18 +833,16 @@ export const List = {
                             <td width="651">范围：有效用户［不包括封号，黑名单用户］  AND<br>\
                                 qbao 30&lt;注册时间&lt;60天  AND<br>\
                                 注册以来，现金充值次数&gt;=1 <br>\
-                                输出：Y/N<br></td>\
+                                输出：Y/N</td>\
                             </tr>\
                             <tr>\
                             <td width="229">活跃型</td>\
                             <td width="229">user_type_2</td>\
-                            <td width="651"><br>\
+                            <td width="651">\
                                 范围：有效用户［不包括封号，黑名单用户］  AND<br>\
                                 30天内，签到次数大于20次 And<br>\
                                 30天内， 分销任务＋广告任务&gt;=1 <br>\
-                                输出：Y/N<br>\
-                                <br>\
-                                <br></td>\
+                                输出：Y/N</td>\
                             </tr>\
                             <tr>\
                             <td width="229">沉默型</td>\
