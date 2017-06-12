@@ -85,4 +85,6 @@ export const checkLogin = () => dispatch =>{
         type: ActionType.SET_LOGIN_STATE,
         data: isLogin
     })
+
+    return isLogin
 }
