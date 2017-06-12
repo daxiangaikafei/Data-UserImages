@@ -31,7 +31,6 @@ class App extends React.Component {
     }
 
     checkLogin(props){
-        let isLogin = false
         if(!props.isLogin){
             if([RouterConst.ROUTER_HOME, RouterConst.ROUTER_LOGIN, RouterConst.ROUTER_REGISTER].indexOf(props.location.pathname) < 0){
                 hashHistory.push(RouterConst.ROUTER_LOGIN)
@@ -40,12 +39,14 @@ class App extends React.Component {
     }
 
     componentWillMount(){
-        this.props.checkLogin()
+        let state = this.props.checkLogin()
+        if(state == this.props.isLogin){
+            this.checkLogin(this.props)
+        }
     }
 
     componentWillReceiveProps(nextProps){
         this.checkLogin(nextProps)
-        console.log(this.props.location.query,7777)
     }
 
     componentDidMount() {

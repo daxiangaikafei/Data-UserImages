@@ -37,6 +37,7 @@ class ChartItem extends React.Component {
             series: [
                 {
                     type: 'bar',
+                    barMaxWidth: 50,
                     data: data.map(obj=>obj.value)
                 }
             ],
@@ -83,6 +84,7 @@ class ChartItem extends React.Component {
             series: [
                 {
                     type: 'bar',
+                    barMaxWidth: 50,
                     data: data.map(obj=>obj.value)
                 }
             ],
