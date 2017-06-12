@@ -107,9 +107,6 @@ class ChartItem extends React.Component {
                     show: true,
                     type: 'category',
                     data: data.map(obj=>obj.name),
-                    axisLabel: {
-                        interval: 0
-                    }
                 }
             ],
             yAxis: [
