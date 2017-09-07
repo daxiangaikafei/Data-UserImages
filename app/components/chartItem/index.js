@@ -107,6 +107,12 @@ class ChartItem extends React.Component {
                     show: true,
                     type: 'category',
                     data: data.map(obj=>obj.name),
+                    axisLabel:{
+                        interval:0,
+                        formatter:data.length>7&&function(val){
+                            return val.split("").join("\n");
+                        }
+                    }
                 }
             ],
             yAxis: [

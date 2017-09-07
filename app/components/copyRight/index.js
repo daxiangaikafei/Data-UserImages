@@ -14,10 +14,10 @@ class CopyRights extends React.Component{
             <div className="copyrights-div">
                 <div className="copyrights-align">
                     <div className="text-div">
-                        <p>Copyright © 1998-2016 Ficus-hederacea. All Rights Reserved.</p>
+                        <p>Copyright © 2012 - {new Date().getFullYear()} Ficus-hederacea. All Rights Reserved.</p>
                         <p>藤榕网络 版权所有</p>
                     </div>
-                    <QRCode value="https://www.qbao.com/" size={58} />
+                    <QRCode value="http://ms.tengrong-data.com" size={58} />
                 </div>
             </div>
         )

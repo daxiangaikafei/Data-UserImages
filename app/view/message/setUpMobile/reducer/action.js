@@ -16,8 +16,14 @@ export const sendMessage = (data) => dispatch => {
     let url = "/message/sendMobile.do";
     return dispatch(HTTPUtil.fetchGet(url, data, null))
 }
-//保存
+//确认发送手机短信
 export const messageSave = (data) => dispatch => {
     let url = "/activity/save.do";
+    return dispatch(HTTPUtil.fetchPost(url, data, null))
+}
+
+//确认发送手机短信
+export const appSave = (data) => dispatch => {
+    let url = "/qbaoMsg/save.do";
     return dispatch(HTTPUtil.fetchPost(url, data, null))
 }

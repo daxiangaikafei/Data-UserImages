@@ -6,7 +6,7 @@ import TableMenuItem from './tableMenuItem'
 import './index.scss'
 
 class UserMirrorTableMenu extends React.Component{
-
+    
     constructor(props, context){
         super(props, context)
     }

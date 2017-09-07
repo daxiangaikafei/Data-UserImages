@@ -10,6 +10,9 @@ function getData(msg){
                 return {  ...item ,img: "1"  }
             case 2:
                 return {  ...item ,img: "2" }
+            case 3:
+                return {  ...item ,img: "3" }
+
             default:
                 return item;
             

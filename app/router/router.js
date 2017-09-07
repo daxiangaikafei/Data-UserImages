@@ -22,7 +22,9 @@ const Wechart = cb => require.ensure([], require => { cb(null, require('../view/
 const WechartNext= cb => require.ensure([], require => { cb(null, require('../view/wechat/createH5/next').default)}, "wechartNext")
 
 const Favorite = cb => require.ensure([], require => { cb(null, require('../view/favorite').default)}, "Favorite")
-const Dev = cb => require.ensure([], require => { cb(null, require('../view/dev').default)}, "Favorite")
+const Dev = cb => require.ensure([], require => { cb(null, require('../view/dev').default)}, "Dev")
+
+const ToApp = cb => require.ensure([], require => { cb(null, require('../view/message/setUpMobile/setUpApp').default)}, "ToApp")
 
 
 const Routers = {
@@ -36,10 +38,10 @@ const Routers = {
 			path: RouterConst.ROUTER_LOGIN,
 			getComponent(nextState, cb){ Login(cb) }
 		},
-		{
-			path: RouterConst.ROUTER_REGISTER,
-			getComponent(nextState, cb){ Register(cb) }
-		},
+		// {
+		// 	path: RouterConst.ROUTER_REGISTER,
+		// 	getComponent(nextState, cb){ Register(cb) }
+		// },
 		{
 			path: RouterConst.ROUTER_FORGET_PW,
 			getComponent(nextState, cb){ ForgetPW(cb) }
@@ -91,7 +93,12 @@ const Routers = {
 		{
 			path: RouterConst.ROUTER_DEV+"/:list",
 			getComponent(nextState, cb){ Dev(cb) },
+		},
+		{
+			path: RouterConst.ROUTER_TOAPP,
+			getComponent(nextState, cb){ ToApp(cb) },
 		}
+		
 	]
 }
 

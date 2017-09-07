@@ -4,7 +4,11 @@
     .chart-title-div{
         padding-bottom: 16px;
         border-bottom: 2px solid #a5a6a7;
-
+        font-size:14px;
+        font-family:arial;
+        & span:nth-child(1){
+            padding-right:24px;
+        }
         p{
             font-size: 20px;
             color: #666666;

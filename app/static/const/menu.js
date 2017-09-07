@@ -19,22 +19,22 @@ let data={
                 "icon":"",
                 "id":"c"
             },{
-                "name":"APP应用推送（建设中）",
-                "url":"",
+                "name":"钱宝APP应用推送",
+                "url":"/toApp",
                 "icon":"",
                 "id":"d"
             }]
         },
-        {
-            "icon":"menu2",
-            "name":"营销设置",
-            "children":[{
-                "name":"设置",
-                "url":"/message/setUp",
-                "icon":"",
-                "id":"e"
-            }]
-        }
+        // {
+        //     "icon":"menu2",
+        //     "name":"营销设置",
+        //     "children":[{
+        //         "name":"设置",
+        //         "url":"/message/setUp",
+        //         "icon":"",
+        //         "id":"e"
+        //     }]
+        // }
     ]
 }
 

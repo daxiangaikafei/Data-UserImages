@@ -15,7 +15,6 @@
   background:none;
   height:100%;
   line-height: 64px;
-  float:left;
 }
 .ant-menu-horizontal .ant-menu-item.menuLi{
   margin: 0;
@@ -23,12 +22,14 @@
   font-size: 14px;
   color: #4c4c4c;
 }
-
+.header-div .ant-menu.menuUl{
+  display:inline-block;
+}
 .login-btns{
   float: right;
-
   button {
     margin-left: 10px;
+    margin-top:16px;
     font-size: 14px;
     height: 34px;
   }

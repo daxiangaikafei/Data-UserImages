@@ -47,8 +47,8 @@ class Headers extends React.Component {
             <Header className="header-div2">
                 <div className="wapper">
                     <div className="logo2" onClick={()=>hashHistory.push(RouterConst.ROUTER_HOME)}></div>
-                    <div className="right" className={this.state.isShow==true?"right showInput":"right"} >
-                         <Input className="search_input"  onChange={this.handlerChange.bind(this)} onKeyUp={this.handlerKeyUp.bind(this)} />
+                    <div className="right" className={this.state.isShow==true?"right showInput":"right showInput"} >
+                         <Input className="search_input"  onChange={this.handlerChange.bind(this)} onKeyUp={this.handlerKeyUp.bind(this)} placeholder="请输入用户ID" />
                          <Icon type="search" className="search_icon" onClick={this.handlerSearch.bind(this)} />
                     </div>
                     <Menu onClick={(e) => this.handleClick(e)} selectedKeys={[this.state.selectedTab]} mode="horizontal" className="menuUl">

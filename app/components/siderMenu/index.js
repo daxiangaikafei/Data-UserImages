@@ -18,6 +18,7 @@ class SiderMenu extends React.Component {
         }
     }
     handleMenuClick(e) {
+        console.log(e)
         this.props.getCurrent(e.key)
     }
     componentDidMount(e) {
@@ -53,7 +54,7 @@ class SiderMenu extends React.Component {
                 onOpenChange={(e) => this.onOpenChange(e)}
                 className="silder"
                 selectedKeys={[this.props.current]}
-                defaultOpenKeys={openTitle}
+                defaultOpenKeys={this.props.openKeys}
                 defaultSelectedKeys={[this.props.current]}
                 mode="inline" >
                 {
@@ -65,7 +66,7 @@ class SiderMenu extends React.Component {
                             </span>}>
                             {
                                 item.children.map((menu, index) => (
-                                    <Menu.Item key={menu.id + index} disabled={menu.id == "d" ? true : false}>
+                                    <Menu.Item key={menu.id + index} >
                                         <Link to={{ pathname: menu.url, query: { text: menu.id + index } }}>{menu.name}</Link>
                                     </Menu.Item>
                                 ))

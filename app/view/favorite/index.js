@@ -3,8 +3,8 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { hashHistory } from 'react-router'
 
-import { Table, Button } from 'antd'
-import Icon from '../../components/icon'
+import { Table, Button ,Icon} from 'antd'
+import Icons from '../../components/icon'
 import FavoriteItemInfo from './favoriteItemInfo'
 import { getFavoriteData } from './reducer/actions'
 import * as RouterConst from '../../static/const'
@@ -23,6 +23,7 @@ class FavoritePage extends React.Component {
                 {
                     title: '筛选时间',
                     dataIndex: 'createTime',
+                    width:220,
                     // key: 'create_time',
                     className: "table-createTime"
                 },
@@ -52,10 +53,12 @@ class FavoritePage extends React.Component {
                     title: '操作',
                     className: "table-operation",
                     // key: "operation",
+                    width:260,
                     render: (text, record) => (
                         <span>
-                            <Button className="btn_mail" onClick={(e) => this.onMailHandler(e, record.userSelectId, record.id, record.num)}><span className="btn-icon"><Icon name="mail" color="#000" size="14" /></span>短信</Button>
-                            <Button className="btn_wx" onClick={(e) => this.onWeiXinHandler(e, record.userSelectId, record.id, record.num)}><span className="btn-icon"><Icon name="weixing" color="#000" size="14" /></span>微信</Button>
+                            <Button className="btn_mail" onClick={(e) => this.onMailHandler(e, record.userSelectId, record.id, record.num)}><span className="btn-icon"><Icons name="mail" color="#000" size="14" /></span>短信</Button>
+                            <Button className="btn_wx" onClick={(e) => this.onWeiXinHandler(e, record.userSelectId, record.id, record.num)}><span className="btn-icon"><Icons name="weixing" color="#000" size="14" /></span>微信</Button>
+                            <Button className="btn_app" onClick={(e) => this.onAppHandler(e, record.userSelectId, record.id, record.num)}><span className="btn-icon"><Icon type="apple" color="#000" size="14" style={{color:"#000"}} /></span>钱宝App</Button>
                         </span>
                     )
                 }
@@ -102,6 +105,20 @@ class FavoritePage extends React.Component {
             pathname: RouterConst.WECHART,
             query: {
                 text: 'c2',
+                id: id,
+                oid: oid,
+                number: number
+            }
+        })
+    }
+    onAppHandler(e, id, oid, number) {
+        e.stopPropagation()
+        e.preventDefault()
+
+        hashHistory.push({
+            pathname: RouterConst.ROUTER_TOAPP,
+            query: {
+                text: 'd3',
                 id: id,
                 oid: oid,
                 number: number

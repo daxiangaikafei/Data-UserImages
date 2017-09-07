@@ -1,8 +1,10 @@
 body{
     min-width:1280px;
     min-height:100%;
-    overflow-y:scroll;
     background:#f6f7fa; 
+}
+.ant-layout-header{
+    padding:0px;
 }
 .technology{
     width:1280px;
@@ -31,13 +33,17 @@ body{
 }
 
 .silderFold{
+    min-width: 72px !important;
     background:#f5f9fe;
     flex: 0 0 72px !important;
 }
 
 .siderSearchMenu{
+    max-width: 280px !important;
+    width: 280px !important;
     flex: 0 0 280px !important;
     background:#f5f9fe;
+    overflow:hidden;
 }
 
 .oBg{
@@ -52,6 +58,8 @@ body{
     .wapper {
         width: 1280px;
         margin: 0 auto;
+        background:#0f85fb;
+        height:64px;
     }
     .ant-layout{
         background:#f6f7fa;
@@ -88,6 +96,8 @@ body{
 .oBg2 .wapper {
     width:1280px;
     margin:0 auto;
+    background:#0f85fb ;
+    height:64px;
 }
 
 .oBg2{

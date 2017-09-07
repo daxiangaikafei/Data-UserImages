@@ -38,9 +38,9 @@ reader.readAsDataURL(img);
 }
 
 function beforeUpload(file) {
-const isJPG = file.type === 'image/jpeg';
-if (!isJPG) {
-        Modal.error({title: "只能输入JPG图片"});
+
+if (file.type.indexOf('image')<0) {
+        Modal.error({title: "请上传图片"});
 return false;
 }
 const isLt2M = file.size / 1024 / 1024 /1024*300 < 300;
@@ -136,7 +136,7 @@ goNext(){
             title:title,
             content:content,
             logo:logo,
-            link:linkurl,
+            link:linkurl.indexOf("http://")==0?linkurl:"http://"+linkurl,
             shortContent:datas,
             type:2,
             token:this.state.token
@@ -327,7 +327,7 @@ render() {
                         <Button className="send"  onClick={this.goNext.bind(this)}>确认发送</Button>
                  </div>
             </TabPane>
-            <TabPane tab="导入已有H5页面" key="2">
+            {/*<TabPane tab="导入已有H5页面" key="2">
                 <div className="content contentImport">
                         <RadioGroup value={this.state.value}  onChange={this.handleChangeRadio.bind(this)}>
                             <Radio style={radioStyle} value={1}>上传H5代码文件包
@@ -345,7 +345,7 @@ render() {
                         <Button className="ts"  onClick={this.handlerts.bind(this)}>推送预览</Button>
                         <Button className="send" >确认发送</Button>
                  </div>
-            </TabPane>
+            </TabPane>*/}
         </Tabs>
         {tabs==1&&ishow!=0?<Mobile oClose={this.handlerClick.bind(this)}  data={data} wapLink={this.props.linkurl} showType="weixing" />:""}
         

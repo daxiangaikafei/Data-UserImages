@@ -5,15 +5,15 @@
     background: url(../../static/images/logoIndex.png) no-repeat center;
     width:140px;
     height: 60px;
-    float:left;
+    display: inline-block;
     margin-left:30px;
   }
   .ant-menu.menuUl{
     background:none;
     height:100%;
     line-height: 64px;
-    float:left;
     border:0px;
+    display: inline-block;
   }
   .ant-menu-horizontal .ant-menu-item.menuLi{
     margin: 0;
@@ -41,6 +41,7 @@
       .search_input{
         width:200px;
         padding-left:16px;
+        margin-top: 18px;
       }
       .search_icon{
         color:#000;
@@ -56,13 +57,12 @@
     position:absolute;
     right:3px;
     top:25px;
-    color:#fff;
     font-size:16px;
     }
   .search_input{
-    width:0px;
     border-radius: 30px;
+    width:200px;
     border:0px;
-    padding:0px;
+    padding:0px 16px;
   }
 }

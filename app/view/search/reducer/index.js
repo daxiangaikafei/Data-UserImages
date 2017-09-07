@@ -8,7 +8,6 @@ const initialState = {
     reportNumber: 0,
     reportList: [],
     reportCount: 0,
-
     cityCode: null
 }
 
@@ -148,7 +147,9 @@ export default function update(state = initialState, action) {
                 reportDate: action.data.create_date,
                 reportNumber: action.data.number,
                 reportList: action.data.reports,
-                reportCount: action.data.count
+                reportCount: action.data.count,
+                time:action.data.spendTime
+
              }
         case ActionType.CLOSE_FILTER_MENU_LIST:
             return closeFilterMenuList(state, action.data)

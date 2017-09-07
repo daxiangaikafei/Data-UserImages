@@ -2,11 +2,11 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { hashHistory } from 'react-router'
-import { Select, Input, Button,Icon,Modal} from 'antd';
+import { Select, Input, Button,Icon,Modal,Checkbox} from 'antd';
 import NumberInput from '../../../components/numberInput'
 import DataSelect from '../../../components/dataSelect'
-import Mobile from '../../../components/mobilePhone'
-import {getLinkUrl,getUserList,sendMessage,messageSave} from './reducer/action'
+import Mobile from '../../../components/iphone'
+import {getLinkUrl,getUserList,appSave} from './reducer/action'
 const Option = Select.Option;
 
 import './index.scss'
@@ -18,14 +18,15 @@ class setUpMessage extends React.Component {
             Population: "",
             time:timer,
             sendType:1,
-            ishow:0
+            ishow:0,
+            hour:2,
+            wapLink:""
         }
     }
   handleChange(msg,e){
     let state={};
     state[msg]=e;
     this.setState(state);
-    console.log(e,283839949)
   }
   handlerChanges(msg,e){
     let state={};
@@ -43,31 +44,7 @@ class setUpMessage extends React.Component {
       ishow:e
     })
   }
-  hadleSendMessage(e){
-    let msg;
-    let reg=/^1\d{10}$/;
-    const {content,tel,wapLink} = this.state;
-    if(!content){
-      msg="消息内容不能为空"
-    }else  if(!tel){
-      msg="请输入短信预览手机号"
-    }else if(!reg.test(tel)){
-      msg="预览手机号格式不正确"
-    }
-    if(msg){
-      Modal.error({
-        title: msg
-      });
-      return false;
-    }else{
-      let con=wapLink?(content+wapLink):content
-      console.log(con)
-      this.props.sendMessage({
-        "phone":tel,
-        "content":encodeURIComponent(con)
-      })
-    }
-  }
+  
   handlerClick(msg){
     this.setState({
       ishow:msg
@@ -92,7 +69,7 @@ class setUpMessage extends React.Component {
     return  timestamp+tmp;
   }
   handlerCommit(e){
-    const {name,userSelectGroupId,content,tel,sendType,time,wapLink,messageId}=this.state;
+    const {name,userSelectGroupId,title,content,tel,sendType,time,wapLink,messageId,token,timeSetUp,hour}=this.state;
     let reg=/^1\d{10}$/;
     let msg;
     let otime;
@@ -100,10 +77,14 @@ class setUpMessage extends React.Component {
       msg="活动名称不能为空"
     }else if(!userSelectGroupId){
       msg="推送人群不能为空"
+    }else if(!title){
+      msg="消息标题不能为空"
     }
     else if(!content){
       msg="消息内容不能为空"
-    }
+    }else if(!wapLink){
+      msg="跳转链接不能为空"
+    }else 
     if(sendType==1){
         otime=new Date().getTime()
     }else if(sendType==2&&time<new Date().getTime()){
@@ -117,23 +98,31 @@ class setUpMessage extends React.Component {
       });
       return false;
     }
-    this.props.messageSave({
-      "name":name,
-      "userSelectGroupId":userSelectGroupId.split('&')[0],
-      "selectNum":userSelectGroupId.split('&')[1],
-      "content":wapLink?content+wapLink:content,
-      "type":1,
-      "sendType":sendType,
-      "sendTime":otime,
-      "tunnelId":1,
-      "messageId":messageId,
-      "token":this.state.token
-    }).then(()=> {
-          hashHistory.push({pathname:'message', query: { text:'a0'}})
-          this.setState({
-            btnDisabled:true
+    let _this=this;
+     Modal.confirm({
+        title: 'APP消息一旦推送将无法撤回，是否确认推送？',
+        cancelText:'返回',
+        onOk() {
+         _this.props.appSave({
+            "name":name,
+            "userSelectGroupId":userSelectGroupId.split('&')[0],
+            "selectNum":userSelectGroupId.split('&')[1],
+            "title":title,
+            "content":content,
+            "link":wapLink,
+            "type":3,
+            "tunnelId":3,
+            "tunnelName":"钱宝APP推送",
+            "sendType":sendType,
+            "sendTime":otime,
+            "messageId":messageId,
+            "token":token
+          }).then(()=> {
+                hashHistory.push({pathname:'message', query: { text:'a0'}})
           })
-    })
+        }
+      });
+    
   }
   componentDidMount(){
     let loc=this.props.location.query;
@@ -145,7 +134,9 @@ class setUpMessage extends React.Component {
         token:this.randomChar()
       })
     })
-    
+  }
+  handlerCheckChange(e){
+    this.setState({"timeSetUp":e.target.checked})
   }
   render() {
     const {Population,message,sendType,ishow,content,wapLink,id,address,userSelectGroupId,btnDisabled} = this.state;
@@ -158,12 +149,15 @@ class setUpMessage extends React.Component {
     address&&address.map((item,index)=> {
         oAddress.push(<Option key={item.id+"&&"+item.wapLink} >{item.wapLink}</Option>);
     });
-    console.log(userSelectGroupId,123)
+    let hours=[]
+    for(var i=1;i<13;i++){
+        hours.push(<Option key={i*2} >{i*2}小时</Option>);
+    }
     return (
       <div className="content-wrapper">
           <h6>1.推送活动</h6>
           <ul>
-             <li><span>活动名称</span><Input onChange={this.handlerChanges.bind(this,['name'])}/></li>
+             <li><span>活动名称</span><Input  onChange={this.handlerChanges.bind(this,['name'])}/></li>
              <li>
                <span>推送人群</span>
                <Select   onChange={this.handleChange.bind(this,['userSelectGroupId'])} 
@@ -174,29 +168,24 @@ class setUpMessage extends React.Component {
           </ul>
           <h6>2.推送内容</h6>
           <ul>
+              <li className="w360">
+                <span>消息标题</span>
+                 <NumberInput number={30}  isOne={1} placeholder="请输入消息标题" nInputValue={this.handleChange.bind(this,['title'])}/>
+              </li>
               <li className="displayTable">
                 <span>消息内容</span>
                 <NumberInput number={180} isOne={6} otherContent={wapLink} nInputValue={this.handleChange.bind(this,['content'])}/>
               </li>
               <li>
-                <span>消息预览</span>
-                <Input placeholder="预览短信手机号码" onChange={this.handlerChanges.bind(this,['tel'])} />
-                <Button  className="sendButton" onClick={this.hadleSendMessage.bind(this)}>发送</Button>
-              </li>
-              <li>
-                <span>插入地址</span>
-                <Select onChange={this.handleChangeAddress.bind(this)} placeholder="点击按钮获取地址" >
-                    {oAddress}
-                </Select>
-                {/*<Input value={wapLink}  */}
-                <Button  className="sendButton"  onClick={this.handlerAddUrl.bind(this)}>获取</Button>
+                <span>跳转链接</span>
+                <Input   onChange={this.handlerChanges.bind(this,['wapLink'])} style={{width:360}}/>
               </li>
           </ul>
           <h6>3.推送选项</h6>
           <ul>
               <li>
                 <span>推送通道</span>
-                <Button className="tdBtn">营销类短信</Button>
+                <Button className="tdBtn">钱宝APP推送</Button>
               </li>
               <li className="displayTable paddingB0">
                 <span>推送时间</span>
@@ -212,19 +201,16 @@ class setUpMessage extends React.Component {
             <Button className="ts" onClick={this.handlerShow.bind(this)}>推送预览</Button>
             <Button className="send" onClick={this.handlerCommit.bind(this)}  disabled={btnDisabled?true:false}  >确认发送</Button>
           </div>
-          {ishow==0?"":<Mobile oClose={this.handlerClick.bind(this)} content={wapLink?(content+wapLink):content} wapLink={wapLink}/>}
+          {ishow==0?"":<Mobile oClose={this.handlerClick.bind(this)} title={this.state.title}  content={content}  />}
       </div>
     );
   }
 }
-setUpMessage.propTypes = {
-}
-
 let mapStateToProps = state => ({
 })
 
 let mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({getUserList,getLinkUrl,sendMessage, messageSave }, dispatch)
+    return bindActionCreators({getUserList,getLinkUrl, appSave }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(setUpMessage)

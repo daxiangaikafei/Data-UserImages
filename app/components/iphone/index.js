@@ -11,11 +11,9 @@ class Mobile extends React.Component{
         } 
       }
       handlerLinkUrl(e){
-        if(this.props.wapLink.indexOf("http://")<0){
-            this.props.wapLink&&window.open("http://"+this.props.wapLink)
-        }else{
-            this.props.wapLink&&window.open(this.props.wapLink)
-        }
+       this.props.wapLink&&window.open(this.props.wapLink)
+       
+       this.props.wapLink&&window.open(this.props.wapLink)
       }
       render() {
           const {logo,title,url,content,data,reLang,oUrl,oImg,code,iframeUrl,fileString,wapLink,showType}=this.props;
@@ -30,9 +28,8 @@ class Mobile extends React.Component{
           }):"";
           let iframe=iframeUrl?<iframe src={iframeUrl}   className="iframes" ></iframe>:"";
           let icon=logo?<img src={logo} width="10px" />:""; 
-          // let oHtml=fileString?<div dangerouslySetInnerHTML={{__html: fileString}}  className="oHtml"/>:"";
           return (
-            <div className="msgIphone">
+            <div className="appIphone">
               <div className="phoneBg">
               </div>
               <div className="mobileContent">
@@ -41,18 +38,26 @@ class Mobile extends React.Component{
                   <div className="mobileClose" onClick={this.props.oClose.bind(this,0)}>
                     <Icon type="close" className="mob_closeicon"/><span>关闭</span>
                   </div>
-                  <div className={showType=="weixing"?"oIp wx":"oIp"} >
-                      <div className={title||content?"oHead":""}>
-                        {icon}
-                        <div>{title}</div>
-                        {content? <div className="content">{content} </div>:""}
-                       
+                  <div className="oIp" >
+                      <div>
+                        <div className="app-header"><span></span>9分钟前</div>
+                        <div className="app-content">
+                          <div className="app-title">{this.props.title}</div>
+                          {this.props.content}
+                        </div>
                       </div>
-                      {component}
-
-                      {/*{iframe}*/}
-
-                      {/*{oHtml}*/}
+                      
+                      <div>
+                        <div>
+                            <div className="app-title">
+                              <div>{this.props.title}</div>
+                              <span>9分钟前</span>
+                            </div>
+                            <div className="app-content">
+                              {this.props.content}
+                            </div>
+                        </div>
+                      </div>
                   </div>
               </div>
               </div>

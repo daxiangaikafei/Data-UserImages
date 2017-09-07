@@ -28,17 +28,17 @@ class Index extends React.Component {
                 <HomeBanner data={this.props.number}/>
                 <HomeTab data={this.props.tabList} />
                 <div className="email-container">
-                    {
-                        !this.props.isLogin ?
+                    {/*{
+                        !this.props.isLogin ?*/}
                             <div>
-                                <p>立刻体验，即可享受个性化服务套餐</p>
-                                <div className="input-container">
+                                <p>享受个性化专业数据统计分析</p>
+                                {/*<div className="input-container">
                                     <Input className="email-input" placeholder="请输入您的电子邮箱" />
                                     <Button className="email-btn"><Link to={RouterConst.ROUTER_LOGIN}>立即体验</Link></Button>
-                                </div>
+                                </div>*/}
                             </div>
-                        : ""
-                    }
+                        {/*: ""
+                    }*/}
                     <div className="div-bg"></div>
                 </div>
                 <CopyRights />

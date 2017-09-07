@@ -34,3 +34,5 @@ export const IMPORTCHART = ROUTER_ROOT + "/importChart"
 export const ROUTER_FAVORITE = ROUTER_ROOT + "/favorite"
 
 export const ROUTER_DEV = ROUTER_ROOT + "/dev"
+
+export const ROUTER_TOAPP = ROUTER_ROOT + "/toApp"

@@ -47,7 +47,7 @@ class Wechat extends React.Component {
             this.props.sendMessage({
                 "phone":mobileNo,
                 "content":oUrl
-            }).then(Modal.success({title:"发送成功"}))
+            })
         }
     }
     handlerChangeMobile(e){

@@ -111,7 +111,8 @@ export const getReportData = (opt) => (dispatch, getState) => {
                 create_date: data.create_date || "",
                 number: data.number || 0,
                 reports: data.reports || [],
-                count: data.count || 0
+                count: data.count || 0,
+                spendTime: data.spendTime || 0
             }
             dispatch(receiveReportData(data))
             if(data.reports.length > 0) {

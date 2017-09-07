@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react'
 import createG2 from 'g2-react';
 import G2 from 'g2';
-
 class TreeChart extends React.Component {
 
     constructor(props, context) {
@@ -34,16 +33,22 @@ class TreeChart extends React.Component {
             .position(Stat.link('source*target', nodes))
             .shape('smooth')
             .color('#ccc');
+        let reg=/^[A-Z]+$/
         function strLen(str) {
             var len = 0;
             for (var i = 0; i < str.length; i++) {
                 if (str.charCodeAt(i) > 0 && str.charCodeAt(i) < 128) {
-                    len++;
-                } else {
+                    if(reg.test(str[i])){
+                        len+=2
+                    }else{
+                        len++;
+                    }
+                }else {
                     len += 2;
                 }
             }
-            return len;
+            console.log(str,123456,len)
+            return len+1;
         }
         // 创建节点视图
         var nodeView = chart.createView();

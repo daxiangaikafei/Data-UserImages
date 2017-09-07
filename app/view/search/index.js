@@ -46,9 +46,8 @@ class SearchList extends React.Component {
         if(isBtn) state.btnFavoriteStatus = false
         this.props.getReportData(opt).then(
             ()=>this.setState(state),
-            ()=>Modal.error({
-                title: "提示",
-                content: ErrorMessage.Error_Reports_Empty
+            ()=>Modal.info({
+                title: ErrorMessage.Error_Reports_Empty
             })
         )
     }
@@ -78,7 +77,9 @@ class SearchList extends React.Component {
                 </div>
                 
                 <SelectResultContainer />
-                <SelectContainer onShowFavorite={()=>this.onShowFavorite()} btnFavoriteStatus={this.state.btnFavoriteStatus} getReportData={(page, isBtn)=>this.onGetReportData(page, isBtn)}/>
+                <SelectContainer onShowFavorite={()=>this.onShowFavorite()}
+                     btnFavoriteStatus={this.state.btnFavoriteStatus} 
+                     getReportData={(page, isBtn)=>this.onGetReportData(page, isBtn)}/>
                 <AntVContainer pageSize={this.state.pageSize} currentPage={this.state.currentPage} getReportData={(page, isBtn)=>this.onGetReportData(page, isBtn)} />
                 {this.state.isShowFavorite ? <FavoriteContainer onCloseHandler={(val)=>this.onCloseFavorite(val)}/> : ""}
             </div>

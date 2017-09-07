@@ -19,6 +19,10 @@ const columns = [{
     else if(value==2){
       return <Icons  name="weixing" color={'#666'} size={20}  />
     }
+    else if(value==3){
+      return <Icon  type="apple" color={'#666'} style={{fontSize:20}}  />
+    }
+    
   }
 }, {
   title: '活动名称',
@@ -35,6 +39,9 @@ const columns = [{
     }
     else if(value=="2"){
       return "微信"
+    }
+    else if(value=="3"){
+      return "钱宝APP推送"
     }
   }
 },
@@ -92,6 +99,9 @@ class Message extends React.Component {
     handlerCreateWeixin(){
        hashHistory.push({pathname:'/wechart',query:{text:'c2'}})
     }
+    handlerCreateApp(){
+       hashHistory.push({pathname:'/toApp',query:{text:'d3'}})
+    }
     render() {
         return (
           <div className="content-wrapper">
@@ -99,8 +109,19 @@ class Message extends React.Component {
             <div className="white-bg">
               <Button className="oButton" onClick={this.handlerCreatMail.bind(this)}><Icons className="btn-icon" name="mail" color={'#666'} />新建短信推送</Button>
               <Button className="oButton" onClick={this.handlerCreateWeixin.bind(this)}><Icons  className="btn-icon" name="weixing" color={'#666'} />新建微信推送</Button>
-              <Table  rowKey="id" columns={columns} dataSource={this.props.data}  onChange={this.handleTableChange.bind()} />
-               {this.props.count?<Pagination  style={{marginTop:18}} onChange={(e)=>this.handleTableChange(e)} total={this.props.count} />:""} 
+              <Button className="oButton" onClick={this.handlerCreateApp.bind(this)}><Icon  className="btn-icon" type="apple" color={'#666'} style={{fontSize:14}}/>新建钱宝App应用推送</Button>
+              <Table  rowKey="id" columns={columns} dataSource={this.props.data}  onChange={this.handleTableChange.bind()} className="active-list" />
+               {this.props.count?<Pagination  style={{marginTop:18}} onChange={(e)=>this.handleTableChange(e)} total={this.props.count} />:
+               <div className='noData'>
+                 <div>
+                      <Icon type="exclamation-circle-o" />
+                      <div>
+                        <span>非常抱歉,没有找到符合的精准客群!</span><br/>
+                        建议前往用户画像界面筛选客群<br/>
+                        <a href="/#/searchList">立即前往</a>
+                      </div>
+                 </div>
+              </div>} 
             </div>
             
           </div>
@@ -113,8 +134,8 @@ Message.propTypes = {
 }
 
 let mapStateToProps = state => ({
-    data:state.activeList.data,
-    count:state.activeList.count,
+   data:state.activeList.data,
+   count:state.activeList.count
 })
 
 let mapDispatchToProps = (dispatch) => {

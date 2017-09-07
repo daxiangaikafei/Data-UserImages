@@ -45,6 +45,7 @@ class SelectContainer extends React.Component {
         )
     }
 
+    
     render(){
         return (
             <div className="selectContainer">
@@ -56,6 +57,13 @@ class SelectContainer extends React.Component {
                         <Button size="large" onClick={this.props.onShowFavorite} disabled={this.props.btnFavoriteStatus}>收藏筛选</Button>
                         <Button size="large" onClick={()=>this.onGetReportHandler()}>画像计算</Button>
                     </div>
+                    {/*<div className="calculation" style={{display:this.props.btnFavoriteStatus?"none":"block"}}>
+                       <Icon type="exclamation-circle-o" />
+                       <span> 用户统计数:{this.props.reportNumber}</span>
+                       <span>计算时间:{this.props.time}</span>
+                    </div>*/}
+                    
+                    
                 </div>
             </div>
         )
@@ -70,6 +78,8 @@ SelectContainer.PropTypes = {
 
 let mapStateToProps = state => ({
     filterMenuList: state.searchList.filterMenuList,
+    reportNumber: state.searchList.reportNumber,
+    time: state.searchList.time,
 })
 
 let mapDispatchToProps = (dispatch) => {

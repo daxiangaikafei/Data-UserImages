@@ -5,6 +5,7 @@
     right:6px;
 }
 .oBg{
+     &.wrap{width: calc(~"100% - 200px");}
     .ant-menu-submenu-open .ant-menu-submenu-title span{
         color:#1a5bfb !important;
         .sider_menuicon{

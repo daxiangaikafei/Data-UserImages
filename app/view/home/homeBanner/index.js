@@ -52,13 +52,20 @@ class HomeBanner extends React.Component {
             )
         }).reverse()
     }
-
+    componentDidMount() {
+        window.addEventListener('resize', this.onWindowResize)
+    }
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.onWindowResize)
+    }
+    onWindowResize(e){
+    }
     render() {
         let { Element } = BannerAnim, BgElement = Element.BgElement
-
-
+        const {width} = this.state;
+        console.log(width)
         return (
-            <BannerAnim prefixCls="banner-user">
+            <BannerAnim prefixCls="banner-user" >
                 <Element key="banner1" prefixCls="banner-user-elem banner1">
                     <BgElement key="bg" className="bg" style={this.state.bgStyle1} />
                     <QueueAnim className="title-anim" name="QueueAnim">

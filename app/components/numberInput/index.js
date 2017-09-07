@@ -28,11 +28,11 @@ class NumberInput extends React.Component{
       render() {
         let html;
         if(this.props.isOne==1){
-            html=<Input  onChange={(e)=>this.handlerChange(e)} value={this.state.value}/>
+            html=<Input  onChange={(e)=>this.handlerChange(e)} value={this.state.value} placeholder={this.props.placeholder}/>
         }else{
             html= <Input className="oText" type="textarea"
                   rows={this.props.isOne}  onChange={(e)=>this.handlerChange(e)} 
-                  value={this.state.value}/>
+                  value={this.state.value}  placeholder={this.props.placeholder}/>
         }
           return (
               <div className="numberInput">

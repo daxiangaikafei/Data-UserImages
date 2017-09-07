@@ -8,18 +8,18 @@ reader.addEventListener('load', () => callback(reader.result));
 reader.readAsDataURL(img);
 }
 
-function beforeUpload(file) {
-const isJPG = file.type === 'image/jpeg';
-if (!isJPG) {
-Modal.error('只能输入JPG图片');
-return false;
-}
-const isLt2M = file.size / 1024 / 1024 /1024 *300 < 300;
-if (!isLt2M) {
-Modal.error('图片不能大于300K');
-return false;
-}
-return  isLt2M;
+function beforeUploadF(file) {
+    console.log(file.type)
+    if (file.type.indexOf('image')<0) {
+        Modal.error({title: "请上传图片"});
+        return false;
+    }
+    const isLt2M = file.size / 1024 / 1024 /1024 *300 < 300;
+        if (!isLt2M) {
+        Modal.error({title: "图片不能大于300K"});
+        return false;
+    }
+    return  isLt2M;
 }
 let datas=[]
 class Pic extends React.Component{
@@ -54,7 +54,7 @@ render() {
                         name="file"
                         showUploadList={false}
                         action="/qiniu/upload.do"
-                        beforeUpload={beforeUpload}
+                        beforeUpload={beforeUploadF}
                         onChange={this.handleChange}>
                     {
                     imageUrl ?

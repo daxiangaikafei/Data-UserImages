@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import { Provider } from 'react-redux'
 import { Router } from 'react-router'
+import core from 'core-js'
 
 import injectTapEventPlugin from 'react-tap-event-plugin'
 

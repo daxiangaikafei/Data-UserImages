@@ -1,11 +1,25 @@
 .selectContainer{
+    //width: 1000px;
     background: #ffffff;
     border: 1px solid #e7eaf2;
-
     .ant-tabs{
         border-bottom: 1px solid #e7eaf2;
     }
 
+    .calculation{
+        margin-top:20px;
+        font-size:14px;
+        color:#1a5bfb;
+        .anticon{
+                padding-right:9px;
+                padding-left:9px;
+        }
+        span{
+            &:nth-child(2){
+                padding-right:16px;
+            }
+        }
+    }
     .ant-tabs-bar{
         padding: 0 30px;
         border-bottom: 1px solid #e7eaf2;

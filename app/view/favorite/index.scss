@@ -63,13 +63,15 @@
             color: #000;
         }
 
-        .btn_mail, .btn_wx{
-            width: 52px;
+        .btn_mail, .btn_wx,.btn_app{
             height: 22px;
+            min-width:52px;
             padding: 0;
+            margin-right:6px;
+            padding-right:4px;
             padding-left: 16px;
             position: relative;
-
+            .btn_app{margin-right:0px }
             .btn-icon{
                 position: absolute;
                 top: 3px;
@@ -77,9 +79,6 @@
             }
         }
 
-        .btn_mail{
-            margin-right: 10px;
-        }
 
         .ant-table-pagination{
             width: 100%;

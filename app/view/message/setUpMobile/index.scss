@@ -34,6 +34,9 @@
         margin:0px;
         border:0px;
     }
+    .w360 input{
+        width:100%;
+    }
     input,.ant-select-selection{
         width:300px;
         border-radius:0px;
@@ -118,4 +121,23 @@
 }
 .isshow{
     display:block;
+}
+.oSelect{
+    margin-left: 7px;
+    margin-right: 7px;
+    width:74px;
+    line-height: 26px;
+     .ant-select-selection{
+          width:74px;
+     }
+}
+.iCheckedUser{
+    position:relative;
+    top:-12px;
+    .ant-checkbox-input{
+        width:30px;
+    }
+}
+.langText{
+    width:360px !important;
 }

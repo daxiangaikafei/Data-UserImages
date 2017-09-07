@@ -62,9 +62,9 @@ class SiderSearchMenu extends React.Component {
         let { openKeys } = this.state
         
         return (
-            <div className="silder">
+            <div className="silder" >
                 <div className="silder-title">
-                    <span style={{display: "inline-block", overflow: "hidden", width: silderFold ? "0px" : "auto"}}>展示图表</span>
+                    <span className={silderFold?"menu-close":"menu-open"} >展示图表</span>
                     <span style={{cursor: "pointer"}} onClick={()=>this.props.onChangeSilderFold(!silderFold)}><Icon name="show" size="20" color="#000" /></span>
                 </div>
                 <Menu
@@ -82,7 +82,6 @@ class SiderSearchMenu extends React.Component {
 }
 
 SiderSearchMenu.PropTypes = {
-    onChangeSilderFold: PropTypes.func.isRequired,
     silderFold: PropTypes.bool.isRequired,
     menuData: PropTypes.array.isRequired
 }
